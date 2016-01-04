@@ -28,14 +28,14 @@
     border-radius: 5px;
 }
 
-#lhc-workingOnIt-message img {
-    width: 40px;
-}
+    #lhc-workingOnIt-message img {
+        width: 40px;
+    }
 
-#lhc-workingOnIt-message span.lpm-workingOnIt-accentText {
-    font-size: 36px;
-    font-family: "Segoe UI Light", "Segoe UI", Tahoma, Helvetica, Arial,sans-serif;
-}
+    #lhc-workingOnIt-message span.lpm-workingOnIt-accentText {
+        font-size: 36px;
+        font-family: "Segoe UI Light", "Segoe UI", Tahoma, Helvetica, Arial,sans-serif;
+    }
 /*#endregion */
 
 /*#region angular dissolve animation */
@@ -103,3 +103,15 @@
     }
 
 /*#endregion */
+
+/*#region ngView main section */
+#content.view-container {
+    margin-top: 80px;
+}
+
+/*#endregion */
+
+/*#region Client Dashboard Bootstrap  Section*/
+
+
+/*#endregion*/

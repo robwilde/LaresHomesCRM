@@ -1,4 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Clients" OnQuickLaunch="TRUE" TemplateType="100" Url="Lists/Clients" Description="My List Instance"></ListInstance>
+  <ListInstance Title="Clients" 
+                OnQuickLaunch="TRUE" 
+                TemplateType="100" 
+                Url="Lists/Clients" 
+                Description="Clients List">
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="ClientsFirstName">James</Field>
+          <Field Name="ClientsLastName">Butt</Field>
+          <Field Name="ClientsPhone">08-845-142</Field>
+          <Field Name="ClientsEmail">jbutt@gmail.com</Field>
+          <Field Name="ClientsAddress">6649 N Blue Gum St</Field>
+          <Field Name="ClientsSuburb">New Orleans</Field>
+          <Field Name="ClientsCity">Orleans</Field>
+          <Field Name="ClientsPostcode">48116</Field>
+          <Field Name="ClientsProjectStatus">In-Progress</Field>
+        </Row>
+        <Row>
+          <Field Name="ClientsFirstName">Ernie</Field>
+          <Field Name="ClientsLastName">Stenseth</Field>
+          <Field Name="ClientsPhone">201-387-9093</Field>
+          <Field Name="ClientsEmail">ernie_stenseth@aol.com</Field>
+          <Field Name="ClientsAddress">45 E Liberty St</Field>
+          <Field Name="ClientsSuburb">Ridgefield Park</Field>
+          <Field Name="ClientsCity">Bergen</Field>
+          <Field Name="ClientsPostcode">07660</Field>
+          <Field Name="ClientsProjectStatus">On-Hold</Field>
+        </Row>
+        <Row>
+          <Field Name="ClientsFirstName">Mattie</Field>
+          <Field Name="ClientsLastName">Poquette</Field>
+          <Field Name="ClientsPhone">602-277-4385</Field>
+          <Field Name="ClientsEmail">mattie@aol.com</Field>
+          <Field Name="ClientsAddress">73 State Road 434 E</Field>
+          <Field Name="ClientsSuburb">Phoenix</Field>
+          <Field Name="ClientsCity">Maricopa</Field>
+          <Field Name="ClientsPostcode">85013</Field>
+          <Field Name="ClientsProjectStatus">Closed</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
 </Elements>

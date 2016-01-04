@@ -35,11 +35,11 @@
       {
         url: '/Clients',
         config: {
-          templateUrl: 'app/clients/clients.html',
+          templateUrl: 'app/clients/clients-dashboard.html',
           title: 'Client List',
           settings: {
             nav: 1,
-            content: 'client list',
+            content: 'Clients',
             quickLaunchEnabled: true
           }
         }

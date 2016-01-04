@@ -27,5 +27,9 @@
     <File Path="fonts\glyphicons-halflings-regular.ttf" Url="fonts/glyphicons-halflings-regular.ttf" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.svg" Url="fonts/glyphicons-halflings-regular.svg" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.eot" Url="fonts/glyphicons-halflings-regular.eot" ReplaceContent="TRUE" />
+    <File Path="App\clients\clients-dashboard.html" Url="App/clients/clients-dashboard.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\clientsDashCtrl.js" Url="App/clients/clientsDashCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\clients-details.html" Url="App/clients/clients-details.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\clientsDetailsCtrl.js" Url="App/clients/clientsDetailsCtrl.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

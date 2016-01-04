@@ -28,5 +28,9 @@
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.ttf" Target="fonts\" Type="ElementFile" />
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.svg" Target="fonts\" Type="ElementFile" />
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.eot" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clients-dashboard.html" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clientsDashCtrl.js" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clients-details.html" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clientsDetailsCtrl.js" Target="App\clients\" Type="ElementFile" />
   </Files>
 </ProjectItem>

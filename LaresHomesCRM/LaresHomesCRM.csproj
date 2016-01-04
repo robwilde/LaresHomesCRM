@@ -63,6 +63,10 @@
     </None>
     <Content Include="App\app.js" />
     <Content Include="App\appLauncher.js" />
+    <Content Include="App\clients\clients-dashboard.html" />
+    <Content Include="App\clients\clients-details.html" />
+    <Content Include="App\clients\clientsDashCtrl.js" />
+    <Content Include="App\clients\clientsDetailsCtrl.js" />
     <Content Include="App\common\common.js" />
     <Content Include="App\common\logger.js" />
     <Content Include="App\config.exceptionHandler.js" />
@@ -99,6 +103,7 @@
     <Content Include="Pages\app.html" />
     <Content Include="Pages\appLauncher.html" />
     <Content Include="Pages\Elements.xml" />
+    <None Include="Scripts\jquery-1.11.3.min.map" />
     <None Include="SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3e249b1e-2c97-4e67-b53b-714786d73334}</SharePointProjectItemId>
     </None>
@@ -109,7 +114,6 @@
     <None Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\angular.min.js.map" />
-    <None Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{92f97384-6b4b-4d0c-9a51-39372e1efb20}</SharePointProjectItemId>
     </None>
@@ -132,9 +136,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
-    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\moment-with-langs.js" />
     <Content Include="Scripts\moment-with-langs.min.js" />
     <Content Include="Scripts\moment.js" />
@@ -176,9 +180,7 @@
       <SubType>Designer</SubType>
     </AppManifestFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\clients\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

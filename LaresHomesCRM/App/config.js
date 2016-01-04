@@ -11,7 +11,7 @@
   };
 
   var config = {
-    title: 'Lares Homes CRM',
+    title: 'LHC',
     // config the exceptionHandler decorator
     appErrorPrefix: '[SYSERR] ',
     // app events
