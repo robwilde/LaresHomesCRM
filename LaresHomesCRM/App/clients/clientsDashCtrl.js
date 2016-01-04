@@ -19,7 +19,7 @@
             common.activateController([], controllerId);
         }
 
-        common.logger.logError('Checking DashCtrl', DashCtrl, controllerId);
+        //common.logger.logError('Checking DashCtrl', DashCtrl, controllerId);
 
     };
 

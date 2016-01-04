@@ -104,6 +104,14 @@
 
 /*#endregion */
 
+
+/*#region sidebox navbar quicklaunch*/
+#sideNavBox {
+    margin-top: 30px;
+}
+
+/*#endregion */
+
 /*#region ngView main section */
 #content.view-container {
     margin-top: 80px;

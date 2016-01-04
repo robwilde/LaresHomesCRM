@@ -98,6 +98,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\error.png" />
     <Content Include="Images\info.png" />
+    <Content Include="Images\LaresHomesLogo.png" />
     <Content Include="Images\success.png" />
     <Content Include="Images\warning.png" />
     <Content Include="Pages\app.html" />
