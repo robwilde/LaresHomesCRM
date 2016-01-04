@@ -22,5 +22,10 @@
     <File Path="App\layout\quicklaunch.js" Url="App/layout/quicklaunch.js" ReplaceContent="TRUE" />
     <File Path="App\services\spContext.js" Url="App/services/spContext.js" ReplaceContent="TRUE" />
     <File Path="App\util\jquery-extensions.js" Url="App/util/jquery-extensions.js" ReplaceContent="TRUE" />
+    <File Path="fonts\glyphicons-halflings-regular.woff2" Url="fonts/glyphicons-halflings-regular.woff2" ReplaceContent="TRUE" />
+    <File Path="fonts\glyphicons-halflings-regular.woff" Url="fonts/glyphicons-halflings-regular.woff" ReplaceContent="TRUE" />
+    <File Path="fonts\glyphicons-halflings-regular.ttf" Url="fonts/glyphicons-halflings-regular.ttf" ReplaceContent="TRUE" />
+    <File Path="fonts\glyphicons-halflings-regular.svg" Url="fonts/glyphicons-halflings-regular.svg" ReplaceContent="TRUE" />
+    <File Path="fonts\glyphicons-halflings-regular.eot" Url="fonts/glyphicons-halflings-regular.eot" ReplaceContent="TRUE" />
   </Module>
 </Elements>

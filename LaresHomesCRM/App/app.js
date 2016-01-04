@@ -8,6 +8,7 @@
     'ngCookies',    // cookie read/write support
     'ngSanitize',   // fixes HTML issues in data binding
     'ngAnimate',    // animation capabilities
+    'ui.bootstrap', // UI Bootstrap add on
 
     // my custom modules
     'common'

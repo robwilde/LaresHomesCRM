@@ -26,5 +26,11 @@
     <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-langs.min.js" Url="Scripts/moment-with-langs.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-langs.js" Url="Scripts/moment-with-langs.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap.min.js" Url="Scripts/angular-ui/ui-bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap.js" Url="Scripts/angular-ui/ui-bootstrap.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.min.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\bootstrap.min.js" Url="Scripts/bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\bootstrap.js" Url="Scripts/bootstrap.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

@@ -43,6 +43,20 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Content\bootstrap-theme.css.map" />
+    <None Include="Content\bootstrap-theme.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="Data\Clients\ClientsInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a360aabc-7468-4324-b380-45e48855defd}</SharePointProjectItemId>
+    </None>
+    <None Include="Data\Clients\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0483b404-9c2a-40eb-8977-6789d55203a2}</SharePointProjectItemId>
+    </None>
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{15ce9e91-2c73-45a9-b9a6-4132c7c331dc}</SharePointProjectItemId>
@@ -68,7 +82,16 @@
     <Content Include="App\layout\workingonit.js" />
     <Content Include="App\services\spContext.js" />
     <Content Include="App\util\jquery-extensions.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Data\Clients\ClientsInstance\Elements.xml" />
+    <Content Include="Data\Clients\Elements.xml" />
+    <Content Include="Data\Clients\Schema.xml" />
     <Content Include="Elements.xml" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\error.png" />
     <Content Include="Images\info.png" />
     <Content Include="Images\success.png" />
@@ -99,8 +122,14 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -148,7 +177,7 @@
     </AppManifestFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Folder Include="App\clients\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
