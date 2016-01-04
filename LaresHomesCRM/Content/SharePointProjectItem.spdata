@@ -12,5 +12,10 @@
     <ProjectItemFile Source="bootstrap-theme.min.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap-theme.css.map" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap-theme.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="metisMenu.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="metisMenu.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="sb-admin-2.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="font-awesome.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="font-awesome.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

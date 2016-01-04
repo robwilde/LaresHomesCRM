@@ -32,5 +32,12 @@
     <ProjectItemFile Source="App\clients\clientsDashCtrl.js" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clients-details.html" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientsDetailsCtrl.js" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\bs-admin\navbar-section.html" Target="App\bs-admin\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\FontAwesome.otf" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.woff2" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.woff" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.ttf" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.svg" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.eot" Target="fonts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

@@ -7,26 +7,36 @@
 
     <!-- vendor styles -->
     <link href="/_layouts/15/1033/styles/forms.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/metisMenu.min.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/sb-admin-2.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
 
     <!-- my styles -->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/App.css" rel="stylesheet" />
+
 </head>
 <body>
-    <div id="pageWidth">
-        <div data-ng-include="'App/layout/spAppChrome.html'"></div>
-        <div id="s4-workspace" class="ms-core-overlay">
-            <div id="s4-bodyContainer">
-                <div data-ng-include="'App/layout/header.html'"></div>
-                <div id="contentRow">
-                    <div data-ng-include="'App/layout/quicklaunch.html'"></div>
-                    <div id="contentBox" aria-live="polite" aria-relevant="all">
-                        <div data-ng-include="'App/layout/shell.html'"></div>
-                    </div>
+    <div data-ng-include="'App/layout/spAppChrome.html'"></div>
+
+    <div class="wrapper">
+
+        <!-- Navigation -->
+        <div data-ng-include="'App/bs-admin/navbar-section.html'"></div>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div data-ng-controller="shell as vm">
+                    <section id="content">
+                        <div data-ng-view></div>
+                    </section>
                 </div>
             </div>
+            <!-- /.container-fluid -->
         </div>
+        <!-- /#page-wrapper -->
     </div>
     <div data-ng-include="'App/layout/workingonit.html'"></div>
 
@@ -43,6 +53,8 @@
     <script src="Scripts/moment.min.js"></script>
     <script src="Scripts/moment-with-langs.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/metisMenu.min.js"></script>
+    <script src="Scripts/sb-admin-2.js"></script>
 
     <!-- my libraries -->
     <script src="App/util/jquery-extensions.js"></script>

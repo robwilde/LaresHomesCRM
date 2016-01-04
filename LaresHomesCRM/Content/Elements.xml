@@ -11,5 +11,10 @@
     <File Path="Content\bootstrap-theme.min.css" Url="Content/bootstrap-theme.min.css" ReplaceContent="TRUE" />
     <File Path="Content\bootstrap-theme.css.map" Url="Content/bootstrap-theme.css.map" ReplaceContent="TRUE" />
     <File Path="Content\bootstrap-theme.css" Url="Content/bootstrap-theme.css" ReplaceContent="TRUE" />
+    <File Path="Content\metisMenu.min.css" Url="Content/metisMenu.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\metisMenu.css" Url="Content/metisMenu.css" ReplaceContent="TRUE" />
+    <File Path="Content\sb-admin-2.css" Url="Content/sb-admin-2.css" ReplaceContent="TRUE" />
+    <File Path="Content\font-awesome.min.css" Url="Content/font-awesome.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\font-awesome.css" Url="Content/font-awesome.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>

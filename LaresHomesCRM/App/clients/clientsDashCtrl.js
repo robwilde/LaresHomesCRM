@@ -8,6 +8,7 @@
     function clientsDashboard($location, common) {
         var DashCtrl = this;
 
+        DashCtrl.pageTitle = 'Clients';
         DashCtrl.Clients = WPQ1ListData;
 
         // init controller

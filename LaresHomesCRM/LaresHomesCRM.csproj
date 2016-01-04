@@ -53,16 +53,22 @@
     <None Include="Data\Clients\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{0483b404-9c2a-40eb-8977-6789d55203a2}</SharePointProjectItemId>
     </None>
-    <None Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="fonts\glyphicons-halflings-regular.woff" />
-    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{15ce9e91-2c73-45a9-b9a6-4132c7c331dc}</SharePointProjectItemId>
     </None>
     <Content Include="App\app.js" />
     <Content Include="App\appLauncher.js" />
+    <Content Include="App\bs-admin\navbar-section.html" />
     <Content Include="App\clients\clients-dashboard.html" />
     <Content Include="App\clients\clients-details.html" />
     <Content Include="App\clients\clientsDashCtrl.js" />
@@ -90,14 +96,22 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\metisMenu.css" />
+    <Content Include="Content\metisMenu.min.css" />
+    <Content Include="Content\sb-admin-2.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Data\Clients\ClientsInstance\Elements.xml" />
     <Content Include="Data\Clients\Elements.xml" />
     <Content Include="Data\Clients\Schema.xml" />
     <Content Include="Elements.xml" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\error.png" />
     <Content Include="Images\info.png" />
+    <Content Include="Images\LaresHomesLogo.png" />
+    <Content Include="Images\lares_contact_square-1160x600.jpg" />
     <Content Include="Images\success.png" />
     <Content Include="Images\warning.png" />
     <Content Include="Pages\app.html" />
@@ -109,6 +123,8 @@
     <None Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.11.3.min.map" />
+    <None Include="Scripts\metisMenu.js.map" />
+    <None Include="Scripts\metisMenu.min.js.map" />
     <None Include="SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3e249b1e-2c97-4e67-b53b-714786d73334}</SharePointProjectItemId>
     </None>
@@ -139,10 +155,13 @@
     <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\metisMenu.js" />
+    <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>

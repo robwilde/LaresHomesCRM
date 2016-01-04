@@ -32,5 +32,10 @@
     <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\metisMenu.min.js.map" Url="Scripts/metisMenu.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\metisMenu.min.js" Url="Scripts/metisMenu.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\metisMenu.js.map" Url="Scripts/metisMenu.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\metisMenu.js" Url="Scripts/metisMenu.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\sb-admin-2.js" Url="Scripts/sb-admin-2.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

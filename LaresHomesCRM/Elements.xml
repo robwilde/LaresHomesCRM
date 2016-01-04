@@ -31,5 +31,12 @@
     <File Path="App\clients\clientsDashCtrl.js" Url="App/clients/clientsDashCtrl.js" ReplaceContent="TRUE" />
     <File Path="App\clients\clients-details.html" Url="App/clients/clients-details.html" ReplaceContent="TRUE" />
     <File Path="App\clients\clientsDetailsCtrl.js" Url="App/clients/clientsDetailsCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\bs-admin\navbar-section.html" Url="App/bs-admin/navbar-section.html" ReplaceContent="TRUE" />
+    <File Path="fonts\FontAwesome.otf" Url="fonts/FontAwesome.otf" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.woff2" Url="fonts/fontawesome-webfont.woff2" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.woff" Url="fonts/fontawesome-webfont.woff" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.ttf" Url="fonts/fontawesome-webfont.ttf" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.svg" Url="fonts/fontawesome-webfont.svg" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.eot" Url="fonts/fontawesome-webfont.eot" ReplaceContent="TRUE" />
   </Module>
 </Elements>
