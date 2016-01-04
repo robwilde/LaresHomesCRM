@@ -11,6 +11,8 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Phone</th>
+                        <th>eMail</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +21,8 @@
                         <td>{{client.ClientsFirstName}}</td>
                         <td>{{client.ClientsLastName}}</td>
                         <td>{{client.ClientsPhone}}</td>
+                        <td><p data-ng-bind-html="client.ClientsEmail"></p></td>
+                        <td>{{client.ClientsProjectStatus}}</td>
                     </tr>
                 </tbody>
             </table>
