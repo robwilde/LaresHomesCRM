@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="626eb854-fa64-49b0-9f38-a5ac12abad22" 
+        solutionId="626eb854-fa64-49b0-9f38-a5ac12abad22" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="LaresHomesCRM"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="e85036f4-9997-4b8d-a3ab-cb1f6d195ebb" />
+  </features>
+</package>
