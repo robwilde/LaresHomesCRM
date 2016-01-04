@@ -47,6 +47,28 @@
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{15ce9e91-2c73-45a9-b9a6-4132c7c331dc}</SharePointProjectItemId>
     </None>
+    <Content Include="App\app.js" />
+    <Content Include="App\appLauncher.js" />
+    <Content Include="App\common\common.js" />
+    <Content Include="App\common\logger.js" />
+    <Content Include="App\config.exceptionHandler.js" />
+    <Content Include="App\config.js" />
+    <Content Include="App\config.route.js" />
+    <Content Include="App\dashboard\dashboard.html" />
+    <Content Include="App\dashboard\dashboard.js" />
+    <Content Include="App\layout\header.html" />
+    <Content Include="App\layout\header.js" />
+    <Content Include="App\layout\quicklaunch.html" />
+    <Content Include="App\layout\quicklaunch.js" />
+    <Content Include="App\layout\shell.html" />
+    <Content Include="App\layout\shell.js" />
+    <Content Include="App\layout\spAppChrome.html" />
+    <Content Include="App\layout\spAppChrome.js" />
+    <Content Include="App\layout\workingonit.html" />
+    <Content Include="App\layout\workingonit.js" />
+    <Content Include="App\services\spContext.js" />
+    <Content Include="App\util\jquery-extensions.js" />
+    <Content Include="Elements.xml" />
     <Content Include="Images\error.png" />
     <Content Include="Images\info.png" />
     <Content Include="Images\success.png" />
@@ -54,6 +76,9 @@
     <Content Include="Pages\app.html" />
     <Content Include="Pages\appLauncher.html" />
     <Content Include="Pages\Elements.xml" />
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3e249b1e-2c97-4e67-b53b-714786d73334}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\angular-animate.min.js.map" />
@@ -121,6 +146,9 @@
     <AppManifestFile Include="AppManifest.xml">
       <SubType>Designer</SubType>
     </AppManifestFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
