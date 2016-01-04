@@ -103,17 +103,17 @@
     <Content Include="Pages\app.html" />
     <Content Include="Pages\appLauncher.html" />
     <Content Include="Pages\Elements.xml" />
+    <None Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Scripts\angular-cookies.min.js.map" />
+    <None Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.11.3.min.map" />
     <None Include="SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3e249b1e-2c97-4e67-b53b-714786d73334}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\angular-animate.min.js.map" />
-    <None Include="Scripts\angular-cookies.min.js.map" />
-    <None Include="Scripts\angular-route.min.js.map" />
-    <None Include="Scripts\angular-sanitize.min.js.map" />
-    <None Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{92f97384-6b4b-4d0c-9a51-39372e1efb20}</SharePointProjectItemId>
     </None>
@@ -139,8 +139,8 @@
     <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
-    <Content Include="Scripts\moment-with-langs.js" />
-    <Content Include="Scripts\moment-with-langs.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\_references.js" />
