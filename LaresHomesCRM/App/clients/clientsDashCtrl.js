@@ -27,7 +27,9 @@
             datacontext.getClientsPartials()
               .then(function (data) {
                   if (data) {
-                      DashCtrl.clients = data;
+                      //common.logger.logDebug('getClients', data, controllerId);
+
+                      DashCtrl.Clients = data;
                   } else {
                       throw new Error('error obtaining data');
                   }

@@ -89,7 +89,7 @@
 
             $http({
                 method: 'GET',
-                url: '_api/web/lists/getbytitle(\'Clients\')/items?$select=Id,Title,ClientsFirstName,ClientsLastName,ClientsEmail,ClientsProjectStatus&$orderby=ClientsLastName'
+                url: '_api/web/lists/getbytitle(\'Clients\')/items?$select=Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsProjectStatus&$orderby=ClientsLastName'
             }).success(function (data) {
                 common.logger.logDebug("getClientsPartials", data, serviceId);
                 deferred.resolve(data.d.results);

@@ -21,7 +21,7 @@
                         <td>{{client.ClientsFirstName}}</td>
                         <td>{{client.ClientsLastName}}</td>
                         <td>{{client.ClientsPhone}}</td>
-                        <td><p data-ng-bind-html="client.ClientsEmail"></p></td>
+                        <td><a href="mailto:{{client.ClientsEmail}}">{{client.ClientsEmail}}</a></td>
                         <td>{{client.ClientsProjectStatus}}</td>
                     </tr>
                 </tbody>
