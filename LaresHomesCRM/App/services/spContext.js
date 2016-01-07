@@ -56,7 +56,7 @@
     // init the sharepoint app context by loding the app's cookie contents
     function loadSpAppContext() {
       $log.log(loggerSource, 'loading spContext cookie', null);
-      service.hostWeb.appWebUrl = $cookieStore.get('SPHostUrl');
+      service.hostWeb.appWebUrl = $cookieStore.get('SPAppWebUrl');
       service.hostWeb.url = $cookieStore.get('SPHostUrl');
       service.hostWeb.title = $cookieStore.get('SPHostTitle');
       service.hostWeb.logoUrl = $cookieStore.get('SPHostLogoUrl');
