@@ -33,5 +33,8 @@
     <ProjectItemFile Source="moment.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="moment-with-locales.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="moment-with-locales.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-resource.min.js.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-resource.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-resource.js" Target="Scripts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

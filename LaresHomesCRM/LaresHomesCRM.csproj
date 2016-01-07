@@ -65,10 +65,12 @@
     <Content Include="App\appLauncher.js" />
     <Content Include="App\clients\clients-dashboard.html" />
     <Content Include="App\clients\clients-details.html" />
+    <Content Include="App\clients\clientModel.js" />
     <Content Include="App\clients\clientsDashCtrl.js" />
     <Content Include="App\clients\clientsDetailsCtrl.js" />
     <Content Include="App\common\common.js" />
     <Content Include="App\common\logger.js" />
+    <Content Include="App\config.angular.http.js" />
     <Content Include="App\config.exceptionHandler.js" />
     <Content Include="App\config.js" />
     <Content Include="App\config.route.js" />
@@ -84,6 +86,7 @@
     <Content Include="App\layout\spAppChrome.js" />
     <Content Include="App\layout\workingonit.html" />
     <Content Include="App\layout\workingonit.js" />
+    <Content Include="App\services\dataContext.angular.js" />
     <Content Include="App\services\spContext.js" />
     <Content Include="App\util\jquery-extensions.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -96,6 +99,7 @@
     <Content Include="Data\Clients\Schema.xml" />
     <Content Include="Elements.xml" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\debug.png" />
     <Content Include="Images\error.png" />
     <Content Include="Images\info.png" />
     <Content Include="Images\LaresHomesLogo.png" />
@@ -106,6 +110,7 @@
     <Content Include="Pages\Elements.xml" />
     <None Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\angular-cookies.min.js.map" />
+    <None Include="Scripts\angular-resource.min.js.map" />
     <None Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\angular.min.js.map" />
@@ -123,6 +128,8 @@
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-sanitize.js" />

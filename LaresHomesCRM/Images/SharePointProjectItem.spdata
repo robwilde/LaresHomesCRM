@@ -8,5 +8,6 @@
     <ProjectItemFile Source="success.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="warning.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="LaresHomesLogo.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="debug.png" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>
