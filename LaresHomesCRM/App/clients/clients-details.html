@@ -1,127 +1,201 @@
-﻿<div class="container" data-ng-controller="clientDetails as Details">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Client Details</h3>
-        </div>
-        <div class="panel-body">
+﻿<div data-ng-controller="clientDetails">
+    <!-- DETAILS SECTION -->
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Client Details</h3>
+            </div>
+            <div class="panel-body">
 
-            <div class="row">
-                <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-7">
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Name</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsFirstName}} {{Details.client.ClientsLastName}}</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Name</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsFirstName}} {{client.ClientsLastName}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Address</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsAddress}}</div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Address</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsAddress}}</div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Phone</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsPhone}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Suburb</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsSuburb}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Email</div>
+                                <div class="col-xs-8 client-field"><a href="mailto:{{client.ClientsEmail}}">{{client.ClientsEmail}}</a></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">City</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsCity}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Status</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsProjectStatus}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Postcode</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsPostcode}}</div>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-md-5">
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Phone</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsPhone}}</div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Suburb</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsSuburb}}</div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Email</div>
-                            <div class="col-xs-8 client-field"><a href="mailto:{{Details.client.ClientsEmail}}">{{Details.client.ClientsEmail}}</a></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">City</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsCity}}</div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Status</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsProjectStatus}}</div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="col-xs-4 field-name">Postcode</div>
-                            <div class="col-xs-8 client-field">{{Details.client.ClientsPostcode}}</div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Client Details</h3>
+                            </div>
+                            <div class="panel-body">
+                                {{client.ClientsNotes}}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
 
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Notes</h3>
-                        </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABS SECTION -->
+    <div class="container">
+        <div>
+            <!-- Nav tabs -->
+            <tabset>
+                <tab heading="Contracts" select="select('contracts')"></tab>
+                <tab heading="Selections" select="select('selections')"></tab>
+                <tab heading="Constructon" select="select('construction')"></tab>
+                <tab heading="Email" select="select('email')"></tab>
+            </tabset>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <!-- CONTRACTS -->
+                <div ng-show="selectedTab == 'contracts'" role="tabpanel" class="tab-pane active" id="contracts">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">+ Add Contracts</div>
                         <div class="panel-body">
-                            {{Details.client.ClientsNotes}}
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Modified</th>
+                                        <th>Modified By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>File 1</td>
+                                        <td>24/12/2015</td>
+                                        <td>Robert Wilde</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The other File</td>
+                                        <td>01/01/2016</td>
+                                        <td>Robert Wilde</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No1 Best Seller of all Time</td>
+                                        <td>05/01/2016</td>
+                                        <td>Hunter Wilde</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div>
+                <!-- SELECTIONS -->
+                <div ng-if="selectedTab == 'selections'" role="tabpanel" class="tab-pane active" id="selections">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">+ Add Selections</div>
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Modified</th>
+                                        <th>Modified By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>File 1</td>
+                                        <td>24/12/2015</td>
+                                        <td>Robert Wilde</td>
+                                    </tr>
 
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div>
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#contracts" aria-controls="home" role="tab" data-toggle="tab">Contracts</a></li>
-            <li role="presentation"><a href="#selections" aria-controls="profile" role="tab" data-toggle="tab">Selections</a></li>
-            <li role="presentation"><a href="#construction" aria-controls="messages" role="tab" data-toggle="tab">Construction</a></li>
-            <li role="presentation"><a href="#emails" aria-controls="settings" role="tab" data-toggle="tab">Emails</a></li>
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div class="panel panel-default">
-                <div class="panel-body">
-
-                    <div role="tabpanel" class="tab-pane active" id="contracts">
-
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Modified</th>
-                                    <th>Modified By</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>File 1</td>
-                                    <td>24/12/2015</td>
-                                    <td>Robert Wilde</td>
-                                </tr>
-                                <tr>
-                                    <td>The other File</td>
-                                    <td>01/01/2016</td>
-                                    <td>Robert Wilde</td>
-                                </tr>
-                                <tr>
-                                    <td>No1 Best Seller of all Time</td>
-                                    <td>05/01/2016</td>
-                                    <td>Hunter Wilde</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <!-- CONSTRUCTION -->
+                <div ng-if="selectedTab == 'construction'" role="tabpanel" class="tab-pane active" id="construction">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">+ Add Construction</div>
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Modified</th>
+                                        <th>Modified By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Plans</td>
+                                        <td>24/12/2015</td>
+                                        <td>John Boo</td>
+                                    </tr>
 
-            <div role="tabpanel" class="tab-pane" id="selections">...</div>
-            <div role="tabpanel" class="tab-pane" id="construction">...</div>
-            <div role="tabpanel" class="tab-pane" id="emails">...</div>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- EMAILS -->
+                <div ng-if="selectedTab == 'email'" role="tabpanel" class="tab-pane active" id="email">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Add Emails from Outlook</div>
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Modified</th>
+                                        <th>Modified By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>File 1</td>
+                                        <td>24/12/2015</td>
+                                        <td>Robert Wilde</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
     </div>
-
 </div>

@@ -63,6 +63,8 @@
     </None>
     <Content Include="App\app.js" />
     <Content Include="App\appLauncher.js" />
+    <Content Include="App\clients\client-form.html" />
+    <Content Include="App\clients\clientFormCtrl.js" />
     <Content Include="App\clients\clients-dashboard.html" />
     <Content Include="App\clients\clients-details.html" />
     <Content Include="App\clients\clientModel.js" />

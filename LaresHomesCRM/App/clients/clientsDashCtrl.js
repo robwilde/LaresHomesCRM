@@ -3,43 +3,58 @@
     'use strict';
 
     var controllerId = 'clientsDashCtrl';
-    angular.module('app').controller(controllerId, ['$location', 'common', 'datacontext', clientsDashboard]);
+    angular.module('app').controller(controllerId, ['$scope', '$modal', '$location', 'common', 'datacontext', clientsDashboard]);
 
-    function clientsDashboard($location, common, datacontext) {
-        var DashCtrl = this;
+    function clientsDashboard($scope, $modal, $location, common, datacontext) {
 
-        DashCtrl.goToClient = goToClient;
+        $scope.goToClient = goToClient;
 
         // init controller
         init();
-
-        // get all the clients
-        getClients();
 
         // init controller
         function init() {
             common.logger.log("controller loaded", null, controllerId);
             common.activateController([], controllerId);
+
+            // get all the clients
+            getClients();
         }
 
         // navigate to specified client
         function goToClient(client) {
-            common.logger.logDebug('goToClient', client, controllerId);
+            //common.logger.logDebug('goToClient', client, controllerId);
             if (client && client.Id) {
                 $location.path('/Clients/' + client.Id);
             }
         }
 
-        //common.logger.logError('Checking DashCtrl', DashCtrl, controllerId);
+        $scope.newClientForm = function () {
+            var modalInstance = $modal.open({
+                templateUrl: 'app/clients/client-form.html',
+                controller: 'ClientFormCtrl',
+                resolve: {
+                    id: function () {
+                        return null;
+                    }
+                },
+                backdrop: 'static',
+                size: 'lg'
+            });
+            modalInstance.result.then(function (data) {
+                $scope.Clients.push(data);
+                //updateClientManagers();
+            }, function () {
+            });
+        };
 
         // get clients & set to bindable collection on vm
-        function getClients() {
+        function getClients () {
             datacontext.getClientsPartials()
               .then(function (data) {
                   if (data) {
                       //common.logger.logDebug('getClients', data, controllerId);
-
-                      DashCtrl.Clients = data;
+                      $scope.Clients = data;
                   } else {
                       throw new Error('error obtaining data');
                   }

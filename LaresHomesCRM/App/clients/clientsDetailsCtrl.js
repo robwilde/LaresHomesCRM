@@ -3,36 +3,41 @@
     'use strict';
 
     var controllerId = 'clientDetails';
-    angular.module('app').controller(controllerId, ['$window', '$location', '$routeParams', 'common', 'datacontext', clientDetails]);
+    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$modal', 'common', 'datacontext', clientDetails]);
 
-    function clientDetails($window, $location, $routeParams, common, datacontext) {
-        var ClientCtrl = this;
+    function clientDetails($scope, $location, $routeParams, $modal, common, datacontext) {
 
-        // init controller
-        init();
-
-        // get Client Details
+        $scope.clientId = +$routeParams.id;
 
         // init controller
         function init() {
-            var clientId = +$routeParams.id;
-            if (clientId && clientId > 0) {
-                getClient(clientId);
-            }
+            if ($scope.clientId) {
+                getClientById($scope.clientId);
+            };
+
+            $scope.select('contracts');
 
             common.logger.log("controller loaded", null, controllerId);
             common.activateController([], controllerId);
         }
 
-        function getClient(clientId) {
+        $scope.select = function (value) {
+            $scope.selectedTab = value;
+        };
+
+        var getClientById = function (clientId) {
             datacontext.getClient(clientId)
-            .then(function (data) {
-                ClientCtrl.client = data;
-                common.logger.logDebug('getClient', ClientCtrl, controllerId);
-            })
-        }
+                .then(function (data) {
+                    $scope.client = data;
+                    //common.logger.logDebug('getClient', $scope, controllerId);
+                }, function (error) {
+                    common.logger.logError('getClientById', error, controllerId);
+                });
+        };
+
+        // init controller
+        init();
 
     };
-
 
 })();

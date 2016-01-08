@@ -135,4 +135,11 @@
     font-weight: bold;
     text-align: right;
 }
+
+#contracts table {
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #ddd;
+    border-radius: 2px;
+}
 /*#endregion*/

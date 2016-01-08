@@ -14,7 +14,7 @@
             $routeProvider.when(route.url, route.config);
         });
 
-        $routeProvider.otherwise({ redirectTo: '/' });
+        $routeProvider.otherwise({ redirectTo: '/Clients' });
     }
 
     // build the routes

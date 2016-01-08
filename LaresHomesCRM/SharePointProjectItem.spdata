@@ -35,5 +35,7 @@
     <ProjectItemFile Source="App\clients\clientModel.js" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\services\dataContext.angular.js" Target="App\services\" Type="ElementFile" />
     <ProjectItemFile Source="App\config.angular.http.js" Target="App\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\client-form.html" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clientFormCtrl.js" Target="App\clients\" Type="ElementFile" />
   </Files>
 </ProjectItem>

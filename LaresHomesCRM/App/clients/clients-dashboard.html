@@ -1,4 +1,24 @@
-﻿<div class="container" data-ng-controller="clientsDashCtrl as DashCtrl">
+﻿<div class="container" data-ng-controller="clientsDashCtrl">
+
+    <div class="row">
+        <div class="col-md-12">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="ms-list-addnew ms-textXLarge ms-list-addnew-aligntop ms-soften">
+                            <a href="" ng-click="newClientForm()" class="ms-heroCommandLink">
+                                <span class="ms-list-addnew-imgSpan20">
+                                    <img src="/_layouts/15/images/spcommon.png" class="ms-list-addnew-img20" />
+                                </span>
+                                <span>Add New Client</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Clients List</h3>
@@ -16,7 +36,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-ng-repeat="client in DashCtrl.Clients" data-ng-click="DashCtrl.goToClient(client)">
+                    <tr data-ng-repeat="client in Clients" data-ng-click="goToClient(client)">
                         <th scope="row">{{client.ID}}</th>
                         <td>{{client.ClientsFirstName}}</td>
                         <td>{{client.ClientsLastName}}</td>
