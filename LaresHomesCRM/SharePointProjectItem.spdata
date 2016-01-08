@@ -38,6 +38,5 @@
     <ProjectItemFile Source="App\clients\client-form.html" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientFormCtrl.js" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientsTabsCtrl.js" Target="App\clients\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\clients-details - Copy.html" Target="App\clients\" Type="ElementFile" />
   </Files>
 </ProjectItem>

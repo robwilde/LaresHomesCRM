@@ -66,7 +66,6 @@
     <Content Include="App\clients\client-form.html" />
     <Content Include="App\clients\clientFormCtrl.js" />
     <Content Include="App\clients\clients-dashboard.html" />
-    <Content Include="App\clients\clients-details - Copy.html" />
     <Content Include="App\clients\clients-details.html" />
     <Content Include="App\clients\clientModel.js" />
     <Content Include="App\clients\clientsDashCtrl.js" />
@@ -192,7 +191,13 @@
       <SubType>Designer</SubType>
     </AppManifestFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App\clients\docs\construction\" />
+    <Folder Include="App\clients\docs\contracts\" />
+    <Folder Include="App\clients\docs\emails\" />
+    <Folder Include="App\clients\docs\selections\" />
+    <Folder Include="App\clients\notes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -37,6 +37,5 @@
     <File Path="App\clients\client-form.html" Url="App/clients/client-form.html" ReplaceContent="TRUE" />
     <File Path="App\clients\clientFormCtrl.js" Url="App/clients/clientFormCtrl.js" ReplaceContent="TRUE" />
     <File Path="App\clients\clientsTabsCtrl.js" Url="App/clients/clientsTabsCtrl.js" ReplaceContent="TRUE" />
-    <File Path="App\clients\clients-details - Copy.html" Url="App/clients/clients-details - Copy.html" ReplaceContent="TRUE" />
   </Module>
 </Elements>
