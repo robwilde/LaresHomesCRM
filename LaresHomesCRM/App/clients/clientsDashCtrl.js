@@ -8,6 +8,8 @@
     function clientsDashboard($location, common, datacontext) {
         var DashCtrl = this;
 
+        DashCtrl.goToClient = goToClient;
+
         // init controller
         init();
 
@@ -18,6 +20,14 @@
         function init() {
             common.logger.log("controller loaded", null, controllerId);
             common.activateController([], controllerId);
+        }
+
+        // navigate to specified client
+        function goToClient(client) {
+            common.logger.logDebug('goToClient', client, controllerId);
+            if (client && client.Id) {
+                $location.path('/Clients/' + client.Id);
+            }
         }
 
         //common.logger.logError('Checking DashCtrl', DashCtrl, controllerId);

@@ -16,6 +16,8 @@
     ]);
 
     // startup code
-    app.run(['$route', 'angular.config', function ($route, angularConfig) { }]);
+    app.run(['$route', 'angular.config', function ($route, angularConfig) {
+
+    }]);
 
 })();

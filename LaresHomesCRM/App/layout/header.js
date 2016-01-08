@@ -4,13 +4,13 @@
   // define controller
   var controllerId = 'header';
   angular.module('app').controller(controllerId,
-    ['$rootScope', '$route', 'common', 'config', 'spContext', headerController]);
+    ['$rootScope', '$routeParams', '$route', 'common', 'config', headerController]);
 
   // init controller
-  function headerController($rootScope, $route, common, config, spContext) {
+  function headerController($rootScope, $routeParams, $route, common, config) {
     var vm = this;
     // homepage of the app
-    vm.appHomeUrl = spContext.hostWeb.appWebUrl + '/app.html';
+    vm.appHomeUrl = '/lhc/app.html';
     // app name
     vm.appTitle = config.title;
     // url of the icon to use for the app

@@ -1,5 +1,5 @@
 ﻿<div class="container" data-ng-controller="clientsDashCtrl as DashCtrl">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Clients List</h3>
         </div>
@@ -16,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-ng-repeat="client in DashCtrl.Clients">
+                    <tr data-ng-repeat="client in DashCtrl.Clients" data-ng-click="DashCtrl.goToClient(client)">
                         <th scope="row">{{client.ID}}</th>
                         <td>{{client.ClientsFirstName}}</td>
                         <td>{{client.ClientsLastName}}</td>

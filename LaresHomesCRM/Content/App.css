@@ -67,7 +67,9 @@
     position: relative;
     overflow: hidden;
 }
-
+#contentBox {
+    margin-left: 200px;
+}
 /*#region angular shuffle animation */
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
@@ -114,7 +116,7 @@
 
 /*#region ngView main section */
 #content.view-container {
-    margin-top: 80px;
+    margin-top: 35px;
 }
 
 /*#endregion */
@@ -122,4 +124,15 @@
 /*#region Client Dashboard Bootstrap  Section*/
 
 
+/*#endregion*/
+
+/*$region Client Details Section*/
+.client-field.ng-binding {
+    display: inline;
+}
+.field-name {
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+}
 /*#endregion*/

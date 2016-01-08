@@ -4,6 +4,7 @@ lhc.models = lhc.models || {};
 
 // clients entry 
 lhc.models.client = function () {
+    this.Id = undefined;
     this.LinkTitle = undefined;
     this.ClientsFirstName = undefined;
     this.ClientsLastName = undefined;
@@ -14,7 +15,8 @@ lhc.models.client = function () {
     this.ClientsCity = undefined;
     this.ClientsPostcode = undefined;
     this.ClientsProjectStatus = undefined;
+    this.ClientNotes = undefined;
     this.__metadata = {
         type: 'SP.Data.ClientsListItem'
-    }
+    };
 };

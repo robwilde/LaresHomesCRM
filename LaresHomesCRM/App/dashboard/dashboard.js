@@ -1,23 +1,23 @@
 ﻿(function () {
-  'use strict';
+    'use strict';
 
-  // define controller
-  var controllerId = 'dashboard';
-  angular.module('app').controller(controllerId,
-    ['common', dashboard]);
-
-  // init controller
-  function dashboard(common) {
-    var vm = this;
+    // define controller
+    var controllerId = 'dashboard';
+    angular.module('app').controller(controllerId,
+      ['common', dashboard]);
 
     // init controller
-    init();
+    function dashboard(common) {
+        var vm = this;
 
-    // init controller
-    function init() {
-      common.logger.log("controller loaded", null, controllerId);
-      common.activateController([], controllerId);
+        // init controller
+        init();
+
+        // init controller
+        function init() {
+            common.logger.log("controller loaded", null, controllerId);
+            common.activateController([], controllerId);
+        }
+
     }
-
-  }
 })();

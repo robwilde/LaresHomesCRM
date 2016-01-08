@@ -40,7 +40,7 @@
                     get: {
                         method: 'GET',
                         params: {
-                            '$select': 'Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsAddress,ClientsSuburb,ClientsCity,ClientsPostcode,ClientsProjectStatus,Created,Modified'
+                            '$select': 'Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsAddress,ClientsSuburb,ClientsCity,ClientsPostcode,ClientsProjectStatus,ClientsNotes,Created,Modified'
                         },
                         headers: {
                             'Accept': 'application/json;odata=verbose;'
