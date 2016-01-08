@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var controllerId = 'clientDetails';
+    var controllerId = 'ClientDetails';
     angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$modal', 'common', 'datacontext', clientDetails]);
 
     function clientDetails($scope, $location, $routeParams, $modal, common, datacontext) {

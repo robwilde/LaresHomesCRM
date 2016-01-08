@@ -1,6 +1,6 @@
-﻿<div data-ng-controller="clientDetails">
-    <!-- DETAILS SECTION -->
-    <div class="container">
+﻿<div>
+    <!-- DETAILS SECTION ClientDetailsCtrl -->
+    <div class="container" data-ng-controller="ClientDetails">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Client Details</h3>
@@ -73,129 +73,66 @@
 
     <!-- TABS SECTION -->
     <div class="container">
-        <div>
-            <!-- Nav tabs -->
-            <tabset>
-                <tab heading="Contracts" select="select('contracts')"></tab>
-                <tab heading="Selections" select="select('selections')"></tab>
-                <tab heading="Constructon" select="select('construction')"></tab>
-                <tab heading="Email" select="select('email')"></tab>
-            </tabset>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-
-                <!-- CONTRACTS -->
-                <div ng-show="selectedTab == 'contracts'" role="tabpanel" class="tab-pane active" id="contracts">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">+ Add Contracts</div>
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Modified</th>
-                                        <th>Modified By</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>File 1</td>
-                                        <td>24/12/2015</td>
-                                        <td>Robert Wilde</td>
-                                    </tr>
-                                    <tr>
-                                        <td>The other File</td>
-                                        <td>01/01/2016</td>
-                                        <td>Robert Wilde</td>
-                                    </tr>
-                                    <tr>
-                                        <td>No1 Best Seller of all Time</td>
-                                        <td>05/01/2016</td>
-                                        <td>Hunter Wilde</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+        <uib-tabset>
+            <uib-tab heading="Contracts">
+                <div class="panel panel-default">
+                    <div class="panel-heading">+ Add Contracts</div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Modified</th>
+                                    <th>Modified By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>File 1</td>
+                                    <td>24/12/2015</td>
+                                    <td>Robert Wilde</td>
+                                </tr>
+                                <tr>
+                                    <td>The other File</td>
+                                    <td>01/01/2016</td>
+                                    <td>Robert Wilde</td>
+                                </tr>
+                                <tr>
+                                    <td>No1 Best Seller of all Time</td>
+                                    <td>05/01/2016</td>
+                                    <td>Hunter Wilde</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <!-- SELECTIONS -->
-                <div ng-if="selectedTab == 'selections'" role="tabpanel" class="tab-pane active" id="selections">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">+ Add Selections</div>
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Modified</th>
-                                        <th>Modified By</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>File 1</td>
-                                        <td>24/12/2015</td>
-                                        <td>Robert Wilde</td>
-                                    </tr>
+            </uib-tab>
 
-                                </tbody>
-                            </table>
-                        </div>
+            <uib-tab heading="Selections">
+                <div class="panel panel-default">
+                    <div class="panel-heading">+ Add Selections</div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Modified</th>
+                                    <th>Modified By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>File 1</td>
+                                    <td>24/12/2015</td>
+                                    <td>Robert Wilde</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <!-- CONSTRUCTION -->
-                <div ng-if="selectedTab == 'construction'" role="tabpanel" class="tab-pane active" id="construction">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">+ Add Construction</div>
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Modified</th>
-                                        <th>Modified By</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Plans</td>
-                                        <td>24/12/2015</td>
-                                        <td>John Boo</td>
-                                    </tr>
+            </uib-tab>
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- EMAILS -->
-                <div ng-if="selectedTab == 'email'" role="tabpanel" class="tab-pane active" id="email">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Add Emails from Outlook</div>
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Modified</th>
-                                        <th>Modified By</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>File 1</td>
-                                        <td>24/12/2015</td>
-                                        <td>Robert Wilde</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
+        </uib-tabset>
     </div>
 </div>
