@@ -27,16 +27,16 @@
     <File Path="fonts\glyphicons-halflings-regular.ttf" Url="fonts/glyphicons-halflings-regular.ttf" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.svg" Url="fonts/glyphicons-halflings-regular.svg" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.eot" Url="fonts/glyphicons-halflings-regular.eot" ReplaceContent="TRUE" />
-    <File Path="App\clients\clients-dashboard.html" Url="App/clients/clients-dashboard.html" ReplaceContent="TRUE" />
-    <File Path="App\clients\clientsDashCtrl.js" Url="App/clients/clientsDashCtrl.js" ReplaceContent="TRUE" />
-    <File Path="App\clients\clients-details.html" Url="App/clients/clients-details.html" ReplaceContent="TRUE" />
-    <File Path="App\clients\clientsDetailsCtrl.js" Url="App/clients/clientsDetailsCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\dashboard\clients-dashboard.html" Url="App/clients/dashboard/clients-dashboard.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\dashboard\clientsDashCtrl.js" Url="App/clients/dashboard/clientsDashCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\details\clients-details.html" Url="App/clients/details/clients-details.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\details\clientsDetailsCtrl.js" Url="App/clients/details/clientsDetailsCtrl.js" ReplaceContent="TRUE" />
     <File Path="App\clients\clientModel.js" Url="App/clients/clientModel.js" ReplaceContent="TRUE" />
     <File Path="App\services\dataContext.angular.js" Url="App/services/dataContext.angular.js" ReplaceContent="TRUE" />
     <File Path="App\config.angular.http.js" Url="App/config.angular.http.js" ReplaceContent="TRUE" />
-    <File Path="App\clients\client-form.html" Url="App/clients/client-form.html" ReplaceContent="TRUE" />
-    <File Path="App\clients\clientFormCtrl.js" Url="App/clients/clientFormCtrl.js" ReplaceContent="TRUE" />
-    <File Path="App\clients\clientsTabsCtrl.js" Url="App/clients/clientsTabsCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\form\client-form.html" Url="App/clients/form/client-form.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\form\clientFormCtrl.js" Url="App/clients/form/clientFormCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\details\clientsTabsCtrl.js" Url="App/clients/details/clientsTabsCtrl.js" ReplaceContent="TRUE" />
     <File Path="App\layout\appChrome\spAppChrome-directive.js" Url="App/layout/appChrome/spAppChrome-directive.js" ReplaceContent="TRUE" />
     <File Path="App\layout\header\header-directive.js" Url="App/layout/header/header-directive.js" ReplaceContent="TRUE" />
     <File Path="App\layout\quickLaunch\quickLaunch-directive.js" Url="App/layout/quickLaunch/quickLaunch-directive.js" ReplaceContent="TRUE" />

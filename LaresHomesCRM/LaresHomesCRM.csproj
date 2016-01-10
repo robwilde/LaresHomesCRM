@@ -63,14 +63,14 @@
     </None>
     <Content Include="App\app.js" />
     <Content Include="App\appLauncher.js" />
-    <Content Include="App\clients\client-form.html" />
-    <Content Include="App\clients\clientFormCtrl.js" />
-    <Content Include="App\clients\clients-dashboard.html" />
-    <Content Include="App\clients\clients-details.html" />
+    <Content Include="App\clients\form\client-form.html" />
+    <Content Include="App\clients\form\clientFormCtrl.js" />
+    <Content Include="App\clients\dashboard\clients-dashboard.html" />
+    <Content Include="App\clients\details\clients-details.html" />
     <Content Include="App\clients\clientModel.js" />
-    <Content Include="App\clients\clientsDashCtrl.js" />
-    <Content Include="App\clients\clientsDetailsCtrl.js" />
-    <Content Include="App\clients\clientsTabsCtrl.js" />
+    <Content Include="App\clients\dashboard\clientsDashCtrl.js" />
+    <Content Include="App\clients\details\clientsDetailsCtrl.js" />
+    <Content Include="App\clients\details\clientsTabsCtrl.js" />
     <Content Include="App\common\common.js" />
     <Content Include="App\common\logger.js" />
     <Content Include="App\config.angular.http.js" />
