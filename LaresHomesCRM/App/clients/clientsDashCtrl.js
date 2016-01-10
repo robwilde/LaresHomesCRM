@@ -3,10 +3,10 @@
     'use strict';
 
     var controllerId = 'clientsDashCtrl';
-    angular.module('app').controller(controllerId, ['$scope', '$modal', '$location', 'common', 'datacontext', clientsDashboard]);
+    angular.module('app').controller(controllerId, ['$scope', '$uibModal', '$location', 'common', 'datacontext', clientsDashboard]);
 
-    function clientsDashboard($scope, $modal, $location, common, datacontext) {
-
+    function clientsDashboard($scope, $uibModal, $location, common, datacontext) {
+        var vm = this;
         $scope.goToClient = goToClient;
 
         // init controller
@@ -30,16 +30,14 @@
         }
 
         $scope.newClientForm = function () {
-            var modalInstance = $modal.open({
+            var modalInstance = $uibModal.open({
                 templateUrl: 'app/clients/client-form.html',
                 controller: 'ClientFormCtrl',
                 resolve: {
                     id: function () {
                         return null;
                     }
-                },
-                backdrop: 'static',
-                size: 'lg'
+                }
             });
             modalInstance.result.then(function (data) {
                 $scope.Clients.push(data);

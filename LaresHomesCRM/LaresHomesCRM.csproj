@@ -79,16 +79,21 @@
     <Content Include="App\config.route.js" />
     <Content Include="App\dashboard\dashboard.html" />
     <Content Include="App\dashboard\dashboard.js" />
-    <Content Include="App\layout\header.html" />
-    <Content Include="App\layout\header.js" />
-    <Content Include="App\layout\quicklaunch.html" />
-    <Content Include="App\layout\quicklaunch.js" />
-    <Content Include="App\layout\shell.html" />
-    <Content Include="App\layout\shell.js" />
-    <Content Include="App\layout\spAppChrome.html" />
-    <Content Include="App\layout\spAppChrome.js" />
-    <Content Include="App\layout\workingonit.html" />
-    <Content Include="App\layout\workingonit.js" />
+    <Content Include="App\layout\appChrome\spAppChrome-directive.js" />
+    <Content Include="App\layout\header\header-directive.js" />
+    <Content Include="App\layout\header\header.tpl.html" />
+    <Content Include="App\layout\header\header.js" />
+    <Content Include="App\layout\quickLaunch\quickLaunch-directive.js" />
+    <Content Include="App\layout\quickLaunch\quicklaunch.tpl.html" />
+    <Content Include="App\layout\quickLaunch\quicklaunch.js" />
+    <Content Include="App\layout\shell\shell-directive.js" />
+    <Content Include="App\layout\shell\shell.tpl.html" />
+    <Content Include="App\layout\shell\shell.js" />
+    <Content Include="App\layout\appChrome\spAppChrome.tpl.html" />
+    <Content Include="App\layout\appChrome\spAppChrome.js" />
+    <Content Include="App\layout\workingOnIt\workingOnIt-directive.js" />
+    <Content Include="App\layout\workingOnIt\workingonit.tpl.html" />
+    <Content Include="App\layout\workingOnIt\workingonit.js" />
     <Content Include="App\services\dataContext.angular.js" />
     <Content Include="App\services\spContext.js" />
     <Content Include="App\util\jquery-extensions.js" />
@@ -117,7 +122,7 @@
     <None Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\angular.min.js.map" />
-    <None Include="Scripts\jquery-1.11.3.min.map" />
+    <None Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3e249b1e-2c97-4e67-b53b-714786d73334}</SharePointProjectItemId>
     </None>
@@ -147,9 +152,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
-    <Content Include="Scripts\jquery-1.11.3.intellisense.js" />
-    <Content Include="Scripts\jquery-1.11.3.js" />
-    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />

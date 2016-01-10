@@ -11,16 +11,16 @@
     <ProjectItemFile Source="App\config.exceptionHandler.js" Target="App\" Type="ElementFile" />
     <ProjectItemFile Source="App\config.js" Target="App\" Type="ElementFile" />
     <ProjectItemFile Source="App\config.route.js" Target="App\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\shell.html" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\shell.js" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\spAppChrome.html" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\spAppChrome.js" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\workingonit.html" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\workingonit.js" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\header.html" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\header.js" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\quicklaunch.html" Target="App\layout\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\quicklaunch.js" Target="App\layout\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\shell\shell.tpl.html" Target="App\layout\shell\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\shell\shell.js" Target="App\layout\shell\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\appChrome\spAppChrome.tpl.html" Target="App\layout\appChrome\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\appChrome\spAppChrome.js" Target="App\layout\appChrome\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\workingOnIt\workingonit.tpl.html" Target="App\layout\workingOnIt\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\workingOnIt\workingonit.js" Target="App\layout\workingOnIt\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\header\header.tpl.html" Target="App\layout\header\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\header\header.js" Target="App\layout\header\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\quickLaunch\quicklaunch.tpl.html" Target="App\layout\quickLaunch\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\quickLaunch\quicklaunch.js" Target="App\layout\quickLaunch\" Type="ElementFile" />
     <ProjectItemFile Source="App\services\spContext.js" Target="App\services\" Type="ElementFile" />
     <ProjectItemFile Source="App\util\jquery-extensions.js" Target="App\util\" Type="ElementFile" />
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.woff2" Target="fonts\" Type="ElementFile" />
@@ -38,5 +38,10 @@
     <ProjectItemFile Source="App\clients\client-form.html" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientFormCtrl.js" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientsTabsCtrl.js" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\appChrome\spAppChrome-directive.js" Target="App\layout\appChrome\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\header\header-directive.js" Target="App\layout\header\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\quickLaunch\quickLaunch-directive.js" Target="App\layout\quickLaunch\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\shell\shell-directive.js" Target="App\layout\shell\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\workingOnIt\workingOnIt-directive.js" Target="App\layout\workingOnIt\" Type="ElementFile" />
   </Files>
 </ProjectItem>
