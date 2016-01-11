@@ -17,7 +17,7 @@
     top: 50%;
     left: 50%;
     width: 25em;
-    height: 5em;
+    height: 6em;
     margin: -2em auto 0 -10em /* top is half of height and left is half of width*/;
     position: absolute;
     background-color: #fff;
@@ -67,7 +67,9 @@
     position: relative;
     overflow: hidden;
 }
-
+#contentBox {
+    margin-left: 200px;
+}
 /*#region angular shuffle animation */
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
@@ -104,9 +106,21 @@
 
 /*#endregion */
 
+
+/*#region sidebox navbar quicklaunch*/
+#sideNavBox {
+    margin-top: 30px;
+}
+/*.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #428bca;
+}*/
+
+/*#endregion */
+
 /*#region ngView main section */
 #content.view-container {
-    margin-top: 80px;
+    margin-top: 35px;
 }
 
 /*#endregion */
@@ -114,4 +128,80 @@
 /*#region Client Dashboard Bootstrap  Section*/
 
 
+/*#endregion*/
+
+/*#region Add/Edit Client */
+.modal-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+/*#endregion*/
+
+/*#region Client Details Section*/
+.client-field.ng-binding {
+    display: inline;
+}
+.field-name {
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+}
+
+#contracts table {
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #ddd;
+    border-radius: 2px;
+}
+/*#endregion*/
+
+/*#region details table Section*/
+  .nav-tabs > li > div {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .nav-tabs > li > div:hover {
+    border-color: #eee #eee #ddd;
+  }
+
+  .nav-tabs > li.active > div, .nav-tabs > li.active > div:hover {
+    color: #555;
+    cursor: default;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    border-bottom-color: transparent;
+  }
+
+  .nav > li > div {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+  }
+
+  .nav > li > div:hover {
+    background-color: #eee;
+  }
+
+  .uib-tab > div {
+    color: #337ab7;
+    cursor: pointer;
+  }
+
+  .nav-tabs > li.disabled > div { 
+    color: #999; 
+  }
+
+  .nav-tabs>li.disabled>div:hover, .nav-tabs>li.disabled>div:focus {
+    color: #999;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: not-allowed;
+  }
+
+  form.tab-form-demo .tab-pane {
+    margin: 20px 20px;
+  }
 /*#endregion*/

@@ -7,54 +7,43 @@
 
     <!-- vendor styles -->
     <link href="/_layouts/15/1033/styles/forms.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/metisMenu.min.css" rel="stylesheet" />
-    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
-    <link href="Content/sb-admin-2.css" rel="stylesheet" />
-    <link href="Content/font-awesome.min.css" rel="stylesheet" />
 
     <!-- my styles -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/App.css" rel="stylesheet" />
-
 </head>
 <body>
-    <div data-ng-include="'App/layout/spAppChrome.html'"></div>
-
-    <div class="wrapper">
-
-        <!-- Navigation -->
-        <div data-ng-include="'App/bs-admin/navbar-section.html'"></div>
-
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div data-ng-controller="shell as vm">
-                    <section id="content">
-                        <div data-ng-view></div>
-                    </section>
+    <div id="pageWidth">
+        <sp-app-chrome></sp-app-chrome>
+        <div id="s4-workspace" class="ms-core-overlay">
+            <div id="s4-bodyContainer">
+                <shp-header></shp-header>
+                <div id="contentRow">
+                    <quick-launch></quick-launch>
+                    <div id="contentBox" aria-live="polite" aria-relevant="all">
+                        <shp-shell></shp-shell>
+                    </div>
                 </div>
             </div>
-            <!-- /.container-fluid -->
         </div>
-        <!-- /#page-wrapper -->
     </div>
-    <div data-ng-include="'App/layout/workingonit.html'"></div>
+    <working-on-it></working-on-it>
 
     <!-- vendor libraries -->
-    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
     <script src="/_layouts/15/init.js"></script>
     <script src="/_layouts/15/core.js"></script>
     <script src="/_layouts/15/SP.UI.Controls.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-cookies.min.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
     <script src="Scripts/angular-sanitize.min.js"></script>
     <script src="Scripts/angular-animate.min.js"></script>
     <script src="Scripts/moment.min.js"></script>
-    <script src="Scripts/moment-with-langs.min.js"></script>
+    <script src="Scripts/moment-with-locales.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="Scripts/metisMenu.min.js"></script>
-    <script src="Scripts/sb-admin-2.js"></script>
 
     <!-- my libraries -->
     <script src="App/util/jquery-extensions.js"></script>
@@ -62,6 +51,7 @@
     <!-- app bootstrapping (used to get the app going) -->
     <script src="App/app.js"></script>
     <script src="App/config.js"></script>
+    <script src="App/config.angular.http.js"></script>
     <script src="App/config.exceptionHandler.js"></script>
     <script src="App/config.route.js"></script>
 
@@ -70,17 +60,30 @@
     <script src="App/common/logger.js"></script>
 
     <!-- app core -->
-    <script src="App/layout/workingonit.js"></script>
-    <script src="App/layout/spAppChrome.js"></script>
-    <script src="App/layout/header.js"></script>
-    <script src="App/layout/quicklaunch.js"></script>
-    <script src="App/layout/shell.js"></script>
+    <script src="App/layout/workingOnIt/workingonit.js"></script>
+    <script src="App/layout/workingOnIt/workingOnIt-Directive.js"></script>
+    <script src="App/layout/appChrome/spAppChrome.js"></script>
+    <script src="App/layout/appChrome/spAppChrome-directive.js"></script>
+    <script src="App/layout/header/header.js"></script>
+    <script src="App/layout/header/header-directive.js"></script>
+    <script src="App/layout/quickLaunch/quicklaunch.js"></script>
+    <script src="App/layout/quickLaunch/quickLaunch-directive.js"></script>
+    <script src="App/layout/shell/shell.js"></script>
+    <script src="App/layout/shell/shell-directive.js"></script>
+
+    <!-- APP Models -->
+    <script src="App/clients/clientModel.js"></script>
 
     <!-- app controllers -->
     <script src="App/dashboard/dashboard.js"></script>
-    <script src="App/clients/clientsDashCtrl.js"></script>
+    <script src="App/clients/dashboard/clientsDashCtrl.js"></script>
+    <script src="App/clients/details/clientsDetailsCtrl.js"></script>
+    <script src="App/clients/details/clientsTabsCtrl.js"></script>
+    <script src="App/clients/form/clientFormCtrl.js"></script>
 
     <!-- app services -->
     <script src="App/services/spContext.js"></script>
+    <script src="App/services/dataContext.angular.js"></script>
+
 </body>
 </html>

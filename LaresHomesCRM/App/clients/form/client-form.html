@@ -1,0 +1,124 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <div class="modal-title">Add/Edit Client</div>
+    </div>
+
+    <div class="modal-body">
+        <form>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input ng-model="client.ClientsFirstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input ng-model="client.ClientsLastName"  type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input ng-model="client.ClientsEmail"  type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input ng-model="client.ClientsPhone"  type="text" class="form-control" id="phone" placeholder="Phone">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="addressStreet">Address</label>
+                        <input ng-model="client.ClientsAddress"  type="text" class="form-control" id="addressStreet" placeholder="Street">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!--<label for="suburb">Suburb</label>-->
+                        <input ng-model="client.ClientsSuburb"  type="text" class="form-control" id="suburb" placeholder="Suburb">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!--<label for="city">City</label>-->
+                        <input ng-model="client.ClientsCity"  type="text" class="form-control" id="city" placeholder="City">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!--<label for="postcode">Postcode</label>-->
+                        <input ng-model="client.ClientsPostcode"  type="text" class="form-control" id="postcode" placeholder="Postcode">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!--<label for="state">State</label>-->
+                        <input ng-model="client.ClientsState"  type="text" class="form-control" id="state" placeholder="State">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!--<input ng-model="client.ClientsFirstName"  type="text" class="form-control" id="state" placeholder="State">-->
+                    <div class="form-group">
+                        <textarea ng-model="client.ClientsNotes" class="form-control" rows="5" placeholder="Client Details"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="radio-inline">
+                            <label>
+                                <input type="radio" ng-model="client.ClientsProjectStatus" name="projectStatusOptions" id="inProgess" value="In-Progress" checked>In-Progress
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="radio-inline">
+                            <label>
+                                <input type="radio" ng-model="client.ClientsProjectStatus" name="projectStatusOptions" id="pending" value="Pending">Pending
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="radio-inline ">
+                            <label>
+                                <input type="radio" ng-model="client.ClientsProjectStatus" name="projectStatusOptions" id="onHold" value="On-Hold">On-Hold
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="radio-inline">
+                            <label>
+                                <input type="radio" ng-model="client.ClientsProjectStatus" name="projectStatusOptions" id="complete" value="Complete">Complete
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="save()">Save</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

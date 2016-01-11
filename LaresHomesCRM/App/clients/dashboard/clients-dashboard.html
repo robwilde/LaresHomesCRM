@@ -1,0 +1,55 @@
+﻿<div class="container" data-ng-controller="clientsDashCtrl">
+
+    <div class="row">
+        <div class="col-md-12">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="ms-list-addnew ms-textXLarge ms-list-addnew-aligntop ms-soften">
+                            <a href="" ng-click="newClientForm()" class="ms-heroCommandLink">
+                                <span class="ms-list-addnew-imgSpan20">
+                                    <img ng-src="/_layouts/15/images/spcommon.png" class="ms-list-addnew-img20" />
+                                </span>
+                                <span>Add New Client</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <uib-tabset>
+
+        <uib-tab ng-repeat="clientTab in clientTabs" select="status(clientTab.status)">
+            <uib-tab-heading>{{clientTab.status}}</uib-tab-heading>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>eMail</th>
+                                <!--<th>Address</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="client in Clients | filter:{ ClientsProjectStatus: clientTab.status }" ng-click="goToClient(client)">
+                                <th scope="row">{{client.Id}}</th>
+                                <td>{{client.ClientsFirstName}} {{client.ClientsLastName}}</td>
+                                <td>{{client.ClientsPhone}}</td>
+                                <td><a href="mailto:{{client.ClientsEmail}}">{{client.ClientsEmail}}</a></td>
+                                <!--<td>{{client.ClientsAddress}}, {{client.ClientsSuburb}}, {{client.ClientsCity}}, {{client.ClientsState}} {{client.ClientsPostcode}}</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </uib-tab>
+
+    </uib-tabset>
+
+
+</div>

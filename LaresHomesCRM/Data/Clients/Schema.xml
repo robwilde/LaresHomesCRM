@@ -2,10 +2,9 @@
 <List xmlns:ows="Microsoft SharePoint" Title="Clients" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Clients" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
   <MetaData>
     <ContentTypes>
-
-
       <ContentType ID="0x0100a9abd3cd43a44f30a175a1c2efb3c9a8" Name="ListFieldsContentType">
         <FieldRefs>
+
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
           <FieldRef ID="{897277b6-9f0f-466f-b4f1-14865039ad04}" Name="ClientsFirstName" />
           <FieldRef ID="{f9215ac8-72df-44e5-9245-d8478647e733}" Name="ClientsLastName" />
@@ -16,6 +15,8 @@
           <FieldRef ID="{74c569c3-b3ab-4686-8a50-13b9e047f57e}" Name="ClientsCity" />
           <FieldRef ID="{2afa6c07-98a4-42ac-8bcd-abca8e1c4ef0}" Name="ClientsPostcode" />
           <FieldRef ID="{c7db2a33-f493-4c80-a530-f587884562b2}" Name="ClientsProjectStatus" />
+          <FieldRef ID="{d63ce254-22be-4676-9a3d-5bd293bbbbe2}" Name="ClientsNotes" />
+          <FieldRef ID="{31b99e22-f121-4d2d-bdd6-6a079e048bbb}" Name="ClientsState" />
         </FieldRefs>
       </ContentType>
       <ContentTypeRef ID="0x01">
@@ -24,8 +25,7 @@
       <ContentTypeRef ID="0x0120" />
     </ContentTypes>
     <Fields>
-
-      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
       <Field Name="ClientsFirstName" ID="{897277b6-9f0f-466f-b4f1-14865039ad04}" DisplayName="ClientsFirstName" Type="Text" />
       <Field Name="ClientsLastName" ID="{f9215ac8-72df-44e5-9245-d8478647e733}" DisplayName="ClientsLastName" Type="Text" />
       <Field Name="ClientsPhone" ID="{0553fd0e-7c47-447d-9b40-cfd760f39093}" DisplayName="ClientsPhone" Type="Text" />
@@ -35,6 +35,8 @@
       <Field Name="ClientsCity" ID="{74c569c3-b3ab-4686-8a50-13b9e047f57e}" DisplayName="ClientsCity" Type="Text" />
       <Field Name="ClientsPostcode" ID="{2afa6c07-98a4-42ac-8bcd-abca8e1c4ef0}" DisplayName="ClientsPostcode" Type="Text" />
       <Field Name="ClientsProjectStatus" ID="{c7db2a33-f493-4c80-a530-f587884562b2}" DisplayName="ClientsProjectStatus" Type="Text" />
+      <Field Name="ClientsNotes" ID="{d63ce254-22be-4676-9a3d-5bd293bbbbe2}" DisplayName="ClientsNotes" Type="Note" />
+      <Field Name="ClientsState" ID="{31b99e22-f121-4d2d-bdd6-6a079e048bbb}" DisplayName="ClientsState" Type="Text" />
     </Fields>
     <Views>
 
@@ -76,6 +78,8 @@
           <FieldRef Name="ClientsCity" />
           <FieldRef Name="ClientsPostcode" />
           <FieldRef Name="ClientsProjectStatus" />
+          <FieldRef Name="ClientsNotes" />
+          <FieldRef Name="ClientsState" />
         </ViewFields>
         <Query>
           <OrderBy>

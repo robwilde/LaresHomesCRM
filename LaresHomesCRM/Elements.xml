@@ -10,16 +10,16 @@
     <File Path="App\config.exceptionHandler.js" Url="App/config.exceptionHandler.js" ReplaceContent="TRUE" />
     <File Path="App\config.js" Url="App/config.js" ReplaceContent="TRUE" />
     <File Path="App\config.route.js" Url="App/config.route.js" ReplaceContent="TRUE" />
-    <File Path="App\layout\shell.html" Url="App/layout/shell.html" ReplaceContent="TRUE" />
-    <File Path="App\layout\shell.js" Url="App/layout/shell.js" ReplaceContent="TRUE" />
-    <File Path="App\layout\spAppChrome.html" Url="App/layout/spAppChrome.html" ReplaceContent="TRUE" />
-    <File Path="App\layout\spAppChrome.js" Url="App/layout/spAppChrome.js" ReplaceContent="TRUE" />
-    <File Path="App\layout\workingonit.html" Url="App/layout/workingonit.html" ReplaceContent="TRUE" />
-    <File Path="App\layout\workingonit.js" Url="App/layout/workingonit.js" ReplaceContent="TRUE" />
-    <File Path="App\layout\header.html" Url="App/layout/header.html" ReplaceContent="TRUE" />
-    <File Path="App\layout\header.js" Url="App/layout/header.js" ReplaceContent="TRUE" />
-    <File Path="App\layout\quicklaunch.html" Url="App/layout/quicklaunch.html" ReplaceContent="TRUE" />
-    <File Path="App\layout\quicklaunch.js" Url="App/layout/quicklaunch.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\shell\shell.tpl.html" Url="App/layout/shell/shell.tpl.html" ReplaceContent="TRUE" />
+    <File Path="App\layout\shell\shell.js" Url="App/layout/shell/shell.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\appChrome\spAppChrome.tpl.html" Url="App/layout/appChrome/spAppChrome.tpl.html" ReplaceContent="TRUE" />
+    <File Path="App\layout\appChrome\spAppChrome.js" Url="App/layout/appChrome/spAppChrome.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\workingOnIt\workingonit.tpl.html" Url="App/layout/workingOnIt/workingonit.tpl.html" ReplaceContent="TRUE" />
+    <File Path="App\layout\workingOnIt\workingonit.js" Url="App/layout/workingOnIt/workingonit.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\header\header.tpl.html" Url="App/layout/header/header.tpl.html" ReplaceContent="TRUE" />
+    <File Path="App\layout\header\header.js" Url="App/layout/header/header.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\quickLaunch\quicklaunch.tpl.html" Url="App/layout/quickLaunch/quicklaunch.tpl.html" ReplaceContent="TRUE" />
+    <File Path="App\layout\quickLaunch\quicklaunch.js" Url="App/layout/quickLaunch/quicklaunch.js" ReplaceContent="TRUE" />
     <File Path="App\services\spContext.js" Url="App/services/spContext.js" ReplaceContent="TRUE" />
     <File Path="App\util\jquery-extensions.js" Url="App/util/jquery-extensions.js" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.woff2" Url="fonts/glyphicons-halflings-regular.woff2" ReplaceContent="TRUE" />
@@ -27,16 +27,22 @@
     <File Path="fonts\glyphicons-halflings-regular.ttf" Url="fonts/glyphicons-halflings-regular.ttf" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.svg" Url="fonts/glyphicons-halflings-regular.svg" ReplaceContent="TRUE" />
     <File Path="fonts\glyphicons-halflings-regular.eot" Url="fonts/glyphicons-halflings-regular.eot" ReplaceContent="TRUE" />
-    <File Path="App\clients\clients-dashboard.html" Url="App/clients/clients-dashboard.html" ReplaceContent="TRUE" />
-    <File Path="App\clients\clientsDashCtrl.js" Url="App/clients/clientsDashCtrl.js" ReplaceContent="TRUE" />
-    <File Path="App\clients\clients-details.html" Url="App/clients/clients-details.html" ReplaceContent="TRUE" />
-    <File Path="App\clients\clientsDetailsCtrl.js" Url="App/clients/clientsDetailsCtrl.js" ReplaceContent="TRUE" />
-    <File Path="App\bs-admin\navbar-section.html" Url="App/bs-admin/navbar-section.html" ReplaceContent="TRUE" />
-    <File Path="fonts\FontAwesome.otf" Url="fonts/FontAwesome.otf" ReplaceContent="TRUE" />
-    <File Path="fonts\fontawesome-webfont.woff2" Url="fonts/fontawesome-webfont.woff2" ReplaceContent="TRUE" />
-    <File Path="fonts\fontawesome-webfont.woff" Url="fonts/fontawesome-webfont.woff" ReplaceContent="TRUE" />
-    <File Path="fonts\fontawesome-webfont.ttf" Url="fonts/fontawesome-webfont.ttf" ReplaceContent="TRUE" />
-    <File Path="fonts\fontawesome-webfont.svg" Url="fonts/fontawesome-webfont.svg" ReplaceContent="TRUE" />
-    <File Path="fonts\fontawesome-webfont.eot" Url="fonts/fontawesome-webfont.eot" ReplaceContent="TRUE" />
+    <File Path="App\clients\dashboard\clients-dashboard.html" Url="App/clients/dashboard/clients-dashboard.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\dashboard\clientsDashCtrl.js" Url="App/clients/dashboard/clientsDashCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\details\clients-details.html" Url="App/clients/details/clients-details.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\details\clientsDetailsCtrl.js" Url="App/clients/details/clientsDetailsCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\clientModel.js" Url="App/clients/clientModel.js" ReplaceContent="TRUE" />
+    <File Path="App\services\dataContext.angular.js" Url="App/services/dataContext.angular.js" ReplaceContent="TRUE" />
+    <File Path="App\config.angular.http.js" Url="App/config.angular.http.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\form\client-form.html" Url="App/clients/form/client-form.html" ReplaceContent="TRUE" />
+    <File Path="App\clients\form\clientFormCtrl.js" Url="App/clients/form/clientFormCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\details\clientsTabsCtrl.js" Url="App/clients/details/clientsTabsCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\appChrome\spAppChrome-directive.js" Url="App/layout/appChrome/spAppChrome-directive.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\header\header-directive.js" Url="App/layout/header/header-directive.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\quickLaunch\quickLaunch-directive.js" Url="App/layout/quickLaunch/quickLaunch-directive.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\shell\shell-directive.js" Url="App/layout/shell/shell-directive.js" ReplaceContent="TRUE" />
+    <File Path="App\layout\workingOnIt\workingOnIt-directive.js" Url="App/layout/workingOnIt/workingOnIt-directive.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\docs\documentSrvc.js" Url="App/clients/docs/documentSrvc.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\docs\docsTesting.js" Url="App/clients/docs/docsTesting.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

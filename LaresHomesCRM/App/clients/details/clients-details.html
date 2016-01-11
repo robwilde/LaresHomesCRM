@@ -1,0 +1,138 @@
+﻿<div>
+    <!-- DETAILS SECTION ClientDetailsCtrl -->
+    <div class="container" data-ng-controller="ClientDetails">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Client Details</h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-7">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Name</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsFirstName}} {{client.ClientsLastName}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Address</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsAddress}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Phone</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsPhone}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Suburb</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsSuburb}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Email</div>
+                                <div class="col-xs-8 client-field"><a href="mailto:{{client.ClientsEmail}}">{{client.ClientsEmail}}</a></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">City</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsCity}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Status</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsProjectStatus}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Postcode</div>
+                                <div class="col-xs-8 client-field">{{client.ClientsPostcode}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Client Details</h3>
+                            </div>
+                            <div class="panel-body">
+                                {{client.ClientsNotes}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TABS SECTION -->
+    <div class="container">
+        <uib-tabset>
+            <uib-tab heading="Contracts">
+                <div class="panel panel-default">
+                    <div class="panel-heading">+ Add Contracts</div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Modified</th>
+                                    <th>Modified By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>File 1</td>
+                                    <td>24/12/2015</td>
+                                    <td>Robert Wilde</td>
+                                </tr>
+                                <tr>
+                                    <td>The other File</td>
+                                    <td>01/01/2016</td>
+                                    <td>Robert Wilde</td>
+                                </tr>
+                                <tr>
+                                    <td>No1 Best Seller of all Time</td>
+                                    <td>05/01/2016</td>
+                                    <td>Hunter Wilde</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </uib-tab>
+
+            <uib-tab heading="Selections">
+                <div class="panel panel-default">
+                    <div class="panel-heading">+ Add Selections</div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Modified</th>
+                                    <th>Modified By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>File 1</td>
+                                    <td>24/12/2015</td>
+                                    <td>Robert Wilde</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </uib-tab>
+
+        </uib-tabset>
+    </div>
+</div>

@@ -7,6 +7,6 @@
     <File Path="Images\success.png" Url="Images/success.png" ReplaceContent="TRUE" />
     <File Path="Images\warning.png" Url="Images/warning.png" ReplaceContent="TRUE" />
     <File Path="Images\LaresHomesLogo.png" Url="Images/LaresHomesLogo.png" ReplaceContent="TRUE" />
-    <File Path="Images\lares_contact_square-1160x600.jpg" Url="Images/lares_contact_square-1160x600.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\debug.png" Url="Images/debug.png" ReplaceContent="TRUE" />
   </Module>
 </Elements>
