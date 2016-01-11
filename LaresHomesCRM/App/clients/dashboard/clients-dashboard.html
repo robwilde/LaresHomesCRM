@@ -19,33 +19,37 @@
         </div>
     </div>
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Clients List</h3>
-        </div>
-        <div class="panel-body">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone</th>
-                        <th>eMail</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-ng-repeat="client in Clients" data-ng-click="goToClient(client)">
-                        <th scope="row">{{client.ID}}</th>
-                        <td>{{client.ClientsFirstName}}</td>
-                        <td>{{client.ClientsLastName}}</td>
-                        <td>{{client.ClientsPhone}}</td>
-                        <td><a href="mailto:{{client.ClientsEmail}}">{{client.ClientsEmail}}</a></td>
-                        <td>{{client.ClientsProjectStatus}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <uib-tabset>
+
+        <uib-tab ng-repeat="clientTab in clientTabs" select="status(clientTab.status)">
+            <uib-tab-heading>{{clientTab.status}}</uib-tab-heading>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>eMail</th>
+                                <!--<th>Address</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="client in Clients | filter:{ ClientsProjectStatus: clientTab.status }" ng-click="goToClient(client)">
+                                <th scope="row">{{client.Id}}</th>
+                                <td>{{client.ClientsFirstName}} {{client.ClientsLastName}}</td>
+                                <td>{{client.ClientsPhone}}</td>
+                                <td><a href="mailto:{{client.ClientsEmail}}">{{client.ClientsEmail}}</a></td>
+                                <!--<td>{{client.ClientsAddress}}, {{client.ClientsSuburb}}, {{client.ClientsCity}}, {{client.ClientsState}} {{client.ClientsPostcode}}</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </uib-tab>
+
+    </uib-tabset>
+
+
 </div>

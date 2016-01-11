@@ -15,7 +15,8 @@ lhc.models.client = function () {
     this.ClientsCity = undefined;
     this.ClientsPostcode = undefined;
     this.ClientsProjectStatus = undefined;
-    this.ClientNotes = undefined;
+    this.ClientsNotes = undefined;
+    this.ClientsState = undefined;
     this.__metadata = {
         type: 'SP.Data.ClientsListItem'
     };

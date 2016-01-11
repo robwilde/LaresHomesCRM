@@ -43,5 +43,7 @@
     <ProjectItemFile Source="App\layout\quickLaunch\quickLaunch-directive.js" Target="App\layout\quickLaunch\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\shell\shell-directive.js" Target="App\layout\shell\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\workingOnIt\workingOnIt-directive.js" Target="App\layout\workingOnIt\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\documentSrvc.js" Target="App\clients\docs\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\docsTesting.js" Target="App\clients\docs\" Type="ElementFile" />
   </Files>
 </ProjectItem>

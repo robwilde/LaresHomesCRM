@@ -3,9 +3,9 @@
     'use strict';
 
     var controllerId = 'ClientDetails';
-    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$modal', 'common', 'datacontext', clientDetails]);
+    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$uibModal', 'common', 'datacontext', clientDetails]);
 
-    function clientDetails($scope, $location, $routeParams, $modal, common, datacontext) {
+    function clientDetails($scope, $location, $routeParams, $uibModal, common, datacontext) {
 
         $scope.clientId = +$routeParams.id;
 

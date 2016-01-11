@@ -27,15 +27,15 @@
                   title: 'dashboard',
                   settings: {
                       nav: 0,
-                      content: 'dashboard',
-                      quickLaunchEnabled: false
+                      content: 'Dashboard',
+                      quickLaunchEnabled: true
                   }
               }
           },
           {
               url: '/Clients',
               config: {
-                  templateUrl: 'app/clients/clients-dashboard.html',
+                  templateUrl: 'app/clients/dashboard/clients-dashboard.html',
                   title: 'Client List',
                   settings: {
                       nav: 1,
@@ -47,7 +47,7 @@
             {
                 url: '/Clients/:id',
                 config: {
-                    templateUrl: 'app/clients/clients-details.html',
+                    templateUrl: 'app/clients/details/clients-details.html',
                     title: 'Client Details',
                     settings: {
                         nav: 1,
