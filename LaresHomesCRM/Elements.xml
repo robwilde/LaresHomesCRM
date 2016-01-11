@@ -44,5 +44,6 @@
     <File Path="App\layout\workingOnIt\workingOnIt-Directive.js" Url="App/layout/workingOnIt/workingOnIt-Directive.js" ReplaceContent="TRUE" />
     <File Path="App\clients\docs\documentSrvc.js" Url="App/clients/docs/documentSrvc.js" ReplaceContent="TRUE" />
     <File Path="App\clients\docs\docsTesting.js" Url="App/clients/docs/docsTesting.js" ReplaceContent="TRUE" />
+    <File Path="App\clients\clientSrvc.js" Url="App/clients/clientSrvc.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

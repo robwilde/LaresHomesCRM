@@ -4,10 +4,10 @@
     // define factory
     var serviceId = 'documentService';
     angular.module('app').factory('documentService',
-	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', 'auditService', 'clientService', documentService]);
+	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', 'clientService', documentService]);
 
 
-    function documentService($rootScope, $http, $resource, $q, config, common, spContext, datacontext, auditService, clientService) {
+    function documentService($rootScope, $http, $resource, $q, config, common, spContext, datacontext, clientService) {
 
         var clients = {};
 
@@ -36,58 +36,38 @@
             return spContext.securityValidation;
         }
 
+        // add a NEW doc libary 
         function addDocLibrary(docLibaryName, docLibaryType, loadFromHostWeb) {
             var deferred = $q.defer();
             var requestDigest = spContext.securityValidation;
             var url = addRequestExecuterContext(loadFromHostWeb, documentUrl, spContext.hostWeb.url);
 
-
-            //var req = {
-            //    method: 'POST',
-            //    url: url,
-            //    headers: {
-            //        'accept': 'application/json;odata=verbose',
-            //        'content-type': 'application/json;odata=verbose',
-            //        'X-RequestDigest': requestDigest
-            //    },
-            //    data: JSON.stringify({
-            //        '__metadata': { 'type': 'SP.List' }, 'AllowContentTypes': true, 'BaseTemplate': 101,
-            //        'ContentTypesEnabled': true, 'Description': docLibaryType, 'Title': docLibaryName
-            //    })
-            //}
-
-            //$http(req).then(function(data){
-            //    common.logger.logDebug('Create Doc library - 57', data, serviceId + '.addDocLibrary');
-            //    deferred.resolve(data.d.results);
-            //}, function (error) {
-            //    common.logger.logError('Create Doc library - 61 - ERROR', error, serviceId + '.addDocLibrary');
-            //    deferred.reject(error);
-            //});
-
-            $.ajax({
-                url: url,
+            var req = {
                 method: 'POST',
-                data: JSON.stringify({
-                    '__metadata': { 'type': 'SP.List' }, 'AllowContentTypes': true, 'BaseTemplate': 101,
-                    'ContentTypesEnabled': true, 'Description': docLibaryType, 'Title': docLibaryName
-                }),
+                url: url,
                 headers: {
                     'accept': 'application/json;odata=verbose',
                     'content-type': 'application/json;odata=verbose',
                     'X-RequestDigest': requestDigest
                 },
-                success: function (data) {
-                    common.logger.logDebug('Create Doc library - 57', data, serviceId + '.addDocLibrary');
-                    deferred.resolve(data.d.results);
-                },
-                error: function (error) {
-                    common.logger.logError('Create Doc library - 61 - ERROR', error, serviceId + '.addDocLibrary');
-                    deferred.reject(error);
-                }
+                data: JSON.stringify({
+                    '__metadata': { 'type': 'SP.List' }, 'AllowContentTypes': true, 'BaseTemplate': 101,
+                    'ContentTypesEnabled': true, 'Description': docLibaryType, 'Title': docLibaryName
+                })
+            }
+
+            $http(req).then(function(data){
+                common.logger.logDebug('Create Doc library - 57', data, serviceId + '.addDocLibrary');
+                deferred.resolve(data.d.results);
+            }, function (error) {
+                common.logger.logError('Create Doc library - 61 - ERROR', error, serviceId + '.addDocLibrary');
+                deferred.reject(error);
             });
+
             return deferred.promise;
         }
 
+        // get the content from the docuemnt library
         function bindContentTypeToLibrary(docLibraryName, contentTypeId, loadFromHostWeb) {
             var deferred = $q.defer();
 
@@ -98,29 +78,31 @@
 
             url = addRequestExecuterContext(loadFromHostWeb, url, spContext.hostWeb.url);
 
-            $.ajax({
-                url: url,
+            var req = {
                 method: 'POST',
-                data: JSON.stringify({
-                    'contentTypeId': contentTypeId
-                }),
+                url: url,
                 headers: {
                     'accept': 'application/json;odata=verbose',
                     'content-type': 'application/json;odata=verbose',
                     'X-RequestDigest': requestDigest
                 },
-                success: function (data) {
-                    common.logger.logDebug('Bind contentType to library - 90', data, serviceId + '.bindContentTypeToLibrary');
-                    deferred.resolve(data.d.results);
-                },
-                error: function (error) {
-                    common.logger.logError('Bind contentType to library - 94 - ERROR', error, serviceId + '.bindContentTypeToLibrary');
-                    deferred.reject(error);
-                }
+                data: JSON.stringify({
+                    'contentTypeId': contentTypeId
+                })
+            }
+
+            $http(req).then(function(data){
+                common.logger.logDebug('Bind contentType to library - 90', data, serviceId + '.bindContentTypeToLibrary');
+                deferred.resolve(data.d.results);
+            }, function (error) {
+                common.logger.logError('Bind contentType to library - 94 - ERROR', error, serviceId + '.bindContentTypeToLibrary');
+                deferred.reject(error);
             });
+
             return deferred.promise;
         }
 
+        // delete content from the document libary
         function deleteContentTypeFromLibrary(docLibraryName, contentTypeId, loadFromHostWeb) {
             var deferred = $q.defer();
 
@@ -150,6 +132,7 @@
             return deferred.promise;
         }
 
+        // get teh content types from the document libary
         function getContentTypesFromLibrary(docLibraryName, loadFromHostWeb) {
             var deferred = $q.defer();
 
@@ -169,9 +152,11 @@
                 common.logger.logError('Get contenttype from library - ERROR - 148', error, serviceId + '.getContentTypesFromLibrary');
                 deferred.reject(error);
             });
+
             return deferred.promise;
         }
 
+        // set the docLib ID but this will need to be changed
         function setDocLibId(clientId) {
 
             var clientName,
@@ -185,7 +170,6 @@
 
                 var strUp = clientName.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
                 var strArray = strUp.split(" ", 2);
-
                 var docName = strArray[0] + strArray[1];
 
                 common.logger.logDebug('DocID - 170', docName + "_id" + clientId, serviceId + '.setDocLibId');
@@ -195,10 +179,12 @@
                 deferred.reject(error);
                 common.logger.logError('getClientTitleById - 175 - ERROR', error, serviceId + '.getClientTitleById.error');
             });
+
             return deferred.promise;
 
         }
 
+        // the lsit of documents from the library
         function getDocuments(clientId, projectId, loadFromHostWeb) {
             var deferred = $q.defer();
 
@@ -223,8 +209,10 @@
                     });
                 })
             return deferred.promise;
+
         }
 
+        // not overly sure whtat this is for
         function addRequestExecuterContext(loadFromHostWeb, restUrl, hostweburl) {
             var modifiedUrl = restUrl;
 
