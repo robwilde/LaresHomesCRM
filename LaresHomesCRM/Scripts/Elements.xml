@@ -35,5 +35,10 @@
     <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\spin.min.js" Url="Scripts/spin.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\spin.js" Url="Scripts/spin.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-spinner.min.js.map" Url="Scripts/angular-spinner.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-spinner.min.js" Url="Scripts/angular-spinner.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-spinner.js" Url="Scripts/angular-spinner.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

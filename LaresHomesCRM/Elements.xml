@@ -45,5 +45,10 @@
     <File Path="App\clients\docs\documentSrvc.js" Url="App/clients/docs/documentSrvc.js" ReplaceContent="TRUE" />
     <File Path="App\clients\docs\docsTesting.js" Url="App/clients/docs/docsTesting.js" ReplaceContent="TRUE" />
     <File Path="App\clients\clientSrvc.js" Url="App/clients/clientSrvc.js" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.svg" Url="fonts/fontawesome-webfont.svg" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.ttf" Url="fonts/fontawesome-webfont.ttf" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.woff" Url="fonts/fontawesome-webfont.woff" ReplaceContent="TRUE" />
+    <File Path="fonts\FontAwesome.otf" Url="fonts/FontAwesome.otf" ReplaceContent="TRUE" />
+    <File Path="fonts\fontawesome-webfont.eot" Url="fonts/fontawesome-webfont.eot" ReplaceContent="TRUE" />
   </Module>
 </Elements>

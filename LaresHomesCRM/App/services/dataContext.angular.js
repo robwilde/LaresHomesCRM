@@ -1,8 +1,4 @@
-﻿/*
- * datacontext that uses the Anuglar $http service
- */
-
-(function () {
+﻿(function () {
     'use strict';
 
     // define factory
@@ -16,11 +12,7 @@
 
         // service public signature
         return {
-            getClientsPartials: getClientsPartials,
-            getClient: getClient,
-            createClient: createClient,
-            saveClient: saveClient,
-            deleteClient: deleteClient,
+            getClientResource: getClientResource
         };
 
         // init service
@@ -28,140 +20,62 @@
             common.logger.log("service loaded", null, serviceId);
         }
 
-        // get the Client angular resource reference
-        function getClientResource(currentItem) {
-            // if an ID is passed in, 
-            //   ELSE create resource pointing to collection for a new item
-            if (+currentItem.Id) {
-                //   THEN build the resource to the specific item
-                return $resource('_api/web/lists/getbytitle(\'Clients\')/items(:itemId)',
-                { itemId: currentItem.Id },
-                {
-                    get: {
-                        method: 'GET',
-                        params: {
-                            '$select': 'Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsAddress,ClientsSuburb,ClientsCity,ClientsPostcode,ClientsProjectStatus,ClientsNotes,Created,Modified'
-                        },
-                        headers: {
-                            'Accept': 'application/json;odata=verbose;'
-                        }
-                    },
-                    post: {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json;odata=verbose;',
-                            'Content-Type': 'application/json;odata=verbose;',
-                            'X-RequestDigest': spContext.securityValidation,
-                            'X-HTTP-Method': 'MERGE',
-                            'If-Match': currentItem.__metadata.etag
-                        }
-                    },
-                    delete: {
-                        method: 'DELETE',
-                        headers: {
-                            'Accept': 'application/json;odata=verbose;',
-                            'Content-Type': 'application/json;odata=verbose;',
-                            'X-RequestDigest': spContext.securityValidation,
-                            'If-Match': '*'
-                        }
-                    }
-                });
-            } else {
-                return $resource('_api/web/lists/getbytitle(\'Clients\')/items',
-                  {},
-                  {
-                      post: {
-                          method: 'POST',
-                          headers: {
-                              'Accept': 'application/json;odata=verbose;',
-                              'Content-Type': 'application/json;odata=verbose;',
-                              'X-RequestDigest': spContext.securityValidation
-                          }
-                      }
-                  });
+        function getClientResource(item) {
+            return getResourceForList("Clients", item);
+        }
+
+        function getListResource(listName, item) {
+            var url = "_api/web/lists/" + listName + "/items";
+            if (item && item.Id) {
+                url += "(" + item.Id + ")";
             }
+            return getResource(url);
+        }
+
+        function getResourceForList(listTitle, item) {
+            var url = "_api/web/lists/getbytitle('" + listTitle + "')/items";
+            if (item.Id) {
+                url += "(" + item.Id + ")";
+            }
+            return getResource(url);
         }
 
 
-        // retrieve all learning paths, using ngHttp service
-        function getClientsPartials() {
-            var deferred = $q.defer();
-
-            $http({
-                method: 'GET',
-                url: '_api/web/lists/getbytitle(\'Clients\')/items?$select=Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsProjectStatus&$orderby=ClientsLastName'
-            }).success(function (data) {
-                common.logger.logDebug("getClientsPartials", data, serviceId);
-                deferred.resolve(data.d.results);
-            }).error(function (error) {
-                common.logger.logError('getClientsPartials', error, serviceId);
-                deferred.reject(error);
+        function getResource(url) {
+            var requestDigest = spContext.securityValidation;
+            return $resource(url, {},
+            {
+                save: {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json;odata=verbose;',
+                        'Content-Type': 'application/json;odata=verbose;',
+                        'X-RequestDigest': requestDigest
+                    }
+                },
+                remove: {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json;odata=verbose;',
+                        'Content-Type': 'application/json;odata=verbose;',
+                        'X-RequestDigest': requestDigest,
+                        'If-Match': "*",
+                        'X-HTTP-Method': "DELETE",
+                    }
+                },
+                update: {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json;odata=verbose;',
+                        'Content-Type': 'application/json;odata=verbose;',
+                        'X-RequestDigest': requestDigest,
+                        'If-Match': "*",
+                        'X-HTTP-Method': "MERGE",
+                    }
+                }
             });
-
-            return deferred.promise;
         }
 
-        // gets a specific client
-        function getClient(id) {
-            var client = new lhc.models.client();
-            client.Id = id;
-
-            // get resource
-            var resource = getClientResource(client);
-
-            var deferred = $q.defer();
-            resource.get({}, function (data) {
-                deferred.resolve(data.d);
-                common.logger.logDebug("getClient", data, serviceId);
-            }, function (error) {
-                deferred.reject(error);
-                common.logger.logError("getClient", error, serviceId);
-            });
-
-            return deferred.promise;
-        }
-
-        // creates a new client
-        function createClient() {
-            return new lhc.models.client();
-        }
-
-        // saves a client
-        function saveClient(client) {
-            // get resource
-            var resource = getClientResource(client);
-
-            var deferred = $q.defer();
-
-            resource.post(client, function (data) {
-                deferred.resolve(data);
-                common.logger.logDebug("saveClient", data, serviceId);
-            }, function (error) {
-                deferred.reject(error);
-                common.logger.logError("Save client", error, serviceId);
-            });
-
-            return deferred.promise;
-
-        }
-
-        // deletes a learning path
-        function deleteClient(client) {
-            // get resource
-            var resource = getClientResource(client);
-            var deferred = $q.defer();
-
-            // use angular $resource to delete the item
-            resource.delete(client, function (data) {
-                deferred.resolve(data);
-                common.logger.logDebug("deleteClient", data, serviceId);
-            }, function (error) {
-                deferred.reject(error);
-                common.logger.logError("deleteClient", error, serviceId);
-            });
-
-            return deferred.promise;
-        }
 
     }
 })();

@@ -2,12 +2,12 @@
     'use strict';
 
     // define factory
-    var serviceId = 'clientService';
+    var serviceId = 'clientSrvc';
     angular.module('app').factory(serviceId,
-	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', clientService]);
+	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', 'documentSrvc', clientService]);
 
 
-    function clientService($rootScope, $http, $resource, $q, config, common, spContext, datacontext) {
+    function clientService($rootScope, $http, $resource, $q, config, common, spContext, datacontext, documentSrvc) {
 
         // init factory
         function init() {
@@ -16,20 +16,18 @@
 
         init();
 
-        var listName = "Client List";
+        var log = common.logger;
+
+        var listName = "Clients";
         var clientUrl = "_api/web/lists/getbytitle(\'Clients\')/items";
 
         // service signature
         return {
             listName: listName,
             getClientById: getClientById,
-            getClientTitleById: getClientTitleById,
             getClients: getClients,
-            getClientsTitles: getClientsTitles,
-            getClientsByTitleSearch: getClientsByTitleSearch,
             saveClient: saveClient,
-            deleteClient: deleteClient,
-            checkClient: checkClient
+            deleteClient: deleteClient
         };
 
         function formatTitleFilter(value) {
@@ -51,145 +49,83 @@
             return deferred.promise;
         }
 
-        function getClientTitleById(id) {
-            var deferred = $q.defer();
-            $http({
-                method: 'GET',
-                url: clientUrl + "(" + id + ")?$select=Id,Title"
-            })
-            .success(function (data) {
-                deferred.resolve(data.d);
-            })
-            .error(function (error) {
-                deferred.reject(error);
-            });
-            return deferred.promise;
-        }
-
         function getClients() {
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: clientUrl + "?$selected=Id,Title,phone,email,ContactName,ContactEmail,AccountManager&$orderby=Title",
+                url: clientUrl + '?$select=Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsProjectStatus&$orderby=ClientsLastName'
             })
             .success(function (data) {
                 //common.logger.logDebug('Client details via ngHTTP - OK', data, 'clientService.getClients');
                 deferred.resolve(data.d.results);
             })
             .error(function (error) {
-                common.logger.logError('Client Details via ngHTTP - ERROR', error, 'clientService.getClients');
+                log.logError('getClients - ERROR', error, serviceId);
                 deferred.reject(error);
             });
             return deferred.promise;
         }
 
-        function getClientsTitles() {
-            var deferred = $q.defer();
-            $http({
-                method: 'GET',
-                url: clientUrl + "?$select=Id,Title",
-            })
-            .success(function (data) {
-                //common.logger.logDebug('retireived the Client details via ngHTTP', data, 'clientService.getClientsTitles');
-                deferred.resolve(data.d.results);
-            })
-            .error(function (error) {
-                common.logger.logError('97 - ERROR', error, 'clientService.getClientsTitles');
-                deferred.reject(error);
-            });
-            return deferred.promise;
-        }
-
-        function getClientsByTitleSearch(value) {
-            var deferred = $q.defer();
-            $http({
-                method: 'GET',
-                url: clientUrl + formatTitleFilter(value)
-            })
-            .success(function (data) {
-                //common.logger.logDebug('Get Clients By Title - OK', data, 'clientService.getClientsByTitleSearch');
-                deferred.resolve(data.d.results);
-            })
-            .error(function (error) {
-                common.logger.logError('Get Clients By Title - ERROR', Error, 'clientService.getClientsByTitleSearch');
-
-                deferred.reject(error);
-            });
-            return deferred.promise;
-        }
-
+        // deletes a learning path
         function deleteClient(client) {
+            // get resource
             var resource = datacontext.getClientResource(client);
             var deferred = $q.defer();
-            resource.remove(client, function () {
-                auditService.writeAudit("client", client.Id, "", null, client);
 
-                common.logger.logDebug("delete client - OK", client, 'clientService.deleteClient');
-
-                deferred.resolve();
+            // use angular $resource to delete the item
+            resource.delete(client, function (data) {
+                deferred.resolve(data);
+                log.logDebug("deleteClient", data, serviceId);
             }, function (error) {
-                common.logger.logError("delete client - ERROR", error, 'clientService.deleteClient');
-
                 deferred.reject(error);
+                log.logError("deleteClient", error, serviceId);
             });
+
             return deferred.promise;
         }
 
-        function checkClient(client) {
-            var deferred = $q.defer();
-            getClientsTitles().then(function (data) {
-                var isOk = true;
-                var clients = data;
-                for (var i = 0; i < clients.length; i++) {
-                    if (clients[i].Title == client.Title && clients[i].Id != client.Id) {
-                        isOk = false;
-                    }
-                }
-                deferred.resolve(isOk);
-            });
-            return deferred.promise;
-        }
-
-        function saveClient(client, originalData) {
-
+        // saves a client
+        function saveClient(client) {
+            // get resource
+            var resource = datacontext.getClientResource(client);
             var deferred = $q.defer();
 
-            checkClient(client)
-                .then(function (isOk) {
-                    if (isOk) {
-                        var resource = datacontext.getClientResource(client);
-                        if (client.Id) {
-                            resource.update(client, function () {
-                                auditService.writeAudit("client", client.Id, "", client, originalData);
-                                common.logger.logDebug("save client - OK", client, 'clientService.saveClient.update');
+            resource.save(client, function (data) {
 
-                                deferred.resolve(client);
-                            }, function (error) {
-                                common.logger.logError("save client - ERROR", error, 'clientService.saveClient.update');
+                var client = data.d;
+                addDocList(client);
 
-                                deferred.reject(error);
-                            });
-                        }
-                        else {
-                            resource.save(client, function (data) {
-                                client.Id = data.d.Id;
-                                auditService.writeAudit("client", client.Id, "", client, null);
+                deferred.resolve(client);
+                log.logDebug("saveClient", client, serviceId);
+            }, function (error) {
+                deferred.reject(error);
+                log.logError("Save client", error, serviceId);
+            });
 
-                                common.logger.logDebug("save client - OK", data, 'clientService.saveClient.save');
-                                deferred.resolve(data.d);
-                            }, function (error) {
-                                common.logger.logError("save client - ERROR", error, 'clientService.saveClient.save');
-
-                                deferred.reject(error);
-                            });
-                        }
-                    }
-                    else {
-                        deferred.reject("Client with same Title already exists!");
-                    }
-                });
             return deferred.promise;
-        }
+
+        };
+
+        // create the doc libaries for new clients
+        function addDocList(client) {
+            // libraryName must not start with a number and undescore. Exceptions occur when libraries are created in sequence
+            var firstInitial = client.ClientsFirstName.charAt(0).toUpperCase();
+            var clientFullName = client.ClientsLastName + firstInitial;
+            var docLibs = {};
+
+            // create the email libary
+            var emailLibraryName = clientFullName + '_Emails';
+            var emailLibary = documentSrvc.addDocLibrary(emailLibraryName, "emails", true);
+            log.logDebug('emailLibary', emailLibary, serviceId);
+
+            var docLibaries = ['Contracts', 'Selections', 'Construction'];
+            for (var i = 0; i < docLibaries.length; i++) {
+                var libName = docLibaries[i];
+
+                var docLibraryName = clientFullName + '_' + libName;
+                docLibs[libName] = documentSrvc.addDocLibrary(docLibraryName, libName, true);
+            }
+        };
 
     }
 

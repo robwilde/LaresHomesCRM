@@ -2,14 +2,15 @@
     'use strict';
 
     // define factory
-    var serviceId = 'documentService';
-    angular.module('app').factory('documentService',
-	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', 'clientService', documentService]);
+    var serviceId = 'documentSrvc';
+    angular.module('app').factory(serviceId,
+	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', documentService]);
 
 
-    function documentService($rootScope, $http, $resource, $q, config, common, spContext, datacontext, clientService) {
+    function documentService($rootScope, $http, $resource, $q, config, common, spContext, datacontext) {
 
         var clients = {};
+        var log = common.logger;
 
         // init factory
         function init() {
@@ -28,8 +29,7 @@
             bindContentTypeToLibrary: bindContentTypeToLibrary,
             deleteContentTypeFromLibrary: deleteContentTypeFromLibrary,
             getContentTypesFromLibrary: getContentTypesFromLibrary,
-            addRequestExecuterContext: addRequestExecuterContext,
-            setDocLibId: setDocLibId
+            addRequestExecuterContext: addRequestExecuterContext
         };
 
         function getRequestDigest() {
@@ -56,11 +56,13 @@
                 })
             }
 
-            $http(req).then(function(data){
-                common.logger.logDebug('Create Doc library - 57', data, serviceId + '.addDocLibrary');
-                deferred.resolve(data.d.results);
+
+            $http(req).then(function (data) {
+                log.logDebug('data', data, serviceId + '.addDocLibrary');
+
+                deferred.resolve(data);
             }, function (error) {
-                common.logger.logError('Create Doc library - 61 - ERROR', error, serviceId + '.addDocLibrary');
+                log.logError('ERROR', error, serviceId + '.addDocLibrary');
                 deferred.reject(error);
             });
 
@@ -91,7 +93,7 @@
                 })
             }
 
-            $http(req).then(function(data){
+            $http(req).then(function (data) {
                 common.logger.logDebug('Bind contentType to library - 90', data, serviceId + '.bindContentTypeToLibrary');
                 deferred.resolve(data.d.results);
             }, function (error) {
@@ -154,34 +156,6 @@
             });
 
             return deferred.promise;
-        }
-
-        // set the docLib ID but this will need to be changed
-        function setDocLibId(clientId) {
-
-            var clientName,
-                deferred = $q.defer();
-
-            clientService.getClientTitleById(clientId)
-            .then(function (data) {
-                clientName = data.Title
-
-                //common.logger.logDebug('clientName - 156', clientName, 'documentService.setDocLibId');
-
-                var strUp = clientName.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-                var strArray = strUp.split(" ", 2);
-                var docName = strArray[0] + strArray[1];
-
-                common.logger.logDebug('DocID - 170', docName + "_id" + clientId, serviceId + '.setDocLibId');
-
-                deferred.resolve(docName + "_id" + clientId);
-            }, function (error) {
-                deferred.reject(error);
-                common.logger.logError('getClientTitleById - 175 - ERROR', error, serviceId + '.getClientTitleById.error');
-            });
-
-            return deferred.promise;
-
         }
 
         // the lsit of documents from the library

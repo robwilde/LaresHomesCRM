@@ -3,9 +3,9 @@
     'use strict';
 
     var controllerId = 'ClientDetails';
-    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$uibModal', 'common', 'datacontext', clientDetails]);
+    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$uibModal', 'common', 'datacontext', 'clientSrvc', clientDetails]);
 
-    function clientDetails($scope, $location, $routeParams, $uibModal, common, datacontext) {
+    function clientDetails($scope, $location, $routeParams, $uibModal, common, datacontext, clientSrvc) {
 
         $scope.clientId = +$routeParams.id;
 
@@ -26,7 +26,7 @@
         };
 
         var getClientById = function (clientId) {
-            datacontext.getClient(clientId)
+            clientSrvc.getClientById(clientId)
                 .then(function (data) {
                     $scope.client = data;
                     //common.logger.logDebug('getClient', $scope, controllerId);

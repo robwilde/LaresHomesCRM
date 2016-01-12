@@ -3,38 +3,43 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
     <ProjectItemFile Source="App.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="bootstrap.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="bootstrap.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-mocks.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-animate.min.js.map" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-animate.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-animate.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-cookies.min.js.map" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-cookies.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-cookies.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-route.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-route.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-route.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-animate.min.js.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-animate.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-animate.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-resource.min.js.map" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-resource.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-resource.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-cookies.min.js.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-cookies.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-cookies.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="moment.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="moment.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-ui\ui-bootstrap.min.js" Target="Scripts\angular-ui\" Type="ElementFile" />
     <ProjectItemFile Source="angular-ui\ui-bootstrap.js" Target="Scripts\angular-ui\" Type="ElementFile" />
     <ProjectItemFile Source="angular-ui\ui-bootstrap-tpls.min.js" Target="Scripts\angular-ui\" Type="ElementFile" />
     <ProjectItemFile Source="angular-ui\ui-bootstrap-tpls.js" Target="Scripts\angular-ui\" Type="ElementFile" />
-    <ProjectItemFile Source="jquery-2.2.0.min.map" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="jquery-2.2.0.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="jquery-2.2.0.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-resource.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-resource.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-resource.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="jquery-2.2.0.intellisense.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="moment.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="moment.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="moment-with-locales.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.2.0.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.2.0.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.2.0.min.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="moment-with-locales.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="moment-with-locales.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="spin.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="spin.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-spinner.min.js.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-spinner.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-spinner.js" Target="Scripts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

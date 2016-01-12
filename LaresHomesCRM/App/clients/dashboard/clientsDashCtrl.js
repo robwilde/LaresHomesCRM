@@ -3,10 +3,11 @@
     'use strict';
 
     var controllerId = 'clientsDashCtrl';
-    angular.module('app').controller(controllerId, ['$scope', '$uibModal', '$location', 'common', 'datacontext', clientsDashboard]);
+    angular.module('app').controller(controllerId, ['$scope', '$uibModal', '$location', 'common', 'clientSrvc', 'usSpinnerService', clientsDashboard]);
 
-    function clientsDashboard($scope, $uibModal, $location, common, datacontext) {
+    function clientsDashboard($scope, $uibModal, $location, common, clientSrvc, usSpinnerService) {
         var log = common.logger;
+        $scope.showSpinner = true;
         $scope.goToClient = goToClient;
 
         $scope.clientTabs = [
@@ -59,12 +60,13 @@
                 //log.logDebug('modalInstance Result', data, controllerId);
                 saveClient(data);
             }, function () {
+
             });
         };
 
         /*get clients & set to bindable collection on vm*/
         function getClients() {
-            datacontext.getClientsPartials()
+            clientSrvc.getClients()
               .then(function (data) {
                   if (data) {
                       //common.logger.logDebug('getClients', data, controllerId);
@@ -80,14 +82,16 @@
 
         /*save client from the add/edit modal window*/
         function saveClient(client) {
-            datacontext.saveClient(client)
+
+            $scope.showSpinner = true;
+
+            clientSrvc.saveClient(client)
             .then(function (data) {
-                var item = data.d;
+                var item = data;
                 //log.logDebug('saveClient - item', item, controllerId);
 
                 var newClient = {
                     Id: item.Id,
-                    ID: item.Id,
                     ClientsFirstName: item.ClientsFirstName,
                     ClientsLastName: item.ClientsLastName,
                     ClientsPhone: item.ClientsPhone,
@@ -96,26 +100,12 @@
                 }
 
                 $scope.Clients.push(newClient);
+                $scope.showSpinner = false;
                 //log.logDebug('saveClient - $scope', $scope, controllerId);
 
             }, function (error) {
                 log.logError('saveClient ERROR', error, controllerId);
             });
-        }
-
-        function addDocList() {
-            // libraryName must not start with a number and undescore. Exceptions occur when libraries are created in sequence
-            var clientFullName = $scope.Clients.ClientsFirstName + $scope.Clients.ClientsLastName;
-            var docLibraryName = clientFullName + '_id' + $scope.Clients.Id + '_Documents';
-
-            var docLib1 = documentService.addDocLibrary(docLibraryName, "Client documents", true);
-            var docLib2 = documentService.addDocLibrary(emailLibraryName, "Client emails", true);
-
-            common.logger.logDebug('Doc Lib Name - 216', docLib1, 'addEditClient');
-
-            afterSavedProcesses.push(docLib1);
-            afterSavedProcesses.push(notification);
-            afterSavedProcesses.push(docLib2);
         }
 
 

@@ -14,6 +14,7 @@
           <Field Name="ClientsPostcode">48116</Field>
           <Field Name="ClientsProjectStatus">In-Progress</Field>
           <Field Name="ClientsNotes">Bacon ipsum dolor amet boudin picanha salami ball tip flank cupim chuck chicken leberkas pork belly. Tenderloin chuck turducken t-bone tongue. Venison salami sirloin boudin kielbasa pork kevin tail. Rump salami landjaeger jowl beef ribs t-bone. Pig pancetta picanha pastrami kielbasa, drumstick prosciutto leberkas.</Field>
+          <Field Name="ClientsState">QLD</Field>
         </Row>
         <Row>
           <Field Name="ClientsFirstName">Ernie</Field>
@@ -26,6 +27,7 @@
           <Field Name="ClientsPostcode">07660</Field>
           <Field Name="ClientsProjectStatus">On-Hold</Field>
           <Field Name="ClientsNotes">Strip steak pork loin turkey, shankle chuck picanha turducken swine landjaeger brisket. Picanha jerky pancetta, ribeye boudin ball tip tenderloin doner ground round. Turkey ribeye porchetta beef ribs pig. Hamburger pork fatback doner, porchetta meatball drumstick pig tongue ham short ribs strip steak alcatra pork chop ribeye. Bresaola brisket salami kielbasa chuck short ribs shank leberkas ball tip biltong sausage. Beef swine jerky short loin, shank andouille boudin landjaeger doner strip steak.</Field>
+          <Field Name="ClientsState">QLD</Field>
         </Row>
         <Row>
           <Field Name="ClientsFirstName">Mattie</Field>
@@ -36,8 +38,9 @@
           <Field Name="ClientsSuburb">Phoenix</Field>
           <Field Name="ClientsCity">Maricopa</Field>
           <Field Name="ClientsPostcode">85013</Field>
-          <Field Name="ClientsProjectStatus">Closed</Field>
+          <Field Name="ClientsProjectStatus">Completed</Field>
           <Field Name="ClientsNotes">Bacon hamburger fatback, short ribs turducken shoulder pork loin andouille chuck bresaola pork drumstick ribeye. Strip steak meatloaf biltong, alcatra sirloin capicola chuck. Bresaola pork loin pork belly, brisket venison turducken hamburger. Beef ribs alcatra chuck cow.</Field>
+          <Field Name="ClientsState">QLD</Field>
         </Row>
       </Rows>
     </Data>
