@@ -7,7 +7,7 @@
 
     function clientsDashboard($scope, $uibModal, $location, common, clientSrvc, usSpinnerService) {
         var log = common.logger;
-        $scope.showSpinner = true;
+        $scope.showSpinner = false;
         $scope.goToClient = goToClient;
 
         $scope.clientTabs = [
