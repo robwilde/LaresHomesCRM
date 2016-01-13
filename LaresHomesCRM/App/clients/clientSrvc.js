@@ -25,6 +25,7 @@
         return {
             listName: listName,
             getClientById: getClientById,
+            getClientNameId: getClientNameId,
             getClients: getClients,
             saveClient: saveClient,
             deleteClient: deleteClient
@@ -34,21 +35,25 @@
             return "?$filter=substringof('" + value + "', Title)";
         }
 
+        // get client byID return singal result
         function getClientById(id) {
             var deferred = $q.defer();
+
             $http({
                 method: 'GET',
                 url: clientUrl + "(" + id + ")"
             })
-            .success(function (data) {
-                deferred.resolve(data.d);
-            })
-            .error(function (error) {
+            .then(function (response) {
+                //log.logDebug('data - 46', data, serviceId + '.getClientById');
+                deferred.resolve(response.data.d);
+            }, function (error) {
                 deferred.reject(error);
             });
+
             return deferred.promise;
         }
 
+        // get all clients listed
         function getClients() {
             var deferred = $q.defer();
             $http({
@@ -56,7 +61,7 @@
                 url: clientUrl + '?$select=Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsProjectStatus&$orderby=ClientsLastName'
             })
             .success(function (data) {
-                //common.logger.logDebug('Client details via ngHTTP - OK', data, 'clientService.getClients');
+                common.logger.logDebug('data - 62', data, serviceId + '.getClients');
                 deferred.resolve(data.d.results);
             })
             .error(function (error) {
@@ -73,7 +78,7 @@
             var deferred = $q.defer();
 
             // use angular $resource to delete the item
-            resource.delete(client, function (data) {
+            resource.remove(client, function (data) {
                 deferred.resolve(data);
                 log.logDebug("deleteClient", data, serviceId);
             }, function (error) {
@@ -106,23 +111,63 @@
 
         };
 
+
+        // return the clientName ID LastName First Initial
+        function getClientNameId(clientId) {
+            var deffered = $q.defer();
+
+            getClientById(clientId)
+            .then(function (data) {
+                var clientNameId = setClientNameId(data);
+                log.logDebug('clientNameId - 122', clientNameId, serviceId + '.getClientNameId');
+
+                deffered.resolve(clientNameId);
+            }, function (error) {
+                log.logError('ERROR', error, serviceId + '.getClientNameId');
+            });
+
+            return deffered.promise;
+        }
+
+        // user LastName and First Intial to create docLib ID
+        function setClientNameId(client) {
+            var firstInitial = client.ClientsFirstName.charAt(0).toUpperCase();
+            var clientNameId = client.ClientsLastName + firstInitial;
+
+            return clientNameId;
+        }
+
         // create the doc libaries for new clients
         function addDocList(client) {
             // libraryName must not start with a number and undescore. Exceptions occur when libraries are created in sequence
-            var firstInitial = client.ClientsFirstName.charAt(0).toUpperCase();
-            var clientFullName = client.ClientsLastName + firstInitial;
+
+            var clientNameId = setClientNameId(client);
             var docLibs = {};
 
             // create the email libary
-            var emailLibraryName = clientFullName + '_Emails';
-            var emailLibary = documentSrvc.addDocLibrary(emailLibraryName, "emails", true);
-            log.logDebug('emailLibary', emailLibary, serviceId);
+            var emailLibraryName = clientNameId + '_Emails';
+            documentSrvc.addDocLibrary(emailLibraryName, "emails", true)
+            .then(function (data) {
+                log.logDebug('data', data, serviceId + '.addEmailLibary');
+
+                // bind the contentType for OnePlace Mail to the doc libary
+                var contentTypeId = '0x0101002EFF4F6709F446E5AD064DC20BBE6855';
+                documentSrvc.bindContentTypeToLibrary(emailLibraryName, contentTypeId, true)
+                .then(function (data) {
+                    log.logDebug('data', data, serviceId + '.bindContentTypeToLibrary');
+                }, function (error) {
+                    log.logError('ERROR', error, serviceId);
+                });
+
+            }, function (error) {
+                log.logError('ERROR', error, serviceId);
+            })
 
             var docLibaries = ['Contracts', 'Selections', 'Construction'];
             for (var i = 0; i < docLibaries.length; i++) {
                 var libName = docLibaries[i];
 
-                var docLibraryName = clientFullName + '_' + libName;
+                var docLibraryName = clientNameId + '_' + libName;
                 docLibs[libName] = documentSrvc.addDocLibrary(docLibraryName, libName, true);
             }
         };

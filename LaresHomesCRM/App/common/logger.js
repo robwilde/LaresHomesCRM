@@ -8,29 +8,29 @@
     // create factory
     function logger($log, config) {
         var service = {
-            log: log,
-            logDebug: logDebug,
-            logError: logError,
-            logSuccess: logSuccess,
-            logWarning: logWarning
+            log: Info,
+            logDebug: Debug,
+            logError: Error,
+            logSuccess: Success,
+            logWarning: Warning
         };
 
         return service;
 
         // #region public members
-        function log(message, data, source, showNotification) {
+        function Info(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "info");
         }
 
-        function logDebug(message, data, source, showNotification) {
+        function Debug(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "debug");
         }
 
-        function logError(message, data, source, showNotification) {
+        function Error(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "error");
         }
 
-        function logSuccess(message, data, source, showNotification) {
+        function Success(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "success");
         }
 

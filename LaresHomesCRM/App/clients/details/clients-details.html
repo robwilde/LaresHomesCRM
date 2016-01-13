@@ -8,7 +8,7 @@
             <div class="panel-body">
 
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-6">
 
                         <div class="row">
                             <div class="col-md-6">
@@ -54,8 +54,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
 
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-success btn-sm btn-block" ng-click="editClientForm()">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="deleteClient()">Delete</button>
+                    </div>
+
+                    <div class="col-md-5">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Client Details</h3>
@@ -66,17 +71,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-inline">
+                            <li><em>Created: </em>{{client.Created | date: fullDate}}</li>
+                            <li><em>Modified: </em>{{client.Modified | date: fullDate}}</li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
 
     <!-- TABS SECTION -->
-    <div class="container">
+    <div class="container" ng-controller="ClientTabsCtrl">
+
         <uib-tabset>
-            <uib-tab heading="Contracts">
+
+            <uib-tab ng-repeat="tab in Tabs" heading="{{tab.name}}" select="getTabData(tab.name)">
                 <div class="panel panel-default">
-                    <div class="panel-heading">+ Add Contracts</div>
+                    <div class="panel-heading">+ Add {{tab.name}}</div>
                     <div class="panel-body">
                         <table class="table table-hover">
                             <thead>
@@ -87,49 +102,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>File 1</td>
-                                    <td>24/12/2015</td>
-                                    <td>Robert Wilde</td>
-                                </tr>
-                                <tr>
-                                    <td>The other File</td>
-                                    <td>01/01/2016</td>
-                                    <td>Robert Wilde</td>
-                                </tr>
-                                <tr>
-                                    <td>No1 Best Seller of all Time</td>
-                                    <td>05/01/2016</td>
-                                    <td>Hunter Wilde</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </uib-tab>
 
-            <uib-tab heading="Selections">
-                <div class="panel panel-default">
-                    <div class="panel-heading">+ Add Selections</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Modified</th>
-                                    <th>Modified By</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>File 1</td>
-                                    <td>24/12/2015</td>
-                                    <td>Robert Wilde</td>
+                                <tr ng-repeat="file in tabDocs">
+                                    <td>{{file.FileLeafRef}}</td>
+                                    <td>{{file.Modified | date}}</td>
+                                    <td>{{file.Author.Title}}</td>
                                 </tr>
 
                             </tbody>
                         </table>
+                        <span us-spinner="{radius:15, width:14, length: 12, color: '#0072c6'}" spinner-on="showSpinner"></span>
                     </div>
+
                 </div>
             </uib-tab>
 

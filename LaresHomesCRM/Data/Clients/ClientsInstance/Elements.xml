@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <ListInstance Title="Clients" OnQuickLaunch="TRUE" TemplateType="100" Url="Lists/Clients" Description="Clients List">
-    <Data>
+    <!--<Data>
       <Rows>
         <Row>
           <Field Name="ClientsFirstName">James</Field>
@@ -43,6 +43,6 @@
           <Field Name="ClientsState">QLD</Field>
         </Row>
       </Rows>
-    </Data>
+    </Data>-->
   </ListInstance>
 </Elements>

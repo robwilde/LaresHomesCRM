@@ -14,7 +14,7 @@
 
         // init factory
         function init() {
-            common.logger.log('service loaded', null, serviceId);
+            log.log('service loaded', null, serviceId);
         }
 
         init();
@@ -54,7 +54,7 @@
                     '__metadata': { 'type': 'SP.List' }, 'AllowContentTypes': true, 'BaseTemplate': 101,
                     'ContentTypesEnabled': true, 'Description': docLibaryType, 'Title': docLibaryName
                 })
-            }
+            };
 
 
             $http(req).then(function (data) {
@@ -74,10 +74,9 @@
             var deferred = $q.defer();
 
             var url = "_api/web/lists/getbytitle(\'" + docLibraryName + "\')/ContentTypes/AddAvailableContentType";
-            common.logger.logDebug('URL - 72', url, serviceId + '.bindContentTypeToLibrary');
+            log.logDebug('URL - 72', url, serviceId + '.bindContentTypeToLibrary');
 
             var requestDigest = spContext.securityValidation;
-
             url = addRequestExecuterContext(loadFromHostWeb, url, spContext.hostWeb.url);
 
             var req = {
@@ -91,13 +90,13 @@
                 data: JSON.stringify({
                     'contentTypeId': contentTypeId
                 })
-            }
+            };
 
             $http(req).then(function (data) {
-                common.logger.logDebug('Bind contentType to library - 90', data, serviceId + '.bindContentTypeToLibrary');
-                deferred.resolve(data.d.results);
+                log.logDebug('Bind contentType to library - 97', data, serviceId + '.bindContentTypeToLibrary');
+                deferred.resolve(data.d);
             }, function (error) {
-                common.logger.logError('Bind contentType to library - 94 - ERROR', error, serviceId + '.bindContentTypeToLibrary');
+                log.logError('Bind contentType to library - 94 - ERROR', error, serviceId + '.bindContentTypeToLibrary');
                 deferred.reject(error);
             });
 
@@ -123,11 +122,11 @@
                     "X-Http-Method": "DELETE", "x-requestforceauthentication": true, "If-Match": "*",  // specific for delete op     
                 },
                 success: function (data) {
-                    common.logger.logDebug('Delete contenttype from library - 121', data, serviceId + '.deleteContentTypeFromLibrary');
+                    //log.logDebug('Delete contenttype from library - 121', data, serviceId + '.deleteContentTypeFromLibrary');
                     deferred.resolve(data);
                 },
                 error: function (error) {
-                    common.logger.logError('Delete contenttype from library - 125 - ERROR', error, serviceId + '.deleteContentTypeFromLibrary');
+                    log.logError('Delete contenttype from library - 125 - ERROR', error, serviceId + '.deleteContentTypeFromLibrary');
                     deferred.reject(error);
                 }
             });
@@ -148,49 +147,46 @@
                 url: url
             })
             .then(function (response) {
-                common.logger.logDebug('Get contenttype from library - OK - 145', response, serviceId + '.getContentTypesFromLibrary');
+                //log.logDebug('Get contenttype from library - OK - 145', response, serviceId + '.getContentTypesFromLibrary');
                 deferred.resolve(response.data.d.results);
             }, function (error) {
-                common.logger.logError('Get contenttype from library - ERROR - 148', error, serviceId + '.getContentTypesFromLibrary');
+                log.logError('Get contenttype from library - ERROR - 148', error, serviceId + '.getContentTypesFromLibrary');
                 deferred.reject(error);
             });
 
             return deferred.promise;
         }
-
+        
         // the lsit of documents from the library
-        function getDocuments(clientId, projectId, loadFromHostWeb) {
+        function getDocuments(clientId, docLibName) {
             var deferred = $q.defer();
 
-            setDocLibId(clientId)
-                .then(function (data) {
-                    var filter = "?$select=EncodedAbsUrl,FileRef,FileLeafRef,Modified,Author/ID,Author/Title&$expand=Author/ID,Author/Title"
-                    var url = clientDocumentsUrl.replace("placeholder", data + "_Documents");
-                    url = url + filter;
+            var filter = "?$select=EncodedAbsUrl,FileRef,FileLeafRef,Modified,Author/ID,Author/Title&$expand=Author/ID,Author/Title"
+            var url = clientDocumentsUrl.replace("placeholder", docLibName);
+            url = url + filter;
 
-                    url = addRequestExecuterContext(loadFromHostWeb, url, spContext.hostWeb.url);
+            url = addRequestExecuterContext(true, url, spContext.hostWeb.url);
 
-                    $http({
-                        method: 'GET',
-                        url: url
-                    })
-                    .then(function (response) {
-                        common.logger.logDebug('Get Documents - OK - 197', response, serviceId + '.getDocuments.success');
-                        deferred.resolve(response.data.d.results);
-                    }, function (error) {
-                        common.logger.logError('Get Documents - 200', error, serviceId + '.getDocuments.error');
-                        deferred.reject(error);
-                    });
-                })
+            $http({
+                method: 'GET',
+                url: url
+            })
+            .then(function (response) {
+                //log.logDebug('response', response, serviceId + '.getDocuments');
+                deferred.resolve(response.data.d.results);
+            }, function (error) {
+                log.logError('ERROR', error, serviceId + '.getDocuments');
+                deferred.reject(error);
+            });
             return deferred.promise;
 
         }
 
-        // not overly sure whtat this is for
+        // allow the execution of request cross domain
         function addRequestExecuterContext(loadFromHostWeb, restUrl, hostweburl) {
             var modifiedUrl = restUrl;
 
-            common.logger.logDebug('modifiedUrl - 210', modifiedUrl, serviceId + '.addRequestExecuterContext');
+            //log.logDebug('modifiedUrl - 210', modifiedUrl, serviceId + '.addRequestExecuterContext');
 
             if (loadFromHostWeb) {
 

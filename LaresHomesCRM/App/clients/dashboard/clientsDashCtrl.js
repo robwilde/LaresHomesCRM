@@ -17,7 +17,7 @@
             { status: "Completed" }
         ];
 
-        log.logDebug('clientTabs', $scope.clientTabs, controllerId);
+        //log.logDebug('clientTabs', $scope.clientTabs, controllerId);
 
         // init controller
         init();
@@ -51,7 +51,7 @@
                 templateUrl: 'app/clients/form/client-form.html',
                 controller: 'ClientFormCtrl',
                 resolve: {
-                    id: function () {
+                    client: function () {
                         return null;
                     }
                 }
