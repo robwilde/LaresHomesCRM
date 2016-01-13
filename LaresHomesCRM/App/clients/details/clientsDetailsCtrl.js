@@ -20,7 +20,7 @@
 
             $scope.select('contracts');
 
-            log.log("controller loaded", null, controllerId);
+            log.Info("controller loaded", null, controllerId);
             common.activateController([], controllerId);
         }
 
@@ -33,9 +33,9 @@
             clientSrvc.getClientById(clientId)
                 .then(function (data) {
                     $scope.client = data;
-                    log.logDebug('getClient', $scope, controllerId);
+                    log.Debug('getClient', $scope, controllerId);
                 }, function (error) {
-                    log.logError('getClientById', error, controllerId);
+                    log.Error('getClientById', error, controllerId);
                 });
         };
 
@@ -45,10 +45,10 @@
             if (confirm("Are you sure?")) {
                 clientSrvc.deleteClient($scope.client)
                     .then(function () {
-                        //common.logger.logDebug("Deleted Client.", null, controllerId);
+                        //log.Debug("Deleted Client.", null, controllerId);
                         $location.path('/Clients/');
                     }, function (error) {
-                        common.logger.logError('65 - ERROR', error, 'client-details-directive.deleteClient');
+                        log.Error('65 - ERROR', error, 'client-details-directive.deleteClient');
                     });
             }
             //TODO: delete related projects
@@ -68,10 +68,10 @@
 
             modalInstance.result.then(function (data) {
                 $scope.showSpinner = true;
-                log.logDebug("data - 55", data, controllerId + '.modalInstance');
+                log.Debug("data - 55", data, controllerId + '.modalInstance');
 
                 for (var i in data) {
-                    //common.logger.logDebug('data - 35', data, 'addEditClient.isEdit');
+                    //log.Debug('data - 35', data, 'addEditClient.isEdit');
                     if (clientModel.hasOwnProperty(i)) {
                         clientModel[i] = data[i];
                     }
@@ -85,22 +85,22 @@
                     $scope.showSpinner = false;
                 });
             }, function (error) {
-                log.logError('ERROR', error, controllerId);
+                log.Error('ERROR', error, controllerId);
             });
         };
 
         // update the current client data and reload the details info
         function updateClient(client) {
-            log.logDebug("client - 79", client, controllerId + '.updateClient');
+            log.Debug("client - 79", client, controllerId + '.updateClient');
 
             var deferred = $q.defer();
             var resource = datacontext.getClientResource(client);
             
             resource.update(client, function (data) {
-                log.logDebug("data", data, controllerId + '.updateClient');
+                log.Debug("data", data, controllerId + '.updateClient');
                 deferred.resolve(data);
             }, function (error) {
-                log.logError("save client - ERROR", error, controllerId + '.updateClient');
+                log.Error("save client - ERROR", error, controllerId + '.updateClient');
                 deferred.reject(error);
             });
 

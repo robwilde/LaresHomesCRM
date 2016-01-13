@@ -8,29 +8,29 @@
     // create factory
     function logger($log, config) {
         var service = {
-            log: Info,
-            logDebug: Debug,
-            logError: Error,
-            logSuccess: Success,
-            logWarning: Warning
+            Info: log,
+            Debug: logDebug,
+            Error: logError,
+            Success: logSuccess,
+            Warning: logWarning
         };
 
         return service;
 
         // #region public members
-        function Info(message, data, source, showNotification) {
+        function log(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "info");
         }
 
-        function Debug(message, data, source, showNotification) {
+        function logDebug(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "debug");
         }
 
-        function Error(message, data, source, showNotification) {
+        function logError(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "error");
         }
 
-        function Success(message, data, source, showNotification) {
+        function logSuccess(message, data, source, showNotification) {
             writeLog(message, data, source, showNotification, "success");
         }
 
@@ -46,7 +46,7 @@
             showNotification = showNotification || true;
 
             // write to angular log, & specify error if it is an error
-            var write = (notificationType === 'error') ? $log.error : $log.log;
+            var write = (notificationType === 'error') ? $log.error : $log.info;
             source = source ? '[' + source + '] ' : '';
             write(source, message, data);
 

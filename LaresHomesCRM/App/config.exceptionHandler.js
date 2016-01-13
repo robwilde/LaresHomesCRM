@@ -23,7 +23,7 @@
 
       var msg = appErrorPrefix + exception.message;
 
-      logger.logError(msg, errorData, true);
+      logger.Error(msg, errorData, true);
     };
   }
 })();

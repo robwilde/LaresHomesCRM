@@ -14,7 +14,7 @@
 
         // init factory
         function init() {
-            log.log('service loaded', null, serviceId);
+            log.Info('service loaded', null, serviceId);
         }
 
         init();
@@ -58,11 +58,11 @@
 
 
             $http(req).then(function (data) {
-                log.logDebug('data', data, serviceId + '.addDocLibrary');
+                log.Debug('data', data, serviceId + '.addDocLibrary');
 
                 deferred.resolve(data);
             }, function (error) {
-                log.logError('ERROR', error, serviceId + '.addDocLibrary');
+                log.Error('ERROR', error, serviceId + '.addDocLibrary');
                 deferred.reject(error);
             });
 
@@ -74,7 +74,7 @@
             var deferred = $q.defer();
 
             var url = "_api/web/lists/getbytitle(\'" + docLibraryName + "\')/ContentTypes/AddAvailableContentType";
-            log.logDebug('URL - 72', url, serviceId + '.bindContentTypeToLibrary');
+            log.Debug('URL - 72', url, serviceId + '.bindContentTypeToLibrary');
 
             var requestDigest = spContext.securityValidation;
             url = addRequestExecuterContext(loadFromHostWeb, url, spContext.hostWeb.url);
@@ -93,10 +93,10 @@
             };
 
             $http(req).then(function (data) {
-                log.logDebug('Bind contentType to library - 97', data, serviceId + '.bindContentTypeToLibrary');
+                log.Debug('Bind contentType to library - 97', data, serviceId + '.bindContentTypeToLibrary');
                 deferred.resolve(data.d);
             }, function (error) {
-                log.logError('Bind contentType to library - 94 - ERROR', error, serviceId + '.bindContentTypeToLibrary');
+                log.Error('Bind contentType to library - 94 - ERROR', error, serviceId + '.bindContentTypeToLibrary');
                 deferred.reject(error);
             });
 
@@ -122,11 +122,11 @@
                     "X-Http-Method": "DELETE", "x-requestforceauthentication": true, "If-Match": "*",  // specific for delete op     
                 },
                 success: function (data) {
-                    //log.logDebug('Delete contenttype from library - 121', data, serviceId + '.deleteContentTypeFromLibrary');
+                    //log.Debug('Delete contenttype from library - 121', data, serviceId + '.deleteContentTypeFromLibrary');
                     deferred.resolve(data);
                 },
                 error: function (error) {
-                    log.logError('Delete contenttype from library - 125 - ERROR', error, serviceId + '.deleteContentTypeFromLibrary');
+                    log.Error('Delete contenttype from library - 125 - ERROR', error, serviceId + '.deleteContentTypeFromLibrary');
                     deferred.reject(error);
                 }
             });
@@ -147,10 +147,10 @@
                 url: url
             })
             .then(function (response) {
-                //log.logDebug('Get contenttype from library - OK - 145', response, serviceId + '.getContentTypesFromLibrary');
+                //log.Debug('Get contenttype from library - OK - 145', response, serviceId + '.getContentTypesFromLibrary');
                 deferred.resolve(response.data.d.results);
             }, function (error) {
-                log.logError('Get contenttype from library - ERROR - 148', error, serviceId + '.getContentTypesFromLibrary');
+                log.Error('Get contenttype from library - ERROR - 148', error, serviceId + '.getContentTypesFromLibrary');
                 deferred.reject(error);
             });
 
@@ -172,10 +172,10 @@
                 url: url
             })
             .then(function (response) {
-                //log.logDebug('response', response, serviceId + '.getDocuments');
+                //log.Debug('response', response, serviceId + '.getDocuments');
                 deferred.resolve(response.data.d.results);
             }, function (error) {
-                log.logError('ERROR', error, serviceId + '.getDocuments');
+                log.Error('ERROR', error, serviceId + '.getDocuments');
                 deferred.reject(error);
             });
             return deferred.promise;
@@ -186,7 +186,7 @@
         function addRequestExecuterContext(loadFromHostWeb, restUrl, hostweburl) {
             var modifiedUrl = restUrl;
 
-            //log.logDebug('modifiedUrl - 210', modifiedUrl, serviceId + '.addRequestExecuterContext');
+            //log.Debug('modifiedUrl - 210', modifiedUrl, serviceId + '.addRequestExecuterContext');
 
             if (loadFromHostWeb) {
 

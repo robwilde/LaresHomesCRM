@@ -8,15 +8,14 @@
 
 
     function clientService($rootScope, $http, $resource, $q, config, common, spContext, datacontext, documentSrvc) {
+        var log = common.logger;
 
         // init factory
         function init() {
-            common.logger.log('service loaded', null, serviceId);
+            log.Info('service loaded', null, serviceId);
         }
 
         init();
-
-        var log = common.logger;
 
         var listName = "Clients";
         var clientUrl = "_api/web/lists/getbytitle(\'Clients\')/items";
@@ -44,7 +43,7 @@
                 url: clientUrl + "(" + id + ")"
             })
             .then(function (response) {
-                //log.logDebug('data - 46', data, serviceId + '.getClientById');
+                //log.Debug('data - 46', data, serviceId + '.getClientById');
                 deferred.resolve(response.data.d);
             }, function (error) {
                 deferred.reject(error);
@@ -61,11 +60,11 @@
                 url: clientUrl + '?$select=Id,Title,ClientsFirstName,ClientsLastName,ClientsPhone,ClientsEmail,ClientsProjectStatus&$orderby=ClientsLastName'
             })
             .success(function (data) {
-                common.logger.logDebug('data - 62', data, serviceId + '.getClients');
+                log.Debug('data - 62', data, serviceId + '.getClients');
                 deferred.resolve(data.d.results);
             })
             .error(function (error) {
-                log.logError('getClients - ERROR', error, serviceId);
+                log.Error('getClients - ERROR', error, serviceId);
                 deferred.reject(error);
             });
             return deferred.promise;
@@ -80,10 +79,10 @@
             // use angular $resource to delete the item
             resource.remove(client, function (data) {
                 deferred.resolve(data);
-                log.logDebug("deleteClient", data, serviceId);
+                log.Debug("deleteClient", data, serviceId);
             }, function (error) {
                 deferred.reject(error);
-                log.logError("deleteClient", error, serviceId);
+                log.Error("deleteClient", error, serviceId);
             });
 
             return deferred.promise;
@@ -101,10 +100,10 @@
                 addDocList(client);
 
                 deferred.resolve(client);
-                log.logDebug("saveClient", client, serviceId);
+                log.Debug("saveClient", client, serviceId);
             }, function (error) {
                 deferred.reject(error);
-                log.logError("Save client", error, serviceId);
+                log.Error("Save client", error, serviceId);
             });
 
             return deferred.promise;
@@ -119,11 +118,11 @@
             getClientById(clientId)
             .then(function (data) {
                 var clientNameId = setClientNameId(data);
-                log.logDebug('clientNameId - 122', clientNameId, serviceId + '.getClientNameId');
+                log.Debug('clientNameId - 122', clientNameId, serviceId + '.getClientNameId');
 
                 deffered.resolve(clientNameId);
             }, function (error) {
-                log.logError('ERROR', error, serviceId + '.getClientNameId');
+                log.Error('ERROR', error, serviceId + '.getClientNameId');
             });
 
             return deffered.promise;
@@ -148,19 +147,19 @@
             var emailLibraryName = clientNameId + '_Emails';
             documentSrvc.addDocLibrary(emailLibraryName, "emails", true)
             .then(function (data) {
-                log.logDebug('data', data, serviceId + '.addEmailLibary');
+                log.Debug('data', data, serviceId + '.addEmailLibary');
 
                 // bind the contentType for OnePlace Mail to the doc libary
                 var contentTypeId = '0x0101002EFF4F6709F446E5AD064DC20BBE6855';
                 documentSrvc.bindContentTypeToLibrary(emailLibraryName, contentTypeId, true)
                 .then(function (data) {
-                    log.logDebug('data', data, serviceId + '.bindContentTypeToLibrary');
+                    log.Debug('data', data, serviceId + '.bindContentTypeToLibrary');
                 }, function (error) {
-                    log.logError('ERROR', error, serviceId);
+                    log.Error('ERROR', error, serviceId);
                 });
 
             }, function (error) {
-                log.logError('ERROR', error, serviceId);
+                log.Error('ERROR', error, serviceId);
             })
 
             var docLibaries = ['Contracts', 'Selections', 'Construction'];

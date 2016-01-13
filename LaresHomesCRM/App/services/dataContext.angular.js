@@ -7,6 +7,8 @@
       ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', datacontext]);
 
     function datacontext($rootScope, $http, $resource, $q, config, common, spContext) {
+        var log = common.logger;
+
         // init factory
         init();
 
@@ -17,7 +19,7 @@
 
         // init service
         function init() {
-            common.logger.log("service loaded", null, serviceId);
+            log.Info("service loaded", null, serviceId);
         }
 
         function getClientResource(item) {

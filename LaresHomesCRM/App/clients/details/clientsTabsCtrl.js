@@ -27,7 +27,7 @@
                 name: "Construction"
             }
         ];
-        log.logDebug('$scope.Tabs', $scope.Tabs, controllerId);
+        log.Debug('$scope.Tabs', $scope.Tabs, controllerId);
 
         var activeTab = $scope.Tabs[0].name;
 
@@ -49,7 +49,7 @@
                 });
             }
 
-            log.log("controller loaded", null, controllerId);
+            log.Info("controller loaded", null, controllerId);
             common.activateController([], controllerId);
         };
 
@@ -63,11 +63,11 @@
                 .then(function (data) {
                 
                     $scope.tabDocs = data;
-                    log.logDebug('$scope.tabDocs - 76', $scope.tabDocs, controllerId + '.getTabData');
+                    log.Debug('$scope.tabDocs - 76', $scope.tabDocs, controllerId + '.getTabData');
                     $scope.showSpinner = false;
 
                 }, function () {
-                    log.logError('ERROR', error, controllerId);
+                    log.Error('ERROR', error, controllerId);
                 });
             }
 
@@ -79,10 +79,10 @@
 
             documentSrvc.getDocuments(clientId, docLibName)
             .then(function (data) {
-                log.logDebug('Libary Docs - 92', data, controllerId);
+                log.Debug('Libary Docs - 92', data, controllerId);
                 deferred.resolve(data);
             }, function (error) {
-                log.logError('ERROR', error, controllerId + '.getTabData');
+                log.Error('ERROR', error, controllerId + '.getTabData');
                 deferred.reject(error);
             });
 

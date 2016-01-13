@@ -7,6 +7,7 @@
       ['$http', 'common', configAngular]);
 
     function configAngular($http, common) {
+        var log = common.logger;
         // init factory
         init();
 
@@ -18,7 +19,7 @@
             // set common $http headers
             $http.defaults.headers.common.Accept = 'application/json;odata=verbose;';
 
-            common.logger.log("service loaded", null, serviceId);
+            log.Info("service loaded", null, serviceId);
         }
     }
 

@@ -9,13 +9,14 @@
     // init controller
     function dashboard(common) {
         var vm = this;
+        var log = common.logger;
 
         // init controller
         init();
 
         // init controller
         function init() {
-            common.logger.log("controller loaded", null, controllerId);
+            log.Info("controller loaded", null, controllerId);
             common.activateController([], controllerId);
         }
 

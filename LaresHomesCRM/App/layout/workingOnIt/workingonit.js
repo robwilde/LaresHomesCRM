@@ -8,33 +8,34 @@
 
     function workingonit($rootScope, common, config) {
         var vm = this;
+        var log = common.logger;
 
         vm.isWorking = false;
 
         init();
 
         function init() {
-            common.logger.log("controller loaded", null, controllerId);
+            log.Info("controller loaded", null, controllerId);
             common.activateController([], controllerId);
         }
 
-        //common.logger.logDebug('$rootscope', $rootScope, controllerId);
+        //log.Debug('$rootscope', $rootScope, controllerId);
 
         $rootScope.$on(config.events.workingOnItToggle,
             function (event, data) {
-                common.logger.logDebug('toggle working on it', data, controllerId);
+                log.Debug('toggle working on it', data, controllerId);
                 vm.isWorking = data.show;
             });
 
         $rootScope.$on('$routeChangeStart',
           function (event, next, current) {
-              //common.logger.logDebug('$routeChangeStart - event', event, controllerId);
+              //log.Debug('$routeChangeStart - event', event, controllerId);
               vm.isWorking = true;
           });
 
         // wire handler when route is finished changing to hide
         $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
-            //common.logger.logDebug('$routeChangeSuccess - event', event, controllerId);
+            //log.Debug('$routeChangeSuccess - event', event, controllerId);
             vm.isWorking = false;
         });
 

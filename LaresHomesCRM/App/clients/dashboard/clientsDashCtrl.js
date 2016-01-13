@@ -17,14 +17,14 @@
             { status: "Completed" }
         ];
 
-        //log.logDebug('clientTabs', $scope.clientTabs, controllerId);
+        //log.Debug('clientTabs', $scope.clientTabs, controllerId);
 
         // init controller
         init();
 
         // init controller
         function init() {
-            common.logger.log("controller loaded", null, controllerId);
+            log.Info("controller loaded", null, controllerId);
             common.activateController([], controllerId);
 
             // get all the clients
@@ -40,7 +40,7 @@
 
         // navigate to specified client
         function goToClient(client) {
-            //common.logger.logDebug('goToClient', client, controllerId);
+            //log.Debug('goToClient', client, controllerId);
             if (client && client.Id) {
                 $location.path('/Clients/' + client.Id);
             }
@@ -57,7 +57,7 @@
                 }
             });
             modalInstance.result.then(function (data) {
-                //log.logDebug('modalInstance Result', data, controllerId);
+                //log.Debug('modalInstance Result', data, controllerId);
                 saveClient(data);
             }, function () {
 
@@ -69,14 +69,14 @@
             clientSrvc.getClients()
               .then(function (data) {
                   if (data) {
-                      //common.logger.logDebug('getClients', data, controllerId);
+                      //log.Debug('getClients', data, controllerId);
                       $scope.Clients = data;
                   } else {
                       throw new Error('error obtaining data');
                   }
               })
               .catch(function (error) {
-                  common.logger.logError('getClients', error, controllerId);
+                  log.Error('getClients', error, controllerId);
               });
         }
 
@@ -88,7 +88,7 @@
             clientSrvc.saveClient(client)
             .then(function (data) {
                 var item = data;
-                //log.logDebug('saveClient - item', item, controllerId);
+                //log.Debug('saveClient - item', item, controllerId);
 
                 var newClient = {
                     Id: item.Id,
@@ -101,10 +101,10 @@
 
                 $scope.Clients.push(newClient);
                 $scope.showSpinner = false;
-                //log.logDebug('saveClient - $scope', $scope, controllerId);
+                //log.Debug('saveClient - $scope', $scope, controllerId);
 
             }, function (error) {
-                log.logError('saveClient ERROR', error, controllerId);
+                log.Error('saveClient ERROR', error, controllerId);
             });
         }
 
