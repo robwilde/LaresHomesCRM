@@ -42,18 +42,18 @@
         // #region private members
         // universal method for writing notifications
         function writeLog(message, data, source, showNotification, notificationType) {
-            var iconUrl, notiTitle;
+            var iconUrl, notiTitle, write;
             showNotification = showNotification || true;
 
+
             // write to angular log, & specify error if it is an error
-            var write = (notificationType === 'error') ? $log.error : $log.info;
-            source = source ? '[' + source + '] ' : '';
-            write(source, message, data);
+            //var write = (notificationType === 'error') ? $log.error : $log.log;
 
             if (showNotification) {
 
                 switch (notificationType) {
                     case 'info':
+                        var write = $log.info;
                         if (!config.showDebugNotiSetting) {
                             return;
                         } else {
@@ -62,6 +62,8 @@
                         }
                         break;
                     case 'debug':
+                        var write = $log.debug;
+
                         if (!config.showDebugNotiSetting) {
                             return;
                         } else {
@@ -70,20 +72,31 @@
                         }
                         break;
                     case 'error':
+                        var write = $log.error;
+
                         iconUrl = "images/error.png";
                         notiTitle = "Lares Homes CRM: ERROR";
                         break;
                     case 'warning':
+                        var write = $log.warn;
+
                         iconUrl = "images/warning.png";
                         notiTitle = "Lares Homes CRM: WARNING";
                         break;
                     case 'succes':
+                        var write = $log.info;
+
                         iconUrl = "images/success.png";
                         notiTitle = "Lares Homes CRM";
                         break;
                 }
 
             }
+
+            console.log('WRITE', write);
+
+            source = source ? '[' + source + '] ' : '';
+            write(source, message, data);
 
             // create sharepoint notification
             var notificationData = new SPStatusNotificationData("", STSHtmlEncode(message), iconUrl, null);

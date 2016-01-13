@@ -7,6 +7,9 @@
 
     function clientsDashboard($scope, $uibModal, $location, common, clientSrvc, usSpinnerService) {
         var log = common.logger;
+
+        console.log(log);
+
         $scope.showSpinner = false;
         $scope.goToClient = goToClient;
 
@@ -101,7 +104,7 @@
 
                 $scope.Clients.push(newClient);
                 $scope.showSpinner = false;
-                //log.Debug('saveClient - $scope', $scope, controllerId);
+                log.Success('New Client Saved', $scope, controllerId);
 
             }, function (error) {
                 log.Error('saveClient ERROR', error, controllerId);
