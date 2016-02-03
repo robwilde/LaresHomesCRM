@@ -7,7 +7,12 @@
         ['$scope', '$routeParams', '$q', 'common', 'clientSrvc', 'documentSrvc', 'usSpinnerService', tabCtrl]);
 
     function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc, usSpinnerService) {
-        //var vm = this;
+        // items for the pagination
+        $scope.totalItems = undefined;
+        $scope.itemsPerPage = 5;
+        $scope.bigTotalItems = 100;
+        $scope.bigCurrentPage = 1;
+
 
         $scope.showSpinner = false;
 
@@ -25,6 +30,9 @@
             },
             {
                 name: "Construction"
+            },
+            {
+                name: "Emails"
             }
         ];
         log.Debug('$scope.Tabs', $scope.Tabs, controllerId);
@@ -61,9 +69,10 @@
                 var docLibName = clientNameId + '_' + docType;
                 getClientDocs(clientId, docLibName)
                 .then(function (data) {
-                
+
                     $scope.tabDocs = data;
-                    log.Debug('$scope.tabDocs - 76', $scope.tabDocs, controllerId + '.getTabData');
+
+                    log.Debug('$scope - 75', $scope, controllerId + '.getTabData');
                     $scope.showSpinner = false;
 
                 }, function () {

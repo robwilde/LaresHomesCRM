@@ -29,7 +29,6 @@
     <ProjectItemFile Source="App\clients\details\clients-details.html" Target="App\clients\details\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\details\clientsDetailsCtrl.js" Target="App\clients\details\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\details\clientsTabsCtrl.js" Target="App\clients\details\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\docs\docsTesting.js" Target="App\clients\docs\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\docs\documentSrvc.js" Target="App\clients\docs\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\form\client-form.html" Target="App\clients\form\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\form\clientFormCtrl.js" Target="App\clients\form\" Type="ElementFile" />
@@ -51,5 +50,6 @@
     <ProjectItemFile Source="App\layout\workingOnIt\workingonit.tpl.html" Target="App\layout\workingOnIt\" Type="ElementFile" />
     <ProjectItemFile Source="App\services\dataContext.angular.js" Target="App\services\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientSrvc.js" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\docsPerPageFltr.js" Target="App\clients\docs\" Type="ElementFile" />
   </Files>
 </ProjectItem>

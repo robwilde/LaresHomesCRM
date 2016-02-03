@@ -91,7 +91,21 @@
 
             <uib-tab ng-repeat="tab in Tabs" heading="{{tab.name}}" select="getTabData(tab.name)">
                 <div class="panel panel-default">
-                    <div class="panel-heading">+ Add {{tab.name}}</div>
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+                            </div>
+                            <div class="col-md-4">
+                                <label for="search">Search:</label>
+                                <input ng-model="searchQuery" id="search" class="form-control" placeholder="Filter text">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="search">items per page:</label>
+                                <input type="number" min="1" max="100" class="form-control" ng-model="itemsPerPage">
+                            </div>
+                        </div>
+                    </div>
                     <div class="panel-body">
                         <table class="table table-hover">
                             <thead>
@@ -103,15 +117,19 @@
                             </thead>
                             <tbody>
 
-                                <tr ng-repeat="file in tabDocs">
-                                    <td>{{file.FileLeafRef}}</td>
+                                <tr ng-show="showSpinner">
+                                    <td>
+                                        <span us-spinner="{radius:15, width:14, length: 12, color: '#0072c6'}" spinner-on="showSpinner"></span>
+                                    </td>
+                                </tr>
+                                <tr ng-repeat="file in tabDocs | filter: searchQuery">
+                                    <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank" >{{file.FileLeafRef}}</a> </td>
                                     <td>{{file.Modified | date}}</td>
                                     <td>{{file.Author.Title}}</td>
                                 </tr>
 
                             </tbody>
                         </table>
-                        <span us-spinner="{radius:15, width:14, length: 12, color: '#0072c6'}" spinner-on="showSpinner"></span>
                     </div>
 
                 </div>

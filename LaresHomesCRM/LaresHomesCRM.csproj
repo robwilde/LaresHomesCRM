@@ -68,7 +68,7 @@
     <Content Include="App\app.js" />
     <Content Include="App\appLauncher.js" />
     <Content Include="App\clients\clientSrvc.js" />
-    <Content Include="App\clients\docs\docsTesting.js" />
+    <Content Include="App\clients\docs\docsPerPageFltr.js" />
     <Content Include="App\clients\docs\documentSrvc.js" />
     <Content Include="App\clients\form\client-form.html" />
     <Content Include="App\clients\form\clientFormCtrl.js" />
@@ -210,10 +210,6 @@
     </AppManifestFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\clients\docs\construction\" />
-    <Folder Include="App\clients\docs\contracts\" />
-    <Folder Include="App\clients\docs\emails\" />
-    <Folder Include="App\clients\docs\selections\" />
     <Folder Include="App\clients\notes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
