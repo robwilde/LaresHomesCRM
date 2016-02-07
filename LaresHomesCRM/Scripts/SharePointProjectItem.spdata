@@ -41,5 +41,13 @@
     <ProjectItemFile Source="angular-spinner.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-spinner.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-spinner.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\dropzone.min.js" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\dropzone.min.css" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\dropzone.js" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\dropzone.css" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\dropzone-amd-module.min.js" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\dropzone-amd-module.js" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\basic.min.css" Target="Scripts\dropzone\" Type="ElementFile" />
+    <ProjectItemFile Source="dropzone\basic.css" Target="Scripts\dropzone\" Type="ElementFile" />
   </Files>
 </ProjectItem>

@@ -9,8 +9,11 @@
     <link href="/_layouts/15/1033/styles/forms.css" rel="stylesheet" />
 
     <!-- my styles -->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="Content/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <!--<link href="Scripts/dropzone/dropzone.min.css" rel="stylesheet" />-->
+    <link href="Scripts/dropzone/dropzone.css" rel="stylesheet" />
     <link href="Content/App.css" rel="stylesheet" />
 </head>
 <body>
@@ -30,8 +33,8 @@
     </div>
     <working-on-it></working-on-it>
 
-    <!-- vendor libraries -->
-    <script src="Scripts/jquery-2.2.0.min.js"></script>
+    <!-- vendor libraries Minified-->
+    <!--<script src="Scripts/jquery-2.2.0.min.js"></script>
     <script src="/_layouts/15/init.js"></script>
     <script src="/_layouts/15/core.js"></script>
     <script src="/_layouts/15/SP.UI.Controls.js"></script>
@@ -46,6 +49,25 @@
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="Scripts/spin.min.js"></script>
     <script src="Scripts/angular-spinner.min.js"></script>
+    <script src="Scripts/dropzone/dropzone.min.js"></script>-->
+
+    <!-- vendor libraries -->
+    <script src="Scripts/jquery-2.2.0.js"></script>
+    <script src="/_layouts/15/init.js"></script>
+    <script src="/_layouts/15/core.js"></script>
+    <script src="/_layouts/15/SP.UI.Controls.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/moment-with-locales.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/spin.js"></script>
+    <script src="Scripts/angular-spinner.js"></script>
+    <script src="Scripts/dropzone/dropzone.js"></script>
 
     <!-- my libraries -->
     <script src="App/util/jquery-extensions.js"></script>
@@ -82,6 +104,9 @@
     <script src="App/clients/details/clientsDetailsCtrl.js"></script>
     <script src="App/clients/details/clientsTabsCtrl.js"></script>
     <script src="App/clients/form/clientFormCtrl.js"></script>
+
+    <!-- app directives -->
+    <script src="App/clients/docs/dropzoneDrct.js"></script>
 
     <!-- app services -->
     <script src="App/services/spContext.js"></script>

@@ -4,7 +4,6 @@
     <ContentTypes>
       <ContentType ID="0x0100a9abd3cd43a44f30a175a1c2efb3c9a8" Name="ListFieldsContentType">
         <FieldRefs>
-
           <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
           <FieldRef ID="{897277b6-9f0f-466f-b4f1-14865039ad04}" Name="ClientsFirstName" />
           <FieldRef ID="{f9215ac8-72df-44e5-9245-d8478647e733}" Name="ClientsLastName" />
@@ -17,6 +16,9 @@
           <FieldRef ID="{c7db2a33-f493-4c80-a530-f587884562b2}" Name="ClientsProjectStatus" />
           <FieldRef ID="{d63ce254-22be-4676-9a3d-5bd293bbbbe2}" Name="ClientsNotes" />
           <FieldRef ID="{31b99e22-f121-4d2d-bdd6-6a079e048bbb}" Name="ClientsState" />
+          <FieldRef ID="{5d3e046c-3c78-49cf-a00a-6a33bbba370e}" Name="ClientJobNumber" />
+          <FieldRef ID="{bda38a9a-20ea-49b2-b4d5-cb4ea44a9527}" Name="ClientUserName" />
+          <FieldRef ID="{50ac02d9-84b4-4674-8ca0-b065f83583cd}" Name="ClientPassword" />
         </FieldRefs>
       </ContentType>
       <ContentTypeRef ID="0x01">
@@ -37,9 +39,11 @@
       <Field Name="ClientsProjectStatus" ID="{c7db2a33-f493-4c80-a530-f587884562b2}" DisplayName="ClientsProjectStatus" Type="Text" />
       <Field Name="ClientsNotes" ID="{d63ce254-22be-4676-9a3d-5bd293bbbbe2}" DisplayName="ClientsNotes" Type="Note" />
       <Field Name="ClientsState" ID="{31b99e22-f121-4d2d-bdd6-6a079e048bbb}" DisplayName="ClientsState" Type="Text" />
+      <Field Name="ClientJobNumber" ID="{5d3e046c-3c78-49cf-a00a-6a33bbba370e}" DisplayName="ClientJobNumber" Type="Text" />
+      <Field Name="ClientUserName" ID="{bda38a9a-20ea-49b2-b4d5-cb4ea44a9527}" DisplayName="ClientUserName" Type="Text" />
+      <Field Name="ClientPassword" ID="{50ac02d9-84b4-4674-8ca0-b065f83583cd}" DisplayName="ClientPassword" Type="Text" />
     </Fields>
     <Views>
-
 
       <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
         <Toolbar Type="Standard" />
@@ -67,7 +71,6 @@
         <JSLink>clienttemplates.js</JSLink>
         <RowLimit Paged="TRUE">30</RowLimit>
         <ViewFields>
-
           <FieldRef Name="LinkTitle"></FieldRef>
           <FieldRef Name="ClientsFirstName" />
           <FieldRef Name="ClientsLastName" />
@@ -80,6 +83,9 @@
           <FieldRef Name="ClientsProjectStatus" />
           <FieldRef Name="ClientsNotes" />
           <FieldRef Name="ClientsState" />
+          <FieldRef Name="ClientJobNumber" />
+          <FieldRef Name="ClientUserName" />
+          <FieldRef Name="ClientPassword" />
         </ViewFields>
         <Query>
           <OrderBy>

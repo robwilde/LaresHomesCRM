@@ -1,16 +1,16 @@
-﻿(function () {
+(function () {
     'use strict';
 
     // define factory
     var serviceId = 'documentSrvc';
     angular.module('app').factory(serviceId,
-	  ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', documentService]);
+        ['$rootScope', '$http', '$resource', '$q', 'config', 'common', 'spContext', 'datacontext', documentService]);
 
 
     function documentService($rootScope, $http, $resource, $q, config, common, spContext, datacontext) {
 
-        var clients = {};
-        var log = common.logger;
+        var clients = {},
+            log = common.logger;
 
         // init factory
         function init() {
@@ -24,6 +24,7 @@
 
         return {
             addDocLibrary: addDocLibrary,
+            addFileToFolder: addFileToFolder,
             getDocuments: getDocuments,
             getRequestDigest: getRequestDigest,
             bindContentTypeToLibrary: bindContentTypeToLibrary,
@@ -66,6 +67,38 @@
                 deferred.reject(error);
             });
 
+            return deferred.promise;
+        }
+
+        // add file to selected folder
+        function addFileToFolder(arrayBuffer, dropZone) {
+
+            // Send the request and return the response.
+            // This call returns the SharePoint file.
+            var deferred = $q.defer();
+            var url = addRequestExecuterContext(true, dropZone.options.url, spContext.hostWeb.url);
+
+            //log.Debug('arrayBuffer - 173', arrayBuffer, serviceId + '.addfile.addFileToFolder');
+            //log.Debug('url - 174', url, serviceId + '.addfile.addFileToFolder');
+
+            var req = {
+                method: 'POST',
+                url: url,
+                headers: {
+                    "accept": "application/json;odata=verbose",
+                    "X-RequestDigest": getRequestDigest(),
+                    "content-length": arrayBuffer.byteLength
+                },
+                data: arrayBuffer
+            }
+
+            $http(req).then(function (data) {
+                log.Debug('Data - 188', data, serviceId);
+                deferred.resolve(data);
+            }, function (error) {
+                log.Error('error - 191', error, serviceId);
+                deferred.reject(error);
+            });
             return deferred.promise;
         }
 
@@ -156,7 +189,7 @@
 
             return deferred.promise;
         }
-        
+
         // the lsit of documents from the library
         function getDocuments(clientId, docLibName) {
             var deferred = $q.defer();
@@ -196,6 +229,8 @@
 
             return modifiedUrl;
         }
+
+        // ==========================================================================================
 
     }
 })();

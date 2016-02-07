@@ -70,6 +70,7 @@
     <Content Include="App\clients\clientSrvc.js" />
     <Content Include="App\clients\docs\docsPerPageFltr.js" />
     <Content Include="App\clients\docs\documentSrvc.js" />
+    <Content Include="App\clients\docs\dropzoneDrct.js" />
     <Content Include="App\clients\form\client-form.html" />
     <Content Include="App\clients\form\clientFormCtrl.js" />
     <Content Include="App\clients\dashboard\clients-dashboard.html" />
@@ -161,6 +162,14 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-2.2.0.intellisense.js" />

@@ -51,5 +51,6 @@
     <ProjectItemFile Source="App\services\dataContext.angular.js" Target="App\services\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientSrvc.js" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\docs\docsPerPageFltr.js" Target="App\clients\docs\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\dropzoneDrct.js" Target="App\clients\docs\" Type="ElementFile" />
   </Files>
 </ProjectItem>

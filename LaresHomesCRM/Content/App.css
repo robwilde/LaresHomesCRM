@@ -106,7 +106,6 @@
 
 /*#endregion */
 
-
 /*#region sidebox navbar quicklaunch*/
 #sideNavBox {
     margin-top: 30px;
@@ -143,8 +142,13 @@ ul.nav.nav-sidebar>li.active a:visited {
 
 /*#endregion */
 
-/*#region Client Dashboard Bootstrap  Section*/
+/*#region Add Client Form*/
+#password-generator {
+    margin-top: 24px;
+}
+/*#endregion */
 
+/*#region Client Dashboard Bootstrap  Section*/
 
 /*#endregion*/
 
@@ -170,6 +174,9 @@ ul.nav.nav-sidebar>li.active a:visited {
     border-style: solid;
     border-color: #ddd;
     border-radius: 2px;
+}
+.dropzone {
+    min-height: 100px;
 }
 /*#endregion*/
 
