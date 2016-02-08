@@ -71,35 +71,56 @@
         }
 
         // add file to selected folder
-        function addFileToFolder(arrayBuffer, dropZone) {
+        function addFileToFolder(arrayBuffer, Url) {
 
             // Send the request and return the response.
             // This call returns the SharePoint file.
             var deferred = $q.defer();
-            var url = addRequestExecuterContext(true, dropZone.options.url, spContext.hostWeb.url);
+            var url = addRequestExecuterContext(true, Url, spContext.hostWeb.url);
 
-            //log.Debug('arrayBuffer - 173', arrayBuffer, serviceId + '.addfile.addFileToFolder');
-            //log.Debug('url - 174', url, serviceId + '.addfile.addFileToFolder');
+            log.Debug('arrayBuffer - 81', arrayBuffer, serviceId + '.addfile.addFileToFolder');
+            //log.Debug('byteLength - 82', byteLength, serviceId + '.addfile.addFileToFolder');
 
-            var req = {
-                method: 'POST',
+            jQuery.ajax({
                 url: url,
+                type: "POST",
+                data: arrayBuffer,
+                processData: false,
                 headers: {
                     "accept": "application/json;odata=verbose",
                     "X-RequestDigest": getRequestDigest(),
                     "content-length": arrayBuffer.byteLength
-                },
-                data: arrayBuffer
-            }
-
-            $http(req).then(function (data) {
-                log.Debug('Data - 188', data, serviceId);
+                }
+            })
+            .done(function (data) {
+                log.Debug('DATA - 96', data, serviceId + '.addfile.addFileToFolder');
                 deferred.resolve(data);
-            }, function (error) {
-                log.Error('error - 191', error, serviceId);
+            })
+            .fail(function (error) {
+                log.Error('ERROR - 99', error, serviceId);
                 deferred.reject(error);
             });
+
             return deferred.promise;
+
+            //var req = {
+            //    method: 'POST',
+            //    url: url,
+            //    headers: {
+            //        "accept": "application/json;odata=verbose",
+            //        "X-RequestDigest": getRequestDigest(),
+            //        "content-length": arrayBuffer.byteLength
+            //    },
+            //    data: arrayBuffer
+            //}
+            //$http(req).then(function (data) {
+            //    log.Debug('Data - 188', data, serviceId);
+            //    deferred.resolve(data);
+            //}, function (error) {
+            //    log.Error('error - 191', error, serviceId);
+            //    deferred.reject(error);
+            //});
+            //return deferred.promise;
         }
 
         // get the content from the docuemnt library

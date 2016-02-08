@@ -3,7 +3,7 @@
     <div class="container" data-ng-controller="ClientDetails">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Client Details</h3>
+                <h3 class="panel-title">Client Details Job #{{client.ClientJobNumber}}</h3>
             </div>
             <div class="panel-body">
 
@@ -53,6 +53,19 @@
                                 <div class="col-xs-8 client-field">{{client.ClientsPostcode}}</div>
                             </div>
                         </div>
+
+                        <div class="row bg-danger user-credentials">
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">UserName</div>
+                                <div class="col-xs-8 client-field">{{client.ClientUserName}}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-xs-4 field-name">Password</div>
+                                <div class="col-xs-8 client-field">{{client.ClientPassword}}</div>
+                            </div>
+                        </div>
+
+
                     </div>
 
                     <div class="col-md-1">
@@ -94,7 +107,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                
+
                             </div>
                             <div class="col-md-4">
                                 <label for="search">Search:</label>
@@ -123,7 +136,7 @@
                                     </td>
                                 </tr>
                                 <tr ng-repeat="file in tabDocs | filter: searchQuery">
-                                    <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank" >{{file.FileLeafRef}}</a> </td>
+                                    <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank">{{file.FileLeafRef}}</a> </td>
                                     <td>{{file.Modified | date}}</td>
                                     <td>{{file.Author.Title}}</td>
                                 </tr>
@@ -132,12 +145,14 @@
                         </table>
 
                         <div class="col-md-10 col-md-offset-1">
-                            <div class="">
-                                <div class="dropzone needsClick dz-clickable" dropzone="dropzoneConfig" dropzonereference="dropZoneCtrl">
-                                    <div class="dz-message needsClick">
-                                        Drag and drop files here or click to upload
-                                    </div>
-                                </div>
+                            <!--<p class="size" data-dz-size></p>
+                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                            </div>-->
+                            <div class="well">
+                                <form action="" class="dropzone dz-clickable needsclick" dropzone="dropzoneConfig" dropzonereference="dropZoneCtrl" id="dropzone">
+                                    <div class="dz-default needsclick"></div>
+                                </form>
                             </div>
                         </div>
                     </div>

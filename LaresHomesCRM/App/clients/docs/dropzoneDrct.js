@@ -19,7 +19,7 @@
             });
 
             scope[attrs.dropzonereference] = dropzone;
-
+            //log.Debug('dropzone - 22', dropzone, directiveId);
         };
     }]);
 

@@ -67,7 +67,7 @@
 
             if (clientNameId) {
                 $scope.docLibName = clientNameId + '_' + docType;
-                getClientDocs(clientId, $scope.docLibName)
+                getClientDocs()
                 .then(function (data) {
 
                     $scope.tabDocs = data;
@@ -75,7 +75,7 @@
                     log.Debug('$scope - 75', $scope, controllerId + '.getTabData');
                     $scope.showSpinner = false;
 
-                }, function () {
+                }, function (error) {
                     log.Error('ERROR', error, controllerId);
                 });
             }
@@ -83,8 +83,8 @@
         };
 
         // get the docs for the current Libary Tab
-        function getClientDocs(clientId, docLibName) {
-            return documentSrvc.getDocuments(clientId, docLibName);
+        function getClientDocs() {
+            return documentSrvc.getDocuments(clientId, $scope.docLibName);
         }
 
         // ============================================================================================================
@@ -95,76 +95,90 @@
 
         $scope.dropzoneConfig = {
             'options': { // passed into the Dropzone constructor
-                'url': '_api/web/getfolderbyserverrelativeurl(\'\')/files',
-                'autoProcessQueue': false,
-                'clickable': true
+                url: '_api/web/getfolderbyserverrelativeurl(\'\')/files',
+                maxFilesize: 100,
+                maxThumbnailFilesize: 10,
+                autoProcessQueue: false
             },
             'eventHandlers': {
                 'sending': function (file, xhr, formData) {
-
+                    log.Debug('SENDING - 42', [file, xhr, formData], serviceId);
                 },
                 'success': function (file, response) {
-
+                    log.Debug('SUCCESS - 45', [file, response], serviceId);
                 },
                 "complete": function (file) {
+                    log.Debug('COMPLETE - 45', file, serviceId);
                     this.removeFile(file);
                 },
 
                 "addedfile": function (file) {
                     // adjust Url for new file
+
                     var dropZone = this;
-                    var listName = $scope.docLibName;
+                    log.Debug('$scope - 117', $scope, controllerId);
+                    log.Debug('dropZone - 118', dropZone, controllerId);
+                    log.Debug('FILE - 119', file, controllerId);
+                    /*=========================================================================================================================================*/
+                    getFileBuffer()
+                        .then(dropZoneOptions)
+                        .then(addFile)
+                        .then(getClientDocs)
+                        .then(SetTabsScope)
+                        .catch(handleError)
+                        .finally(finalItems);
 
-                    log.Debug('FILE - 116', file, controllerId + '.addedfile');
+                    /*=========================================================================================================================================*/
 
-                    dropZone.options.url = "_api/web/getfolderbyserverrelativeurl('" + listName + "')/files/add(overwrite=true, url='" + file.name + "')";
-
-                    /*-------------------------------------------------------------------------------------------*/
-                    /* PROMISE CHAIN */
-                    function getFileBuffer(selectedFile) {
-                        log.Debug('selectedFile - 125', selectedFile, controllerId);
-
+                    /* GET THE FILE AND CREATE ARRAY BUFFER */
+                    function getFileBuffer() {
                         var deferred = $q.defer();
                         var reader = new FileReader();
-                        reader.readAsArrayBuffer(selectedFile);
-                        log.Debug('reader - 130', reader, controllerId);
 
                         reader.onloadend = function (e) {
-                            log.Debug('e - 133', e, controllerId);
+                            log.Info('State - 137', e, controllerId);
                             deferred.resolve(e.target.result);
                         }
-
                         reader.onerror = function (e) {
                             deferred.reject(e.target.error);
                         }
+                        reader.readAsArrayBuffer(file);
 
+                        log.Info('State - 145', reader.readyState, controllerId);
                         return deferred.promise;
                     }
 
-                    function FileToFolder(arrayBuffer) {
-                        log.Debug('arrayBuffer - 142', arrayBuffer, controllerId + '.addfile.getFileBuffer');
+                    /*SET THE DROPZONE OPTIONS*/
+                    function dropZoneOptions(arrayBuffer) {
+                        $scope.arrayBuffer = arrayBuffer;
+                        var listName = $scope.docLibName;
+                        dropZone.options.url = "_api/web/getfolderbyserverrelativeurl('" + listName + "')/files/add(overwrite=true, url='" + file.name + "')";
+                        log.Debug('data - 154', $scope, controllerId);
 
-                        return documentSrvc.addFileToFolder(arrayBuffer, dropZone);
+                        return $q.all(dropZone.options.url);
                     }
 
-                    function Complete(data) {
+                    /*ADD FILE TO DOC FOLDER*/
+                    function addFile(url) {
+                        //log.Debug('data - 161', url, controllerId);
+                        return documentSrvc.addFileToFolder($scope.arrayBuffer, dropZone.options.url);
+                    }
+
+                    function SetTabsScope(data) {
+                        log.Debug('data - 167', data, controllerId);
+                        $scope.tabDocs = data;
+                    }
+
+                    /*ERROR HANDLER*/
+                    function handleError(error) {
+                        log.Error('ERROR - 173', error, controllerId);
+                    };
+
+                    /*FINALITEMS TO RUN*/
+                    function finalItems(data) {
                         dropZone.removeFile(file);
-                        log.Debug('file was uploaded - 149', dropZone, controllerId + '.addedfile.addFileToFolder');
-                        getClientDocs(clientId, listName);
-
-                        return $q.when(data);
+                        log.Debug('FINALLY - 179', data, controllerId);
                     }
-
-                    function CatchError(error) {
-                        log.logError('ERROR - 156', error, controllerId);
-                    }
-
-                    function CleanUp(response) {
-                        log.logDebug('Completed - 157', response, controllerId);
-                        log.logDebug('$scope - 157', $scope, controllerId);
-                    }
-
-                    getFileBuffer(file).then(FileToFolder).then(Complete).catch(CatchError).finally(CleanUp);
                     /*-------------------------------------------------------------------------------------------*/
 
                     //getFile.done(function (arrayBuffer) {
