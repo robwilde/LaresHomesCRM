@@ -10,15 +10,15 @@
     <ProjectItemFile Source="angular-route.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-route.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-route.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-animate.min.js.map" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-animate.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-animate.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-animate\angular-animate.min.js.map" Target="Scripts\ng-animate\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-animate\angular-animate.min.js" Target="Scripts\ng-animate\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-animate\angular-animate.js" Target="Scripts\ng-animate\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.min.js.map" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-cookies.min.js.map" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-cookies.min.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="angular-cookies.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-cookies\angular-cookies.min.js.map" Target="Scripts\ng-cookies\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-cookies\angular-cookies.min.js" Target="Scripts\ng-cookies\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-cookies\angular-cookies.js" Target="Scripts\ng-cookies\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="jquery-2.2.0.intellisense.js" Target="Scripts\" Type="ElementFile" />
@@ -49,5 +49,7 @@
     <ProjectItemFile Source="moment.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="moment-with-locales.min.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="moment-with-locales.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-flow\ng-flow-standalone.min.js" Target="Scripts\ng-flow\" Type="ElementFile" />
+    <ProjectItemFile Source="ng-flow\ng-flow-standalone.js" Target="Scripts\ng-flow\" Type="ElementFile" />
   </Files>
 </ProjectItem>

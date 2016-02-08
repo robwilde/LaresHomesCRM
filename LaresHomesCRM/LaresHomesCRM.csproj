@@ -125,8 +125,8 @@
     <Content Include="Pages\app.html" />
     <Content Include="Pages\appLauncher.html" />
     <Content Include="Pages\Elements.xml" />
-    <None Include="Scripts\angular-animate.min.js.map" />
-    <None Include="Scripts\angular-cookies.min.js.map" />
+    <None Include="Scripts\ng-animate\angular-animate.min.js.map" />
+    <None Include="Scripts\ng-cookies\angular-cookies.min.js.map" />
     <None Include="Scripts\angular-resource.min.js.map" />
     <None Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\angular-sanitize.min.js.map" />
@@ -141,10 +141,10 @@
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{92f97384-6b4b-4d0c-9a51-39372e1efb20}</SharePointProjectItemId>
     </None>
-    <Content Include="Scripts\angular-animate.js" />
-    <Content Include="Scripts\angular-animate.min.js" />
-    <Content Include="Scripts\angular-cookies.js" />
-    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\ng-animate\angular-animate.js" />
+    <Content Include="Scripts\ng-animate\angular-animate.min.js" />
+    <Content Include="Scripts\ng-cookies\angular-cookies.js" />
+    <Content Include="Scripts\ng-cookies\angular-cookies.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-resource.min.js" />
@@ -179,6 +179,8 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\ng-flow\ng-flow-standalone.js" />
+    <Content Include="Scripts\ng-flow\ng-flow-standalone.min.js" />
     <Content Include="Scripts\spin.js" />
     <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\_references.js" />

@@ -8,12 +8,12 @@
     <File Path="Scripts\angular.min.js" Url="Scripts/angular.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular.js" Url="Scripts/angular.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-mocks.js" Url="Scripts/angular-mocks.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-animate.min.js.map" Url="Scripts/angular-animate.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-animate.min.js" Url="Scripts/angular-animate.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-animate.js" Url="Scripts/angular-animate.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-cookies.min.js.map" Url="Scripts/angular-cookies.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-cookies.min.js" Url="Scripts/angular-cookies.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-cookies.js" Url="Scripts/angular-cookies.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-animate\angular-animate.min.js.map" Url="Scripts/ng-animate/angular-animate.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-animate\angular-animate.min.js" Url="Scripts/ng-animate/angular-animate.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-animate\angular-animate.js" Url="Scripts/ng-animate/angular-animate.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-cookies\angular-cookies.min.js.map" Url="Scripts/ng-cookies/angular-cookies.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-cookies\angular-cookies.min.js" Url="Scripts/ng-cookies/angular-cookies.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-cookies\angular-cookies.js" Url="Scripts/ng-cookies/angular-cookies.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-route.min.js.map" Url="Scripts/angular-route.min.js.map" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-route.min.js" Url="Scripts/angular-route.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-route.js" Url="Scripts/angular-route.js" ReplaceContent="TRUE" />
@@ -48,5 +48,7 @@
     <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-flow\ng-flow-standalone.min.js" Url="Scripts/ng-flow/ng-flow-standalone.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-flow\ng-flow-standalone.js" Url="Scripts/ng-flow/ng-flow-standalone.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

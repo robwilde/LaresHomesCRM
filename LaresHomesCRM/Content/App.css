@@ -51,25 +51,28 @@
     transition: 0.8s linear all;
 }
 
-    .dissolve-animation.ng-hide-remove.ng-hide-remove-active,
-    .dissolve-animation.ng-hide-add {
-        opacity: 1;
-    }
+.dissolve-animation.ng-hide-remove.ng-hide-remove-active,
+.dissolve-animation.ng-hide-add {
+    opacity: 1;
+}
 
-        .dissolve-animation.ng-hide-add.ng-hide-add-active,
-        .dissolve-animation.ng-hide-remove {
-            opacity: 0;
-        }
+.dissolve-animation.ng-hide-add.ng-hide-add-active,
+.dissolve-animation.ng-hide-remove {
+    opacity: 0;
+}
 /*#endregion */
 
-/* animation container - ensure animate only the body of the page*/
+/*#region animation container - ensure animate only the body of the page*/
 .view-container {
     position: relative;
     overflow: hidden;
 }
+
 #contentBox {
     margin-left: 200px;
 }
+/*#endregion*/
+
 /*#region angular shuffle animation */
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
@@ -108,36 +111,40 @@
 
 /*#region sidebox navbar quicklaunch*/
 #sideNavBox {
-    margin-top: 30px;
+    margin-top: 0;
 }
 
-ul.nav.nav-sidebar>li {
+ul.nav.nav-sidebar > li {
     /* background-color: #d3d3d1; */
     font-size: 18px;
     font-weight: bold;
 }
 
-ul.nav.nav-sidebar>li.active {
-    /* background-color: #d3d3d1; */
-    border-bottom: 1px solid #d3d3d1;
-}
+    ul.nav.nav-sidebar > li.active {
+        /* background-color: #d3d3d1; */
+        border-bottom: 1px solid #d3d3d1;
+    }
 
-ul.nav.nav-sidebar>li>a:hover {
-    border-top: 2px solid #917B61;
-}
+    ul.nav.nav-sidebar > li > a:hover {
+        border-top: 2px solid #917B61;
+    }
 
-ul.nav.nav-sidebar>li.active a,
-ul.nav.nav-sidebar>li.active a:visited {
-    /* background-color: #d3d3d1; */
-    color: rgba(50, 50, 50, 0.6);
-    text-decoration: none;
-}
+    ul.nav.nav-sidebar > li.active a,
+    ul.nav.nav-sidebar > li.active a:visited {
+        /* background-color: #d3d3d1; */
+        color: rgba(50, 50, 50, 0.6);
+        text-decoration: none;
+    }
 
 /*#endregion */
 
 /*#region ngView main section */
 #content.view-container {
-    margin-top: 35px;
+    /*margin-top: 35px;*/
+}
+
+#contentRow {
+    padding-top: 50px;
 }
 
 /*#endregion */
@@ -153,7 +160,7 @@ ul.nav.nav-sidebar>li.active a:visited {
 /*#endregion*/
 
 /*#region Add/Edit Client */
-.modal-title{
+.modal-title {
     font-size: 18px;
     font-weight: bold;
 }
@@ -163,6 +170,7 @@ ul.nav.nav-sidebar>li.active a:visited {
 .client-field.ng-binding {
     display: inline;
 }
+
 .field-name {
     font-style: italic;
     font-weight: bold;
@@ -175,58 +183,59 @@ ul.nav.nav-sidebar>li.active a:visited {
     border-color: #ddd;
     border-radius: 2px;
 }
+
 .dropzone {
     min-height: 100px;
 }
 /*#endregion*/
 
 /*#region details table Section*/
-  .nav-tabs > li > div {
+.nav-tabs > li > div {
     margin-right: 2px;
     line-height: 1.42857143;
     border: 1px solid transparent;
     border-radius: 4px 4px 0 0;
-  }
+}
 
-  .nav-tabs > li > div:hover {
-    border-color: #eee #eee #ddd;
-  }
+    .nav-tabs > li > div:hover {
+        border-color: #eee #eee #ddd;
+    }
 
-  .nav-tabs > li.active > div, .nav-tabs > li.active > div:hover {
+.nav-tabs > li.active > div, .nav-tabs > li.active > div:hover {
     color: #555;
     cursor: default;
     background-color: #d9edf7;
     border: 1px solid #bce8f1;
     border-bottom-color: transparent;
-  }
+}
 
-  .nav > li > div {
+.nav > li > div {
     position: relative;
     display: block;
     padding: 10px 15px;
-  }
+}
 
-  .nav > li > div:hover {
-    background-color: #eee;
-  }
+    .nav > li > div:hover {
+        background-color: #eee;
+    }
 
-  .uib-tab > div {
+.uib-tab > div {
     color: #337ab7;
     cursor: pointer;
-  }
+}
 
-  .nav-tabs > li.disabled > div { 
-    color: #999; 
-  }
-
-  .nav-tabs>li.disabled>div:hover, .nav-tabs>li.disabled>div:focus {
+.nav-tabs > li.disabled > div {
     color: #999;
-    text-decoration: none;
-    background-color: transparent;
-    cursor: not-allowed;
-  }
+}
 
-  form.tab-form-demo .tab-pane {
+    .nav-tabs > li.disabled > div:hover, .nav-tabs > li.disabled > div:focus {
+        color: #999;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+    }
+
+form.tab-form-demo .tab-pane {
     margin: 20px 20px;
-  }
+}
 /*#endregion*/

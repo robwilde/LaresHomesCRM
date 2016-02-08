@@ -136,7 +136,7 @@
                         var reader = new FileReader();
 
                         reader.onloadend = function (e) {
-                            log.Info('State - 137', e, controllerId);
+                            //log.Info('State - 137', e, controllerId);
                             deferred.resolve(e.target.result);
                         }
                         reader.onerror = function (e) {
@@ -144,7 +144,7 @@
                         }
                         reader.readAsArrayBuffer(file);
 
-                        log.Info('State - 145', reader.readyState, controllerId);
+                        //log.Info('State - 145', reader.readyState, controllerId);
                         return deferred.promise;
                     }
 
@@ -153,7 +153,7 @@
                         $scope.arrayBuffer = arrayBuffer;
                         var listName = $scope.docLibName;
                         dropZone.options.url = "_api/web/getfolderbyserverrelativeurl('" + listName + "')/files/add(overwrite=true, url='" + file.name + "')";
-                        log.Debug('data - 154', $scope, controllerId);
+                        //log.Debug('data - 154', $scope, controllerId);
 
                         return $q.all(dropZone.options.url);
                     }
@@ -165,13 +165,13 @@
                     }
 
                     function SetTabsScope(data) {
-                        log.Debug('data - 167', data, controllerId);
+                        //log.Debug('data - 167', data, controllerId);
                         $scope.tabDocs = data;
                     }
 
                     /*ERROR HANDLER*/
                     function handleError(error) {
-                        log.Error('ERROR - 173', error, controllerId);
+                        //log.Error('ERROR - 173', error, controllerId);
                     };
 
                     /*FINALITEMS TO RUN*/
