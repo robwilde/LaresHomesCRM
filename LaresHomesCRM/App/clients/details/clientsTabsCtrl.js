@@ -72,7 +72,7 @@
 
                     $scope.tabDocs = data;
 
-                    log.Debug('$scope - 75', $scope, controllerId + '.getTabData');
+                    //log.Debug('$scope - 75', $scope, controllerId + '.getTabData');
                     $scope.showSpinner = false;
 
                 }, function (error) {

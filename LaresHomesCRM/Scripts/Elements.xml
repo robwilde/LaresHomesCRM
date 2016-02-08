@@ -20,23 +20,10 @@
     <File Path="Scripts\angular-sanitize.min.js.map" Url="Scripts/angular-sanitize.min.js.map" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-sanitize.min.js" Url="Scripts/angular-sanitize.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-sanitize.js" Url="Scripts/angular-sanitize.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-resource.min.js.map" Url="Scripts/angular-resource.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-resource.min.js" Url="Scripts/angular-resource.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-resource.js" Url="Scripts/angular-resource.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-ui\ui-bootstrap.min.js" Url="Scripts/angular-ui/ui-bootstrap.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-ui\ui-bootstrap.js" Url="Scripts/angular-ui/ui-bootstrap.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.min.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.js" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.min.map" Url="Scripts/jquery-2.2.0.min.map" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.min.js" Url="Scripts/jquery-2.2.0.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.js" Url="Scripts/jquery-2.2.0.js" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.intellisense.js" Url="Scripts/jquery-2.2.0.intellisense.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\moment.min.js" Url="Scripts/moment.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\spin.min.js" Url="Scripts/spin.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\spin.js" Url="Scripts/spin.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-spinner.min.js.map" Url="Scripts/angular-spinner.min.js.map" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-spinner.min.js" Url="Scripts/angular-spinner.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-spinner.js" Url="Scripts/angular-spinner.js" ReplaceContent="TRUE" />
@@ -48,5 +35,18 @@
     <File Path="Scripts\dropzone\dropzone-amd-module.js" Url="Scripts/dropzone/dropzone-amd-module.js" ReplaceContent="TRUE" />
     <File Path="Scripts\dropzone\basic.min.css" Url="Scripts/dropzone/basic.min.css" ReplaceContent="TRUE" />
     <File Path="Scripts\dropzone\basic.css" Url="Scripts/dropzone/basic.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap.min.js" Url="Scripts/angular-ui/ui-bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap.js" Url="Scripts/angular-ui/ui-bootstrap.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.min.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\spin.min.js" Url="Scripts/spin.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\spin.js" Url="Scripts/spin.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-resource.min.js.map" Url="Scripts/angular-resource.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-resource.min.js" Url="Scripts/angular-resource.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-resource.js" Url="Scripts/angular-resource.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\moment.min.js" Url="Scripts/moment.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>
