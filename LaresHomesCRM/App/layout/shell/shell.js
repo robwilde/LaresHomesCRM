@@ -9,14 +9,14 @@
   // create controller
   function shell($rootScope, $route, common, config) {
     var vm = this;
-    var logger = common.logger;
+    var log = common.logger;
 
     // init controller
     init();
 
     // init controller
     function init() {
-      logger.log("app shell loaded", null, controllerId);
+      log.Info("app shell loaded", null, controllerId);
       common.activateController([], controllerId)
       .then(function() {
         common.$broadcast(config.events.workingOnItToggle, { show: false });

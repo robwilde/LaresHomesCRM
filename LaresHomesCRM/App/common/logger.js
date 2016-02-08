@@ -8,11 +8,11 @@
     // create factory
     function logger($log, config) {
         var service = {
-            log: log,
-            logDebug: logDebug,
-            logError: logError,
-            logSuccess: logSuccess,
-            logWarning: logWarning
+            Info: log,
+            Debug: logDebug,
+            Error: logError,
+            Success: logSuccess,
+            Warning: logWarning
         };
 
         return service;
@@ -46,12 +46,28 @@
             showNotification = showNotification || true;
 
             // write to angular log, & specify error if it is an error
-            var write = (notificationType === 'error') ? $log.error : $log.log;
+            //var write = (notificationType === 'error') ? $log.error : $log.info;
+            switch (notificationType) {
+                case 'info':
+                    var write = $log.info;
+                    break;
+                case 'debug':
+                    var write = $log.debug;
+                    break;
+                case 'error':
+                    var write = $log.error;
+                    break;
+                case 'success':
+                    var write = $log.success;
+                    break;
+                case 'warning':
+                    var write = $log.warning;
+                    break;
+            }
             source = source ? '[' + source + '] ' : '';
             write(source, message, data);
 
             if (showNotification) {
-
                 switch (notificationType) {
                     case 'info':
                         if (!config.showDebugNotiSetting) {
@@ -82,8 +98,7 @@
                         notiTitle = "Lares Homes CRM";
                         break;
                 }
-
-            }
+            };
 
             // create sharepoint notification
             var notificationData = new SPStatusNotificationData("", STSHtmlEncode(message), iconUrl, null);

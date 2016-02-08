@@ -106,15 +106,32 @@
 
 /*#endregion */
 
-
 /*#region sidebox navbar quicklaunch*/
 #sideNavBox {
     margin-top: 30px;
 }
-/*.nav-sidebar > .active > a {
-    color: #fff;
-    background-color: #428bca;
-}*/
+
+ul.nav.nav-sidebar>li {
+    /* background-color: #d3d3d1; */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul.nav.nav-sidebar>li.active {
+    /* background-color: #d3d3d1; */
+    border-bottom: 1px solid #d3d3d1;
+}
+
+ul.nav.nav-sidebar>li>a:hover {
+    border-top: 2px solid #917B61;
+}
+
+ul.nav.nav-sidebar>li.active a,
+ul.nav.nav-sidebar>li.active a:visited {
+    /* background-color: #d3d3d1; */
+    color: rgba(50, 50, 50, 0.6);
+    text-decoration: none;
+}
 
 /*#endregion */
 
@@ -125,8 +142,13 @@
 
 /*#endregion */
 
-/*#region Client Dashboard Bootstrap  Section*/
+/*#region Add Client Form*/
+#password-generator {
+    margin-top: 24px;
+}
+/*#endregion */
 
+/*#region Client Dashboard Bootstrap  Section*/
 
 /*#endregion*/
 
@@ -152,6 +174,9 @@
     border-style: solid;
     border-color: #ddd;
     border-radius: 2px;
+}
+.dropzone {
+    min-height: 100px;
 }
 /*#endregion*/
 

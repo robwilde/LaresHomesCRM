@@ -8,7 +8,9 @@
 
   // init controller
   function headerController($rootScope, $routeParams, $route, common, config, spContext) {
-    var vm = this;
+      var vm = this;
+      var log = common.logger;
+
     // homepage of the app
     vm.appHomeUrl = spContext.hostWeb.appWebUrl + '/app.html';
     // app name
@@ -16,14 +18,14 @@
     // url of the icon to use for the app
     vm.appIconUrl = '';
 
-    common.logger.logDebug('spContext', spContext, controllerId);
+    log.Debug('spContext', spContext, controllerId);
 
     // init controller
     init();
 
     // init controller
     function init() {
-      common.logger.log("controller loaded", null, controllerId);
+      log.Info("controller loaded", null, controllerId);
       common.activateController([], controllerId);
     }
 

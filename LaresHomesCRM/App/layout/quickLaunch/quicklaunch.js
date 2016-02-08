@@ -8,7 +8,9 @@
 
   // init controller
   function quickLaunch($route, config, common, routes) {
-    var vm = this;
+      var vm = this;
+      var log = common.logger;
+
     // utility method to see if the provided route is the current route
     vm.isCurrent = isCurrent;
 
@@ -17,7 +19,7 @@
 
     // init controller
     function init() {
-      common.logger.log("controller loaded", null, controllerId);
+      log.Info("controller loaded", null, controllerId);
       getNavigationRoutes();
     }
 
@@ -32,7 +34,7 @@
         }).sort(function (routeA, routeB) {
         return routeA.config.settings.nav > routeB.config.settings.nav;
       });
-        // common.logger.log('vmRoutes ', vm.navRoutes, 'navRoutes');
+        // log.Info('vmRoutes ', vm.navRoutes, 'navRoutes');
     }
 
     // utility method to see if the provided route is the current route

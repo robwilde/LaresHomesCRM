@@ -53,6 +53,10 @@
     <None Include="Data\Clients\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{0483b404-9c2a-40eb-8977-6789d55203a2}</SharePointProjectItemId>
     </None>
+    <None Include="fonts\fontawesome-webfont.eot" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\FontAwesome.otf" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
@@ -63,8 +67,10 @@
     </None>
     <Content Include="App\app.js" />
     <Content Include="App\appLauncher.js" />
-    <Content Include="App\clients\docs\docsTesting.js" />
+    <Content Include="App\clients\clientSrvc.js" />
+    <Content Include="App\clients\docs\docsPerPageFltr.js" />
     <Content Include="App\clients\docs\documentSrvc.js" />
+    <Content Include="App\clients\docs\dropzoneDrct.js" />
     <Content Include="App\clients\form\client-form.html" />
     <Content Include="App\clients\form\clientFormCtrl.js" />
     <Content Include="App\clients\dashboard\clients-dashboard.html" />
@@ -108,6 +114,7 @@
     <Content Include="Data\Clients\Elements.xml" />
     <Content Include="Data\Clients\Schema.xml" />
     <Content Include="Elements.xml" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\debug.png" />
     <Content Include="Images\error.png" />
@@ -123,6 +130,7 @@
     <None Include="Scripts\angular-resource.min.js.map" />
     <None Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\angular-sanitize.min.js.map" />
+    <None Include="Scripts\angular-spinner.min.js.map" />
     <None Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-2.2.0.min.map" />
     <None Include="SharePointProjectItem.spdata">
@@ -144,6 +152,8 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-spinner.js" />
+    <Content Include="Scripts\angular-spinner.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
@@ -152,6 +162,14 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-2.2.0.intellisense.js" />
@@ -161,6 +179,8 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
@@ -199,10 +219,6 @@
     </AppManifestFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\clients\docs\construction\" />
-    <Folder Include="App\clients\docs\contracts\" />
-    <Folder Include="App\clients\docs\emails\" />
-    <Folder Include="App\clients\docs\selections\" />
     <Folder Include="App\clients\notes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

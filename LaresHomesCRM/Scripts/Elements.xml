@@ -35,5 +35,18 @@
     <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\spin.min.js" Url="Scripts/spin.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\spin.js" Url="Scripts/spin.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-spinner.min.js.map" Url="Scripts/angular-spinner.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-spinner.min.js" Url="Scripts/angular-spinner.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-spinner.js" Url="Scripts/angular-spinner.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\dropzone.min.js" Url="Scripts/dropzone/dropzone.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\dropzone.min.css" Url="Scripts/dropzone/dropzone.min.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\dropzone.js" Url="Scripts/dropzone/dropzone.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\dropzone.css" Url="Scripts/dropzone/dropzone.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\dropzone-amd-module.min.js" Url="Scripts/dropzone/dropzone-amd-module.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\dropzone-amd-module.js" Url="Scripts/dropzone/dropzone-amd-module.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\basic.min.css" Url="Scripts/dropzone/basic.min.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\dropzone\basic.css" Url="Scripts/dropzone/basic.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>

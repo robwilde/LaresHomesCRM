@@ -11,16 +11,6 @@
     <ProjectItemFile Source="App\config.exceptionHandler.js" Target="App\" Type="ElementFile" />
     <ProjectItemFile Source="App\config.js" Target="App\" Type="ElementFile" />
     <ProjectItemFile Source="App\config.route.js" Target="App\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\shell\shell.tpl.html" Target="App\layout\shell\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\shell\shell.js" Target="App\layout\shell\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\appChrome\spAppChrome.tpl.html" Target="App\layout\appChrome\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\appChrome\spAppChrome.js" Target="App\layout\appChrome\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\workingOnIt\workingonit.tpl.html" Target="App\layout\workingOnIt\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\workingOnIt\workingonit.js" Target="App\layout\workingOnIt\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\header\header.tpl.html" Target="App\layout\header\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\header\header.js" Target="App\layout\header\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\quickLaunch\quicklaunch.tpl.html" Target="App\layout\quickLaunch\" Type="ElementFile" />
-    <ProjectItemFile Source="App\layout\quickLaunch\quicklaunch.js" Target="App\layout\quickLaunch\" Type="ElementFile" />
     <ProjectItemFile Source="App\services\spContext.js" Target="App\services\" Type="ElementFile" />
     <ProjectItemFile Source="App\util\jquery-extensions.js" Target="App\util\" Type="ElementFile" />
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.woff2" Target="fonts\" Type="ElementFile" />
@@ -28,22 +18,39 @@
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.ttf" Target="fonts\" Type="ElementFile" />
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.svg" Target="fonts\" Type="ElementFile" />
     <ProjectItemFile Source="fonts\glyphicons-halflings-regular.eot" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\FontAwesome.otf" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.woff" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.ttf" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.svg" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\fontawesome-webfont.eot" Target="fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clientModel.js" Target="App\clients\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\dashboard\clients-dashboard.html" Target="App\clients\dashboard\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\dashboard\clientsDashCtrl.js" Target="App\clients\dashboard\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\details\clients-details.html" Target="App\clients\details\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\details\clientsDetailsCtrl.js" Target="App\clients\details\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\clientModel.js" Target="App\clients\" Type="ElementFile" />
-    <ProjectItemFile Source="App\services\dataContext.angular.js" Target="App\services\" Type="ElementFile" />
-    <ProjectItemFile Source="App\config.angular.http.js" Target="App\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\details\clientsTabsCtrl.js" Target="App\clients\details\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\documentSrvc.js" Target="App\clients\docs\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\form\client-form.html" Target="App\clients\form\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\form\clientFormCtrl.js" Target="App\clients\form\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\details\clientsTabsCtrl.js" Target="App\clients\details\" Type="ElementFile" />
+    <ProjectItemFile Source="App\config.angular.http.js" Target="App\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\appChrome\spAppChrome-directive.js" Target="App\layout\appChrome\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\appChrome\spAppChrome.js" Target="App\layout\appChrome\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\appChrome\spAppChrome.tpl.html" Target="App\layout\appChrome\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\header\header-directive.js" Target="App\layout\header\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\header\header.js" Target="App\layout\header\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\header\header.tpl.html" Target="App\layout\header\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\quickLaunch\quickLaunch-directive.js" Target="App\layout\quickLaunch\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\quickLaunch\quicklaunch.js" Target="App\layout\quickLaunch\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\quickLaunch\quicklaunch.tpl.html" Target="App\layout\quickLaunch\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\shell\shell-directive.js" Target="App\layout\shell\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\shell\shell.js" Target="App\layout\shell\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\shell\shell.tpl.html" Target="App\layout\shell\" Type="ElementFile" />
     <ProjectItemFile Source="App\layout\workingOnIt\workingOnIt-directive.js" Target="App\layout\workingOnIt\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\docs\documentSrvc.js" Target="App\clients\docs\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\docs\docsTesting.js" Target="App\clients\docs\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\workingOnIt\workingonit.js" Target="App\layout\workingOnIt\" Type="ElementFile" />
+    <ProjectItemFile Source="App\layout\workingOnIt\workingonit.tpl.html" Target="App\layout\workingOnIt\" Type="ElementFile" />
+    <ProjectItemFile Source="App\services\dataContext.angular.js" Target="App\services\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\clientSrvc.js" Target="App\clients\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\docsPerPageFltr.js" Target="App\clients\docs\" Type="ElementFile" />
+    <ProjectItemFile Source="App\clients\docs\dropzoneDrct.js" Target="App\clients\docs\" Type="ElementFile" />
   </Files>
 </ProjectItem>

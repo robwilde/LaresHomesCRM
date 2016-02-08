@@ -6,17 +6,18 @@
     <div class="modal-body">
         <form>
 
+            <!-- CLIENT DETAILS SECTION ------------------------------------------------------------------------------------------------>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input ng-model="client.ClientsFirstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+                        <input ng-model="client.ClientsFirstName" value="{{client.ClientsFirstName}}" type="text" class="form-control" id="firstName" placeholder="First Name">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input ng-model="client.ClientsLastName"  type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        <input ng-model="client.ClientsLastName" value="{{client.ClientsLastName}}"  type="text" class="form-control" id="lastName" placeholder="Last Name">
                     </div>
                 </div>
             </div>
@@ -35,7 +36,40 @@
                     </div>
                 </div>
             </div>
+            <!-- END CLIENT DETAILS SECTION ---------------------->
 
+            <!-- SECTION FOR THE PROJECT id AND THE USERNAME/PASSWORD ------------------------------------------------------------------------->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="jobNumber">Job Number</label>
+                        <input ng-model="client.ClientJobNumber" value="{{client.ClientJobNumber}}" type="text" class="form-control" id="jobNumber" placeholder="Job Number">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button id="password-generator" class="btn btn-info btn-block" type="button" ng-click="generate()">Generate Password</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!--<label for="firstName">First Name</label>-->
+                        <input ng-model="client.ClientUserName" value="{{client.ClientUserName}}" type="text" class="form-control" id="userName" placeholder="username">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!--<label for="lastName">Last Name</label>-->
+                        <input ng-model="client.ClientPassword" value="{{client.ClientPassword}}" type="text" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+            <!-- END -- SECTION FOR THE PROJECT id AND THE USERNAME/PASSWORD -->
+
+
+
+            <!-- SECTION FOR THE ADDRESS ----------------------------------------------------------------------------------------------->
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -70,6 +104,7 @@
                     </div>
                 </div>
             </div>
+            <!-- END ADDRESS SECTION -->
 
             <div class="row">
                 <div class="col-md-12">

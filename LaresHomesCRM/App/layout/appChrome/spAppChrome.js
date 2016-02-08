@@ -9,7 +9,7 @@
   // create controller
   function spAppChrome($rootScope, spContext, common, config) {
     var vm = this;
-    var logger = common.logger;
+    var log = common.logger;
     var spChromeControlData = undefined;
 
     // init controller
@@ -40,7 +40,7 @@
       // hide top app chrome (image & app name)
       nav.setBottomHeaderVisible(false);
 
-      logger.log("spAppChrome loaded", null, controllerId);
+      log.Info("spAppChrome loaded", null, controllerId);
       common.activateController([], controllerId);
     }
 

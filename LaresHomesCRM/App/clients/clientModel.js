@@ -17,6 +17,9 @@ lhc.models.client = function () {
     this.ClientsProjectStatus = undefined;
     this.ClientsNotes = undefined;
     this.ClientsState = undefined;
+    this.ClientJobNumber = undefined;
+    this.ClientUserName = undefined;
+    this.ClientPassword = undefined;
     this.__metadata = {
         type: 'SP.Data.ClientsListItem'
     };
