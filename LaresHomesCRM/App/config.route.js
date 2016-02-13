@@ -20,18 +20,18 @@
     // build the routes
     function getRoutes() {
         return [
-          {
-              url: '/',
-              config: {
-                  templateUrl: 'app/dashboard/dashboard.html',
-                  title: 'dashboard',
-                  settings: {
-                      nav: 0,
-                      content: 'Dashboard',
-                      quickLaunchEnabled: true
-                  }
-              }
-          },
+          //{
+          //    url: '/',
+          //    config: {
+          //        templateUrl: 'app/dashboard/dashboard.html',
+          //        title: 'dashboard',
+          //        settings: {
+          //            nav: 0,
+          //            content: 'Dashboard',
+          //            quickLaunchEnabled: true
+          //        }
+          //    }
+          //},
           {
               url: '/Clients',
               config: {

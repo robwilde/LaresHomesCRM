@@ -65,7 +65,6 @@
             service.hostWeb.title = $cookieStore.get('SPHostTitle');
             service.hostWeb.logoUrl = $cookieStore.get('SPHostLogoUrl');
             log.Info(loggerSource, 'loading spContext cookie', null);
-
         }
 
         // fire off automatic refresh of security digest
