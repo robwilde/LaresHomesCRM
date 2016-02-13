@@ -4,17 +4,15 @@
 
     var controllerId = 'ClientTabsCtrl';
     angular.module('app').controller(controllerId,
-        ['$scope', '$routeParams', '$q', 'common', 'clientSrvc', 'documentSrvc', 'usSpinnerService', tabCtrl]);
+        ['$scope', '$routeParams', '$q', 'common', 'clientSrvc', 'documentSrvc', tabCtrl]);
 
-    function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc, usSpinnerService) {
+    function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc ) {
         // items for the pagination
         $scope.totalItems = undefined;
         $scope.itemsPerPage = 5;
         $scope.bigTotalItems = 100;
         $scope.bigCurrentPage = 1;
         
-        //$scope.showSpinner = false;
-
         var log = common.logger;
         var clientId = +$routeParams.id;
         var clientNameId;
@@ -38,7 +36,6 @@
 
             // get the ClientName ID for the doc libaries
             if (clientId) {
-                //$scope.showSpinner = true;
 
                 clientSrvc.getClientNameId(clientId)
                 .then(function (data) {
@@ -64,7 +61,6 @@
                     $scope.tabDocs = data;
 
                     //log.Debug('$scope - 75', $scope, controllerId + '.getTabData');
-                    //$scope.showSpinner = false;
 
                 }, function (error) {
                     log.Error('ERROR', error, controllerId);

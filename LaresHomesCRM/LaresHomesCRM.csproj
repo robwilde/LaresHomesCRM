@@ -127,6 +127,7 @@
     <Content Include="Images\warning.png" />
     <Content Include="Pages\app.html" />
     <Content Include="Pages\appLauncher.html" />
+    <Content Include="Pages\dialog-template.html" />
     <Content Include="Pages\Elements.xml" />
     <None Include="Scripts\ng-animate\angular-animate.min.js.map" />
     <None Include="Scripts\ng-cookies\angular-cookies.min.js.map" />

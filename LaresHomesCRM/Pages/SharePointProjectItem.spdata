@@ -4,5 +4,6 @@
     <ProjectItemFile Source="Elements.xml" Target="Pages\" Type="ElementManifest" />
     <ProjectItemFile Source="app.html" Target="Pages\" Type="ElementFile" />
     <ProjectItemFile Source="appLauncher.html" Target="Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="dialog-template.html" Target="Pages\" Type="ElementFile" />
   </Files>
 </ProjectItem>

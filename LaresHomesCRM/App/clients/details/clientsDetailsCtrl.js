@@ -3,9 +3,9 @@
     'use strict';
 
     var controllerId = 'ClientDetails';
-    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$uibModal', '$q', 'common', 'datacontext', 'clientSrvc', clientDetails]);
+    angular.module('app').controller(controllerId, ['$scope', '$location', '$routeParams', '$uibModal', '$q', 'dialog', 'common', 'datacontext', 'clientSrvc', clientDetails]);
 
-    function clientDetails($scope, $location, $routeParams, $uibModal, $q, common, datacontext, clientSrvc) {
+    function clientDetails($scope, $location, $routeParams, $uibModal, $q, dialog, common, datacontext, clientSrvc) {
         var log = common.logger;
 
         $scope.clientId = +$routeParams.id;
@@ -38,20 +38,24 @@
                 });
         };
 
+
         // delete client from details page
-        // @TODO: need to look at delteing the docs only if they are empty
-        $scope.deleteClient = function () {
-            if (confirm("Are you sure?")) {
-                clientSrvc.deleteClient($scope.client)
-                    .then(function () {
-                        //log.Debug("Deleted Client.", null, controllerId);
-                        $location.path('/Clients/');
-                    }, function (error) {
-                        log.Error('65 - ERROR', error, 'client-details-directive.deleteClient');
-                    });
-            }
-            //TODO: delete related projects
-        }
+        $scope.deleteClient = function (text) {
+            dialog.confirm(text)
+              .then(function () {
+                  clientSrvc.deleteClient($scope.client)
+                      .then(function () {
+                          //log.Debug("Deleted Client.", null, controllerId);
+                          $location.path('/Clients/');
+                      }, function (error) {
+                          log.Error('65 - ERROR', error, controllerId + '.deleteClient');
+                      });
+              })
+              .catch(function (error) {
+                  log.Error('55 - declined', error, controllerId + '.deleteClient');
+              })
+        };
+
 
         // form update from the modal 
         $scope.editClientForm = function () {
@@ -94,7 +98,7 @@
 
             var deferred = $q.defer();
             var resource = datacontext.getClientResource(client);
-            
+
             resource.update(client, function (data) {
                 log.Debug("data", data, controllerId + '.updateClient');
                 deferred.resolve(data);

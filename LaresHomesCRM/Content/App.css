@@ -48,24 +48,24 @@
 /*#endregion */
 /*#region ANGULAR LOADING BAR*/
 #loading-bar .bar {
-    background: #911817;
-    top: 30px;
+    background: #b1997a;
+    /*top: 30px;*/
 }
 
 #loading-bar .peg {
-    -moz-box-shadow: #911817 1px 0 6px 1px;
-    -ms-box-shadow: #911817 1px 0 6px 1px;
-    -webkit-box-shadow: #911817 1px 0 6px 1px;
-    box-shadow: #911817 1px 0 6px 1px;
+    -moz-box-shadow: #b1997a 1px 0 6px 1px;
+    -ms-box-shadow: #b1997a 1px 0 6px 1px;
+    -webkit-box-shadow: #b1997a 1px 0 6px 1px;
+    box-shadow: #b1997a 1px 0 6px 1px;
 }
 
 #loading-bar-spinner {
-    top: 35px;
+    /*top: 35px;*/
 }
 
     #loading-bar-spinner .spinner-icon {
-        border-top-color: #911817;
-        border-left-color: #911817;
+        border-top-color: #b1997a;
+        border-left-color: #b1997a;
     }
 /*#endregion */
 

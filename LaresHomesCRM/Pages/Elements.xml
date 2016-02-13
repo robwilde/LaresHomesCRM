@@ -3,5 +3,6 @@
   <Module Name="Pages">
     <File Path="Pages\app.html" Url="app.html" ReplaceContent="TRUE" />
     <File Path="Pages\appLauncher.html" Url="appLauncher.html" ReplaceContent="TRUE" />
+    <File Path="Pages\dialog-template.html" Url="Pages/dialog-template.html" ReplaceContent="TRUE" />
   </Module>
 </Elements>

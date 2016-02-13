@@ -70,7 +70,7 @@
 
                     <div class="col-md-1">
                         <button type="button" class="btn btn-success btn-sm btn-block" ng-click="editClientForm()">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="deleteClient()">Delete</button>
+                        <button type="button" class="btn btn-danger btn-sm btn-block" ng-click="deleteClient(' Please confirm Delete ')">Delete</button>
                     </div>
 
                     <div class="col-md-5">
@@ -130,11 +130,6 @@
                             </thead>
                             <tbody>
 
-                                <!--<tr ng-show="showSpinner">
-                                    <td>
-                                        <span us-spinner="{radius:15, width:14, length: 12, color: '#0072c6'}" spinner-on="showSpinner"></span>
-                                    </td>
-                                </tr>-->
                                 <tr ng-repeat="file in tabDocs | filter: searchQuery">
                                     <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank">{{file.FileLeafRef}}</a> </td>
                                     <td>{{file.Modified | date}}</td>
