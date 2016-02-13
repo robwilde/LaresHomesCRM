@@ -12,7 +12,7 @@
         'ui.bootstrap', // UI Bootstrap add on
 
         'angular-loading-bar',
-        'angularSpinner',
+        'simple-angular-dialog',
 
         // my custom modules
         'common'

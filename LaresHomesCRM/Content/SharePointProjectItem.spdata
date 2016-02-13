@@ -14,5 +14,6 @@
     <ProjectItemFile Source="ui-bootstrap-csp.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="loading-bar.min.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="loading-bar.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="simple-angular-dialog.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

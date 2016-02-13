@@ -111,6 +111,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
+    <Content Include="Content\simple-angular-dialog.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Data\Clients\ClientsInstance\Elements.xml" />
     <Content Include="Data\Clients\Elements.xml" />
@@ -185,6 +186,7 @@
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\ng-flow\ng-flow-standalone.js" />
     <Content Include="Scripts\ng-flow\ng-flow-standalone.min.js" />
+    <Content Include="Scripts\simple-angular-dialog.min.js" />
     <Content Include="Scripts\spin.js" />
     <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\_references.js" />

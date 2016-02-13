@@ -52,5 +52,6 @@
     <File Path="Scripts\angular-sanitize.js" Url="Scripts/angular-sanitize.js" ReplaceContent="TRUE" />
     <File Path="Scripts\loading-bar.min.js" Url="Scripts/loading-bar.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\loading-bar.js" Url="Scripts/loading-bar.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\simple-angular-dialog.min.js" Url="Scripts/simple-angular-dialog.min.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

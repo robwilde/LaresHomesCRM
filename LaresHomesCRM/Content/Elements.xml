@@ -13,5 +13,6 @@
     <File Path="Content\ui-bootstrap-csp.css" Url="Content/ui-bootstrap-csp.css" ReplaceContent="TRUE" />
     <File Path="Content\loading-bar.min.css" Url="Content/loading-bar.min.css" ReplaceContent="TRUE" />
     <File Path="Content\loading-bar.css" Url="Content/loading-bar.css" ReplaceContent="TRUE" />
+    <File Path="Content\simple-angular-dialog.css" Url="Content/simple-angular-dialog.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>
