@@ -21,10 +21,12 @@
 
         var documentUrl = "_api/web/lists";
         var clientDocumentsUrl = "_api/web/lists/getbytitle(\'placeholder\')/items";
+        var deleteFileUrl = "_api/web/GetFileByServerRelativeUrl(\'placeholder\')";
 
         return {
             addDocLibrary: addDocLibrary,
-            addFileToFolder: addFileToFolder,
+            addFileToFolder: addFile,
+            deleteFile: deleteFile,
             getDocuments: getDocuments,
             getRequestDigest: getRequestDigest,
             bindContentTypeToLibrary: bindContentTypeToLibrary,
@@ -37,6 +39,7 @@
             return spContext.securityValidation;
         }
 
+        // ----------------------------------------------------------------------------------------
         // add a NEW doc libary 
         function addDocLibrary(docLibaryName, docLibaryType, loadFromHostWeb) {
             var deferred = $q.defer();
@@ -70,8 +73,9 @@
             return deferred.promise;
         }
 
+        // ----------------------------------------------------------------------------------------
         // add file to selected folder
-        function addFileToFolder(arrayBuffer, Url) {
+        function addFile(arrayBuffer, Url) {
 
             // Send the request and return the response.
             // This call returns the SharePoint file.
@@ -123,6 +127,43 @@
             //return deferred.promise;
         }
 
+        // ----------------------------------------------------------------------------------------
+        // add file to selected folder
+        function deleteFile(fileName) {
+
+            // Send the request and return the response.
+            // This call returns the SharePoint file.
+            var deferred = $q.defer();
+            var Url = deleteFileUrl.replace("placeholder", fileName);
+
+            var url = addRequestExecuterContext(true, Url, spContext.hostWeb.url);
+            log.Debug('url - 140', url, serviceId + '.addfile.addFileToFolder');
+
+            jQuery.ajax({
+                url: url,
+                type: "POST",
+                headers: {
+                    'Accept': 'application/json;odata=verbose;',
+                    'Content-Type': 'application/json;odata=verbose;',
+                    'X-RequestDigest': getRequestDigest(),
+                    'If-Match': "*",
+                    'X-HTTP-Method': "DELETE",
+                }
+            })
+            .done(function (data) {
+                log.Debug('DATA - 154', data, serviceId + '.deleteFile');
+                deferred.resolve(data);
+            })
+            .fail(function (error) {
+                log.Error('ERROR - 158', error, serviceId);
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+
+        }
+
+        // ----------------------------------------------------------------------------------------
         // get the content from the docuemnt library
         function bindContentTypeToLibrary(docLibraryName, contentTypeId, loadFromHostWeb) {
             var deferred = $q.defer();
@@ -157,6 +198,7 @@
             return deferred.promise;
         }
 
+        // ----------------------------------------------------------------------------------------
         // delete content from the document libary
         function deleteContentTypeFromLibrary(docLibraryName, contentTypeId, loadFromHostWeb) {
             var deferred = $q.defer();

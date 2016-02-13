@@ -3,7 +3,7 @@
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="lhc"
      ProductID="{15ce9e91-2c73-45a9-b9a6-4132c7c331dc}"
-     Version="1.0.1.0"
+     Version="1.0.1.1"
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>

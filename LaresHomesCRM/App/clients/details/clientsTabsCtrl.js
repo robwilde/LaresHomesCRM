@@ -49,7 +49,17 @@
             common.activateController([], controllerId);
         };
 
-        // function to get the documents based on the tab selected
+        $scope.deleteFile = function (fileName) {
+            documentSrvc.deleteFile(fileName)
+                .then(function (data) {
+                    log.Debug('data - 55', data, controllerId);
+                }, function (error) {
+                    log.Error('ERROR - 57', error, controllerId);
+                });
+        };
+
+        // ==========================================================================
+        //#region function to get the documents based on the tab selected
         $scope.getTabData = function (docType) {
             var docType = docType || activeTab;
 
@@ -74,8 +84,9 @@
             return documentSrvc.getDocuments(clientId, $scope.docLibName);
         }
 
-        // ============================================================================================================
-        // dropZone config for uploading files
+        //#endregion 
+        // ==========================================================================
+        //#region dropZone config for uploading files
 
         $scope.fileBuffer = null;
         $scope.dropZoneCtrl = null;
@@ -187,7 +198,8 @@
             }
         };
 
-
+        //#endregion
+        // ==========================================================================
     };
 
 })();

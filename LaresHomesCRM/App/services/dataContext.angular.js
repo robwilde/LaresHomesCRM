@@ -14,7 +14,8 @@
 
         // service public signature
         return {
-            getClientResource: getClientResource
+            getClientResource: getClientResource,
+            getListResource: getListResource
         };
 
         // init service
