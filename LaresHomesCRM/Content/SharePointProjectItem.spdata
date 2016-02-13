@@ -12,5 +12,7 @@
     <ProjectItemFile Source="bootstrap-theme.css.map" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="bootstrap-theme.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="ui-bootstrap-csp.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="loading-bar.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="loading-bar.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

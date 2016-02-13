@@ -38,6 +38,37 @@
     }
 /*#endregion */
 
+/*#region SHP CRHOME BAR*/
+#suiteBarLeft {
+    background-color: #333333;
+    color: #fff;
+    width: 100%;
+    vertical-align: middle;
+}
+/*#endregion */
+/*#region ANGULAR LOADING BAR*/
+#loading-bar .bar {
+    background: #911817;
+    top: 30px;
+}
+
+#loading-bar .peg {
+    -moz-box-shadow: #911817 1px 0 6px 1px;
+    -ms-box-shadow: #911817 1px 0 6px 1px;
+    -webkit-box-shadow: #911817 1px 0 6px 1px;
+    box-shadow: #911817 1px 0 6px 1px;
+}
+
+#loading-bar-spinner {
+    top: 35px;
+}
+
+    #loading-bar-spinner .spinner-icon {
+        border-top-color: #911817;
+        border-left-color: #911817;
+    }
+/*#endregion */
+
 /*#region angular dissolve animation */
 .dissolve-animation.ng-hide-remove {
     display: inline !important;
@@ -51,15 +82,15 @@
     transition: 0.8s linear all;
 }
 
-.dissolve-animation.ng-hide-remove.ng-hide-remove-active,
-.dissolve-animation.ng-hide-add {
-    opacity: 1;
-}
+    .dissolve-animation.ng-hide-remove.ng-hide-remove-active,
+    .dissolve-animation.ng-hide-add {
+        opacity: 1;
+    }
 
-.dissolve-animation.ng-hide-add.ng-hide-add-active,
-.dissolve-animation.ng-hide-remove {
-    opacity: 0;
-}
+        .dissolve-animation.ng-hide-add.ng-hide-add-active,
+        .dissolve-animation.ng-hide-remove {
+            opacity: 0;
+        }
 /*#endregion */
 
 /*#region animation container - ensure animate only the body of the page*/
@@ -116,25 +147,35 @@
 
 ul.nav.nav-sidebar > li {
     /* background-color: #d3d3d1; */
-    font-size: 18px;
-    font-weight: bold;
+    /*border-top: 2px solid #FFF;
+    border-bottom: 1px solid #FFF;*/
+    /*font-size: 18px;
+    font-weight: bold;*/
 }
 
-    ul.nav.nav-sidebar > li.active {
-        /* background-color: #d3d3d1; */
+    ul.nav.nav-sidebar > li > a {
+        border-top: 2px solid #FFF;
         border-bottom: 1px solid #d3d3d1;
-    }
-
-    ul.nav.nav-sidebar > li > a:hover {
-        border-top: 2px solid #917B61;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(50, 50, 50, 0.6);
     }
 
     ul.nav.nav-sidebar > li.active a,
     ul.nav.nav-sidebar > li.active a:visited {
         /* background-color: #d3d3d1; */
+        /*border-top: 2px solid #FFF;*/
+        /*border-bottom: 1px solid #FFF;
         color: rgba(50, 50, 50, 0.6);
-        text-decoration: none;
+        text-decoration: none;*/
     }
+
+    ul.nav.nav-sidebar > li > a:hover {
+        border-top: 2px solid #917B61 !important;
+        border-bottom: 1px solid #d3d3d1;
+    }
+
+
 
 /*#endregion */
 

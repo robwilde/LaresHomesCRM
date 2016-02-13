@@ -130,11 +130,11 @@
                             </thead>
                             <tbody>
 
-                                <tr ng-show="showSpinner">
+                                <!--<tr ng-show="showSpinner">
                                     <td>
                                         <span us-spinner="{radius:15, width:14, length: 12, color: '#0072c6'}" spinner-on="showSpinner"></span>
                                     </td>
-                                </tr>
+                                </tr>-->
                                 <tr ng-repeat="file in tabDocs | filter: searchQuery">
                                     <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank">{{file.FileLeafRef}}</a> </td>
                                     <td>{{file.Modified | date}}</td>

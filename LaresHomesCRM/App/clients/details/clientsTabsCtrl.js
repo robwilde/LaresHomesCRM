@@ -12,9 +12,8 @@
         $scope.itemsPerPage = 5;
         $scope.bigTotalItems = 100;
         $scope.bigCurrentPage = 1;
-
-
-        $scope.showSpinner = false;
+        
+        //$scope.showSpinner = false;
 
         var log = common.logger;
         var clientId = +$routeParams.id;
@@ -22,21 +21,13 @@
 
 
         $scope.Tabs = [
-            {
-                name: "Contracts"
-            },
-            {
-                name: "Selections"
-            },
-            {
-                name: "Construction"
-            },
-            {
-                name: "Emails"
-            }
+            { name: "Contracts" },
+            { name: "Selections" },
+            { name: "Construction" },
+            { name: "Emails" }
         ];
-        log.Debug('$scope - 38', $scope, controllerId);
 
+        log.Debug('$scope - 38', $scope, controllerId);
         var activeTab = $scope.Tabs[0].name;
 
         // init controller
@@ -47,7 +38,7 @@
 
             // get the ClientName ID for the doc libaries
             if (clientId) {
-                $scope.showSpinner = true;
+                //$scope.showSpinner = true;
 
                 clientSrvc.getClientNameId(clientId)
                 .then(function (data) {
@@ -73,7 +64,7 @@
                     $scope.tabDocs = data;
 
                     //log.Debug('$scope - 75', $scope, controllerId + '.getTabData');
-                    $scope.showSpinner = false;
+                    //$scope.showSpinner = false;
 
                 }, function (error) {
                     log.Error('ERROR', error, controllerId);

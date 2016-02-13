@@ -4,22 +4,6 @@
     <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
     <File Path="Scripts\bootstrap.min.js" Url="Scripts/bootstrap.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\bootstrap.js" Url="Scripts/bootstrap.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular.min.js.map" Url="Scripts/angular.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular.min.js" Url="Scripts/angular.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular.js" Url="Scripts/angular.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-mocks.js" Url="Scripts/angular-mocks.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\ng-animate\angular-animate.min.js.map" Url="Scripts/ng-animate/angular-animate.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\ng-animate\angular-animate.min.js" Url="Scripts/ng-animate/angular-animate.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\ng-animate\angular-animate.js" Url="Scripts/ng-animate/angular-animate.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\ng-cookies\angular-cookies.min.js.map" Url="Scripts/ng-cookies/angular-cookies.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\ng-cookies\angular-cookies.min.js" Url="Scripts/ng-cookies/angular-cookies.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\ng-cookies\angular-cookies.js" Url="Scripts/ng-cookies/angular-cookies.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-route.min.js.map" Url="Scripts/angular-route.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-route.min.js" Url="Scripts/angular-route.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-route.js" Url="Scripts/angular-route.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-sanitize.min.js.map" Url="Scripts/angular-sanitize.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-sanitize.min.js" Url="Scripts/angular-sanitize.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-sanitize.js" Url="Scripts/angular-sanitize.js" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.min.map" Url="Scripts/jquery-2.2.0.min.map" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.min.js" Url="Scripts/jquery-2.2.0.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\jquery-2.2.0.js" Url="Scripts/jquery-2.2.0.js" ReplaceContent="TRUE" />
@@ -41,14 +25,32 @@
     <File Path="Scripts\angular-ui\ui-bootstrap-tpls.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.js" ReplaceContent="TRUE" />
     <File Path="Scripts\spin.min.js" Url="Scripts/spin.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\spin.js" Url="Scripts/spin.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-resource.min.js.map" Url="Scripts/angular-resource.min.js.map" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-resource.min.js" Url="Scripts/angular-resource.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\angular-resource.js" Url="Scripts/angular-resource.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment.min.js" Url="Scripts/moment.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment.js" Url="Scripts/moment.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.min.js" Url="Scripts/moment-with-locales.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\moment-with-locales.js" Url="Scripts/moment-with-locales.js" ReplaceContent="TRUE" />
     <File Path="Scripts\ng-flow\ng-flow-standalone.min.js" Url="Scripts/ng-flow/ng-flow-standalone.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\ng-flow\ng-flow-standalone.js" Url="Scripts/ng-flow/ng-flow-standalone.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.min.js.map" Url="Scripts/angular.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.min.js" Url="Scripts/angular.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.js" Url="Scripts/angular.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-mocks.js" Url="Scripts/angular-mocks.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-animate\angular-animate.min.js.map" Url="Scripts/ng-animate/angular-animate.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-animate\angular-animate.min.js" Url="Scripts/ng-animate/angular-animate.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-animate\angular-animate.js" Url="Scripts/ng-animate/angular-animate.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-cookies\angular-cookies.min.js.map" Url="Scripts/ng-cookies/angular-cookies.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-cookies\angular-cookies.min.js" Url="Scripts/ng-cookies/angular-cookies.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ng-cookies\angular-cookies.js" Url="Scripts/ng-cookies/angular-cookies.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-resource.min.js.map" Url="Scripts/angular-resource.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-resource.min.js" Url="Scripts/angular-resource.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-resource.js" Url="Scripts/angular-resource.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-route.min.js.map" Url="Scripts/angular-route.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-route.min.js" Url="Scripts/angular-route.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-route.js" Url="Scripts/angular-route.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-sanitize.min.js.map" Url="Scripts/angular-sanitize.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-sanitize.min.js" Url="Scripts/angular-sanitize.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-sanitize.js" Url="Scripts/angular-sanitize.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\loading-bar.min.js" Url="Scripts/loading-bar.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\loading-bar.js" Url="Scripts/loading-bar.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

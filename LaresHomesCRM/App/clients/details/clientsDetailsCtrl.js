@@ -8,7 +8,6 @@
     function clientDetails($scope, $location, $routeParams, $uibModal, $q, common, datacontext, clientSrvc) {
         var log = common.logger;
 
-        $scope.showSpinner = false;
         $scope.clientId = +$routeParams.id;
 
         var clientModel = new lhc.models.client();
@@ -67,7 +66,7 @@
             });
 
             modalInstance.result.then(function (data) {
-                $scope.showSpinner = true;
+                //$scope.showSpinner = true;
                 log.Debug("data - 55", data, controllerId + '.modalInstance');
 
                 for (var i in data) {
@@ -82,7 +81,7 @@
                 updateClient(clientModel)
                 .then(function (data) {
                     $scope.client = data;
-                    $scope.showSpinner = false;
+                    //$scope.showSpinner = false;
                 });
             }, function (error) {
                 log.Error('ERROR', error, controllerId);

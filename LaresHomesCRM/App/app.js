@@ -10,6 +10,8 @@
         'ngResource',   // assists with rest calls
         'ngAnimate',    // animation capabilities
         'ui.bootstrap', // UI Bootstrap add on
+
+        'angular-loading-bar',
         'angularSpinner',
 
         // my custom modules

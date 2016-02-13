@@ -3,11 +3,11 @@
     'use strict';
 
     var controllerId = 'clientsDashCtrl';
-    angular.module('app').controller(controllerId, ['$scope', '$uibModal', '$location', 'common', 'clientSrvc', 'usSpinnerService', clientsDashboard]);
+    angular.module('app').controller(controllerId, ['$scope', '$uibModal', '$location', 'common', 'clientSrvc', clientsDashboard]);
 
-    function clientsDashboard($scope, $uibModal, $location, common, clientSrvc, usSpinnerService) {
+    function clientsDashboard($scope, $uibModal, $location, common, clientSrvc) {
         var log = common.logger;
-        $scope.showSpinner = false;
+        //$scope.showSpinner = false;
         $scope.goToClient = goToClient;
 
         $scope.clientTabs = [
@@ -83,7 +83,8 @@
         /*save client from the add/edit modal window*/
         function saveClient(client) {
 
-            $scope.showSpinner = true;
+            //$scope.showSpinner = true;
+            //cfpLoadingBar.start();
 
             clientSrvc.saveClient(client)
             .then(function (data) {
@@ -100,7 +101,8 @@
                 }
 
                 $scope.Clients.push(newClient);
-                $scope.showSpinner = false;
+                //$scope.showSpinner = false;
+                //cfpLoadingBar.complete();
                 //log.Debug('saveClient - $scope', $scope, controllerId);
 
             }, function (error) {
