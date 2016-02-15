@@ -106,17 +106,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
-
-                            </div>
                             <div class="col-md-4">
                                 <label for="search">Search:</label>
                                 <input ng-model="searchQuery" id="search" class="form-control" placeholder="Filter text">
                             </div>
-                            <div class="col-md-2">
+                            <!--<div class="col-md-2">
                                 <label for="search">items per page:</label>
                                 <input type="number" min="1" max="100" class="form-control" ng-model="itemsPerPage">
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <div class="panel-body">
@@ -132,7 +129,7 @@
                             <tbody>
 
                                 <tr ng-repeat="file in tabDocs | filter: searchQuery">
-                                    <td><span class="glyphicon glyphicon-remove" ng-click="deleteFile(file.FileLeafRef)"></span></td>
+                                    <td><span class="del-file glyphicon glyphicon-remove" ng-click="deleteFile(file.FileRef)"></span></td>
                                     <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank">{{file.FileLeafRef}}</a> </td>
                                     <td>{{file.Modified | date}}</td>
                                     <td>{{file.Author.Title}}</td>
@@ -142,10 +139,6 @@
                         </table>
 
                         <div class="col-md-10 col-md-offset-1">
-                            <!--<p class="size" data-dz-size></p>
-                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
-                            </div>-->
                             <div class="well">
                                 <form action="" class="dropzone dz-clickable needsclick" dropzone="dropzoneConfig" dropzonereference="dropZoneCtrl" id="dropzone">
                                     <div class="dz-default needsclick"></div>

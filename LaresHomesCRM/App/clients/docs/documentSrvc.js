@@ -21,7 +21,7 @@
 
         var documentUrl = "_api/web/lists";
         var clientDocumentsUrl = "_api/web/lists/getbytitle(\'placeholder\')/items";
-        var deleteFileUrl = "_api/web/GetFileByServerRelativeUrl(\'placeholder\')";
+        var deleteFileUrl = "_api/web/getfilebyserverrelativeurl(\'placeholder\')";
 
         return {
             addDocLibrary: addDocLibrary,
@@ -85,77 +85,60 @@
             log.Debug('arrayBuffer - 81', arrayBuffer, serviceId + '.addfile.addFileToFolder');
             //log.Debug('byteLength - 82', byteLength, serviceId + '.addfile.addFileToFolder');
 
-            jQuery.ajax({
+            var req = {
                 url: url,
-                type: "POST",
-                data: arrayBuffer,
+                method: "POST",
                 processData: false,
+                data: arrayBuffer,
+                transformRequest: angular.identity,
                 headers: {
                     "accept": "application/json;odata=verbose",
                     "X-RequestDigest": getRequestDigest(),
-                    "content-length": arrayBuffer.byteLength
+                    "Content-Type": undefined
                 }
-            })
-            .done(function (data) {
-                log.Debug('DATA - 96', data, serviceId + '.addfile.addFileToFolder');
+            };
+
+            $http(req).then(function (data) {
+                log.Debug('Data - 188', data, serviceId);
                 deferred.resolve(data);
-            })
-            .fail(function (error) {
-                log.Error('ERROR - 99', error, serviceId);
+            }, function (error) {
+                log.Error('error - 191', error, serviceId);
                 deferred.reject(error);
             });
 
             return deferred.promise;
-
-            //var req = {
-            //    method: 'POST',
-            //    url: url,
-            //    headers: {
-            //        "accept": "application/json;odata=verbose",
-            //        "X-RequestDigest": getRequestDigest(),
-            //        "content-length": arrayBuffer.byteLength
-            //    },
-            //    data: arrayBuffer
-            //}
-            //$http(req).then(function (data) {
-            //    log.Debug('Data - 188', data, serviceId);
-            //    deferred.resolve(data);
-            //}, function (error) {
-            //    log.Error('error - 191', error, serviceId);
-            //    deferred.reject(error);
-            //});
-            //return deferred.promise;
         }
 
         // ----------------------------------------------------------------------------------------
         // add file to selected folder
-        function deleteFile(fileName) {
+        function deleteFile(docLibName, fileName) {
 
             // Send the request and return the response.
             // This call returns the SharePoint file.
             var deferred = $q.defer();
+            var FolderFileName = "/" + docLibName + "/" + fileName;
             var Url = deleteFileUrl.replace("placeholder", fileName);
 
             var url = addRequestExecuterContext(true, Url, spContext.hostWeb.url);
             log.Debug('url - 140', url, serviceId + '.addfile.addFileToFolder');
-
-            jQuery.ajax({
+           
+            var req = {
+                method: 'POST',
                 url: url,
-                type: "POST",
                 headers: {
                     'Accept': 'application/json;odata=verbose;',
                     'Content-Type': 'application/json;odata=verbose;',
                     'X-RequestDigest': getRequestDigest(),
                     'If-Match': "*",
-                    'X-HTTP-Method': "DELETE",
+                    'X-HTTP-Method': "DELETE"
                 }
-            })
-            .done(function (data) {
-                log.Debug('DATA - 154', data, serviceId + '.deleteFile');
+            };
+
+            $http(req).then(function (data) {
+                log.Debug('Data - 188', data, serviceId);
                 deferred.resolve(data);
-            })
-            .fail(function (error) {
-                log.Error('ERROR - 158', error, serviceId);
+            }, function (error) {
+                log.Error('error - 191', error, serviceId);
                 deferred.reject(error);
             });
 

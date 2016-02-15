@@ -6,13 +6,13 @@
     angular.module('app').controller(controllerId,
         ['$scope', '$routeParams', '$q', 'common', 'clientSrvc', 'documentSrvc', tabCtrl]);
 
-    function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc ) {
+    function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc) {
         // items for the pagination
         $scope.totalItems = undefined;
         $scope.itemsPerPage = 5;
         $scope.bigTotalItems = 100;
         $scope.bigCurrentPage = 1;
-        
+
         var log = common.logger;
         var clientId = +$routeParams.id;
         var clientNameId;
@@ -50,12 +50,13 @@
         };
 
         $scope.deleteFile = function (fileName) {
-            documentSrvc.deleteFile(fileName)
+            documentSrvc.deleteFile($scope.docLibName, fileName)
                 .then(function (data) {
-                    log.Debug('data - 55', data, controllerId);
-                }, function (error) {
-                    log.Error('ERROR - 57', error, controllerId);
-                });
+                    getClientDocs()
+                        .then(function (data) { $scope.tabDocs = data; },
+                        function (error) { log.Error('ERROR', error, controllerId);});
+                    //log.Debug('data - 55', [data, $scope], controllerId);
+                }, function (error) { log.Error('ERROR - 57', error, controllerId); });
         };
 
         // ==========================================================================
