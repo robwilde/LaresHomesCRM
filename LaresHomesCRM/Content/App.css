@@ -49,11 +49,13 @@
 
 /*#region ANGULAR LOADING BAR*/
 #loading-bar .bar {
+    height: 3px;
     background: #b1997a;
     /*top: 30px;*/
 }
 
 #loading-bar .peg {
+    height: 3px;
     -moz-box-shadow: #b1997a 1px 0 6px 1px;
     -ms-box-shadow: #b1997a 1px 0 6px 1px;
     -webkit-box-shadow: #b1997a 1px 0 6px 1px;
@@ -283,9 +285,9 @@ form.tab-form-demo .tab-pane {
 /*#endregion*/
 
 /*#region FILE DISPLAY*/
-span.del-file{
+span.del-file {
     color: red;
-    cursor: pointer; 
+    cursor: pointer;
     /*cursor: hand;*/
 }
 /*#endregion*/
