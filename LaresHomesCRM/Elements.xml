@@ -49,7 +49,9 @@
     <File Path="fonts\fontawesome-webfont.woff" Url="fonts/fontawesome-webfont.woff" ReplaceContent="TRUE" />
     <File Path="fonts\FontAwesome.otf" Url="fonts/FontAwesome.otf" ReplaceContent="TRUE" />
     <File Path="fonts\fontawesome-webfont.eot" Url="fonts/fontawesome-webfont.eot" ReplaceContent="TRUE" />
-    <File Path="App\clients\docs\docsPerPageFltr.js" Url="App/clients/docs/docsPerPageFltr.js" ReplaceContent="TRUE" />
     <File Path="App\clients\docs\dropzoneDrct.js" Url="App/clients/docs/dropzoneDrct.js" ReplaceContent="TRUE" />
+    <File Path="App\modules\irPaginationModule.js" Url="App/modules/irPaginationModule.js" ReplaceContent="TRUE" />
+    <File Path="App\templates\dirPaginationTpl.html" Url="App/templates/dirPaginationTpl.html" ReplaceContent="TRUE" />
+    <File Path="App\config.modules.js" Url="App/config.modules.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

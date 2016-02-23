@@ -106,14 +106,17 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-4">
-                                <label for="search">Search:</label>
-                                <input ng-model="searchQuery" id="search" class="form-control" placeholder="Filter text">
+                            <div class="col-md-7">
+                                <dir-pagination-controls boundary-links="true" pagination-id="tab.name"></dir-pagination-controls>
                             </div>
-                            <!--<div class="col-md-2">
+                            <div class="col-md-3">
+                                <label for="search">Search:</label>
+                                <input ng-model="query.FileLeafRef" id="search" class="form-control" placeholder="Filter text">
+                            </div>
+                            <div class="col-md-2">
                                 <label for="search">items per page:</label>
-                                <input type="number" min="1" max="100" class="form-control" ng-model="itemsPerPage">
-                            </div>-->
+                                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                            </div>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -127,8 +130,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr ng-repeat="file in tabDocs | filter: searchQuery">
+                                <!--<tr ng-repeat="file in tabDocs | filter: searchQuery">-->
+                                <tr dir-paginate="file in tabDocs | filter: query | itemsPerPage: pageSize" pagination-id="tab.name">
                                     <td><span class="del-file glyphicon glyphicon-remove" ng-click="deleteFile(file.FileRef)"></span></td>
                                     <td><a ng-href="{{file.EncodedAbsUrl}}" target="_blank">{{file.FileLeafRef}}</a> </td>
                                     <td>{{file.Modified | date}}</td>

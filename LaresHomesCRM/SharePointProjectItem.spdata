@@ -50,7 +50,9 @@
     <ProjectItemFile Source="App\layout\workingOnIt\workingonit.tpl.html" Target="App\layout\workingOnIt\" Type="ElementFile" />
     <ProjectItemFile Source="App\services\dataContext.angular.js" Target="App\services\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\clientSrvc.js" Target="App\clients\" Type="ElementFile" />
-    <ProjectItemFile Source="App\clients\docs\docsPerPageFltr.js" Target="App\clients\docs\" Type="ElementFile" />
     <ProjectItemFile Source="App\clients\docs\dropzoneDrct.js" Target="App\clients\docs\" Type="ElementFile" />
+    <ProjectItemFile Source="App\modules\irPaginationModule.js" Target="App\modules\" Type="ElementFile" />
+    <ProjectItemFile Source="App\templates\dirPaginationTpl.html" Target="App\templates\" Type="ElementFile" />
+    <ProjectItemFile Source="App\config.modules.js" Target="App\" Type="ElementFile" />
   </Files>
 </ProjectItem>

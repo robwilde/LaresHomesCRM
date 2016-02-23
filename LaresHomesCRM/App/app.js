@@ -13,6 +13,7 @@
 
         'angular-loading-bar',
         'simple-angular-dialog',
+        'dirPagination',
 
         // my custom modules
         'common'

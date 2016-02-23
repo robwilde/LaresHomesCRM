@@ -4,14 +4,12 @@
 
     var controllerId = 'ClientTabsCtrl';
     angular.module('app').controller(controllerId,
-        ['$scope', '$routeParams', '$q', 'common', 'clientSrvc', 'documentSrvc', tabCtrl]);
+        ['$scope', '$routeParams', '$q', 'common', 'clientSrvc', 'documentSrvc', 'dialog', tabCtrl]);
 
-    function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc) {
+    function tabCtrl($scope, $routeParams, $q, common, clientSrvc, documentSrvc, dialog) {
         // items for the pagination
-        $scope.totalItems = undefined;
-        $scope.itemsPerPage = 5;
-        $scope.bigTotalItems = 100;
-        $scope.bigCurrentPage = 1;
+        $scope.currentPage = 1;
+        $scope.pageSize = 5;
 
         var log = common.logger;
         var clientId = +$routeParams.id;
@@ -49,16 +47,49 @@
             common.activateController([], controllerId);
         };
 
+        // ====================================================================
+        //#region DELETE FILE, CONFIRM DELETE AND UPDATE LIST
+
         $scope.deleteFile = function (fileName) {
-            documentSrvc.deleteFile($scope.docLibName, fileName)
-                .then(function (data) {
-                    getClientDocs()
-                        .then(function (data) { $scope.tabDocs = data; },
-                        function (error) { log.Error('ERROR', error, controllerId);});
-                    //log.Debug('data - 55', [data, $scope], controllerId);
-                }, function (error) { log.Error('ERROR - 57', error, controllerId); });
+
+            ShowDialog().then(DeleteFile).then(getClientDocs).then(UpdateClientDocs).catch(handleError).finally(finalItems);
+
+            function ShowDialog() {
+                return dialog.confirm(' Please confirm Delete ');
+            }
+
+            function DeleteFile() {
+                log.Debug('FileName - 62', fileName, controllerId);
+                return documentSrvc.deleteFile($scope.docLibName, fileName);
+            }
+
+            function UpdateClientDocs(data) {
+                $scope.tabDocs = data;
+                return $q.when($scope.tabDocs);
+            }
+
+            /*ERROR HANDLER*/
+            function handleError(error) {
+                log.Error('ERROR - 73', error, controllerId);
+            };
+
+            /*FINALITEMS TO RUN*/
+            function finalItems(data) {
+                log.Debug('FINALLY - 79', data, controllerId);
+            }
+
         };
 
+        //    documentSrvc.deleteFile($scope.docLibName, fileName)
+        //        .then(function (data) {
+        //            getClientDocs()
+        //                .then(function (data) { $scope.tabDocs = data; },
+        //                function (error) { log.Error('ERROR', error, controllerId);});
+        //            //log.Debug('data - 55', [data, $scope], controllerId);
+        //        }, function (error) { log.Error('ERROR - 57', error, controllerId); });
+        //};
+
+        //#endregion 
         // ==========================================================================
         //#region function to get the documents based on the tab selected
         $scope.getTabData = function (docType) {
@@ -170,7 +201,7 @@
 
                     /*ERROR HANDLER*/
                     function handleError(error) {
-                        //log.Error('ERROR - 173', error, controllerId);
+                        log.Error('ERROR - 173', error, controllerId);
                     };
 
                     /*FINALITEMS TO RUN*/
