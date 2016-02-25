@@ -80,14 +80,6 @@
 
         };
 
-        //    documentSrvc.deleteFile($scope.docLibName, fileName)
-        //        .then(function (data) {
-        //            getClientDocs()
-        //                .then(function (data) { $scope.tabDocs = data; },
-        //                function (error) { log.Error('ERROR', error, controllerId);});
-        //            //log.Debug('data - 55', [data, $scope], controllerId);
-        //        }, function (error) { log.Error('ERROR - 57', error, controllerId); });
-        //};
 
         //#endregion 
         // ==========================================================================

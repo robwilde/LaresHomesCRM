@@ -4,7 +4,7 @@
     </div>
 
     <div class="modal-body">
-        <form>
+        <form name="clientForm">
 
             <!-- CLIENT DETAILS SECTION ------------------------------------------------------------------------------------------------>
             <div class="row">
@@ -41,10 +41,22 @@
             <!-- SECTION FOR THE PROJECT id AND THE USERNAME/PASSWORD ------------------------------------------------------------------------->
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error' : clientForm.jobNumber.$invalid && !clientForm.jobNumber.$pristine }">
                         <label for="jobNumber">Job Number</label>
-                        <input ng-model="client.ClientJobNumber" value="{{client.ClientJobNumber}}" type="text" class="form-control" id="jobNumber" placeholder="Job Number">
+                        <input ng-model="client.ClientJobNumber"
+                               maxlength="4"
+                               ng-minlength="4"
+                               name="jobNumber"
+                               ng-pattern="jobNumberPattern" 
+                               value="{{client.ClientJobNumber}}" 
+                               type="text" 
+                               class="form-control" 
+                               id="jobNumber" 
+                               placeholder="Please enter 4 digits for Job Number">
                     </div>
+
+                    <p ng-show="clientForm.jobNumber.$error.minlength" class="help-block">JobNumber is too short.</p>
+
                 </div>
                 <div class="col-md-6">
                     <button id="password-generator" class="btn btn-info btn-block" type="button" ng-click="generate()">Generate Password</button>

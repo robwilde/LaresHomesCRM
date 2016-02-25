@@ -10,6 +10,7 @@
     function clientFormCtrl($scope, $location, $uibModalInstance, $routeParams, $q, common, client) {
         var log = common.logger;
 
+        $scope.jobNumberPattern = '^[0-9]{1,4}$';
         $scope.client = new lhc.models.client();
         $scope.client = client || $scope.client;
         $scope.passLength = 5;

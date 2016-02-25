@@ -118,7 +118,7 @@
             getClientById(clientId)
             .then(function (data) {
                 var clientNameId = setClientNameId(data);
-                log.Debug('clientNameId - 122', clientNameId, serviceId + '.getClientNameId');
+                log.Debug('data - 122', data, serviceId + '.getClientNameId');
 
                 deffered.resolve(clientNameId);
             }, function (error) {
@@ -131,7 +131,7 @@
         // user LastName and First Intial to create docLib ID
         function setClientNameId(client) {
             var firstInitial = client.ClientsFirstName.charAt(0).toUpperCase();
-            var clientNameId = client.ClientsLastName + firstInitial;
+            var clientNameId = 'LH' + client.ClientJobNumber + '_' + client.ClientsLastName + firstInitial;
 
             return clientNameId;
         }
@@ -139,7 +139,7 @@
         // create the doc libaries for new clients
         function addDocList(client) {
             // libraryName must not start with a number and undescore. Exceptions occur when libraries are created in sequence
-
+            log.Debug('Client - 142', client, serviceId + '.addDocList');
             var clientNameId = setClientNameId(client);
             var docLibs = {};
 
@@ -166,7 +166,7 @@
             for (var i = 0; i < docLibaries.length; i++) {
                 var libName = docLibaries[i];
 
-                var docLibraryName = clientNameId + '_' + libName;
+                var docLibraryName = 'LH' + client.ClientJobNumber + '_' + clientNameId + '_' + libName;
                 docLibs[libName] = documentSrvc.addDocLibrary(docLibraryName, libName, true);
             }
         };

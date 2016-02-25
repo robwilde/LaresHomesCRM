@@ -79,9 +79,7 @@
                         clientModel[i] = data[i];
                     }
                 }
-
-
-
+                
                 updateClient(clientModel)
                 .then(function (data) {
                     $scope.client = data;
