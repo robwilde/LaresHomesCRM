@@ -34,10 +34,13 @@
             // Make LastNameFirstintial
             // update ClientUserName
             Client.ClientUserName = newValue + FirstInitial;
-            
-            //log.Debug('WATCH - 28', [newValue, oldValue], controllerId);
+            // log.Debug('WATCH - 28', [newValue, oldValue], controllerId);
         });
         
+        //$scope.$watch('client.ClientJobNumber', function (newValue, oldValue) {
+        //    log.Debug('jobNumber', [newValue, oldValue], controllerId);
+        //});
+
         function randomPassword() {
             var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
             var pass = "";

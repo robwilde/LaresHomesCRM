@@ -83,8 +83,8 @@
         /*save client from the add/edit modal window*/
         function saveClient(client) {
 
-            //$scope.showSpinner = true;
-            //cfpLoadingBar.start();
+            // $scope.showSpinner = true;
+            // cfpLoadingBar.start();
 
             clientSrvc.saveClient(client)
             .then(function (data) {

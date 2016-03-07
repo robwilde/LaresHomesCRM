@@ -138,7 +138,8 @@
 
         // create the doc libaries for new clients
         function addDocList(client) {
-            // libraryName must not start with a number and undescore. Exceptions occur when libraries are created in sequence
+            // libraryName must not start with a number and undescore. 
+            // Exceptions occur when libraries are created in sequence
             log.Debug('Client - 142', client, serviceId + '.addDocList');
             var clientNameId = setClientNameId(client);
             var docLibs = {};
@@ -160,13 +161,15 @@
 
             }, function (error) {
                 log.Error('ERROR', error, serviceId);
-            })
+            });
 
             var docLibaries = ['Contracts', 'Selections', 'Construction'];
             for (var i = 0; i < docLibaries.length; i++) {
                 var libName = docLibaries[i];
 
-                var docLibraryName = 'LH' + client.ClientJobNumber + '_' + clientNameId + '_' + libName;
+                //var docLibraryName = 'LH' + client.ClientJobNumber + '_' + clientNameId + '_' + libName;
+                var docLibraryName = clientNameId + '_' + libName;
+
                 docLibs[libName] = documentSrvc.addDocLibrary(docLibraryName, libName, true);
             }
         };

@@ -52,9 +52,11 @@
                                type="text" 
                                class="form-control" 
                                id="jobNumber" 
-                               placeholder="Please enter 4 digits for Job Number">
+                               placeholder="Please enter 4 digits for Job Number"
+                               required>
                     </div>
 
+                    <p ng-show="clientForm.jobNumber.$error.required" class="help-block">JobNumber is required.</p>
                     <p ng-show="clientForm.jobNumber.$error.minlength" class="help-block">JobNumber is too short.</p>
 
                 </div>
@@ -165,7 +167,8 @@
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="save()">Save</button>
+        <button class="btn btn-primary" type="button" ng-click="save()" 
+                ng-disabled="clientForm.jobNumber.$error.required">Save</button>
         <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
     </div>
 </div>
